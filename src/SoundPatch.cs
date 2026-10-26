@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using HarmonyLib;
 using Vintagestory.API.Common;
@@ -30,6 +32,30 @@ namespace VolumeSliders
 
             VolumeConfig.LastHeard[key] = Environment.TickCount64;
             __result *= VolumeConfig.Factor(key);
+        }
+
+        static readonly System.Reflection.FieldInfo? soundList = AccessTools.Field(typeof(LoadedSoundNative), "loadedSounds");
+        static readonly System.Reflection.FieldInfo? soundLock = AccessTools.Field(typeof(LoadedSoundNative), "loadedSoundsLock");
+
+        /// <summary>
+        /// Steady loops (rapids, rain, wind) only re-send their volume when it drifts, so a slider change would
+        /// otherwise wait until the loop restarts. Re-send now for every playing sound whose key matches (null = all).
+        /// </summary>
+        public static void RefreshPlaying(System.Func<string, bool>? matches)
+        {
+            if (soundList?.GetValue(null) is not IEnumerable list || soundLock?.GetValue(null) is not object padlock) return;
+
+            var playing = new List<LoadedSoundNative>();
+            lock (padlock)
+            {
+                foreach (object o in list) if (o is LoadedSoundNative s) playing.Add(s);
+            }
+            foreach (var s in playing)
+            {
+                var loc = s.Params?.Location;
+                if (loc == null || s.IsDisposed) continue;
+                if (matches == null || matches(SoundKeys.KeyFor(loc))) s.SetVolume();
+            }
         }
     }
 }

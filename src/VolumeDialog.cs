@@ -153,7 +153,9 @@ namespace VolumeSliders
         {
             int idx = offset + row;
             if (idx >= filtered.Count) return true;
-            VolumeConfig.Set(filtered[idx].Key, value);
+            string key = filtered[idx].Key;
+            VolumeConfig.Set(key, value);
+            SoundPatch.RefreshPlaying(k => k == key);
             SaveSoon();
             return true;
         }
@@ -172,6 +174,8 @@ namespace VolumeSliders
         bool OnResetShown()
         {
             foreach (var s in filtered) VolumeConfig.Set(s.Key, VolumeConfig.Max);
+            var shown = new HashSet<string>(filtered.Select(s => s.Key));
+            SoundPatch.RefreshPlaying(shown.Contains);
             SaveSoon();
             FillRows();
             return true;

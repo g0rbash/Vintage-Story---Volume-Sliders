@@ -49,7 +49,15 @@ namespace VolumeSliders
             // IMM edits the config file directly; pick those edits up without a restart.
             api.Event.RegisterGameTickListener(_ =>
             {
-                if (VolumeConfig.ReloadIfChangedExternally()) dialog?.Refresh();
+                if (!VolumeConfig.ReloadIfChangedExternally()) return;
+                SoundPatch.RefreshPlaying(null);
+                dialog?.Refresh();
+                if (VolumeConfig.OpenWindowRequested)
+                {
+                    VolumeConfig.OpenWindowRequested = false;
+                    VolumeConfig.Save(Sounds.Select(s => s.Key));
+                    dialog?.TryOpen();
+                }
             }, 1500);
         }
 
@@ -74,8 +82,10 @@ namespace VolumeSliders
         SoundEntry Describe(AssetLocation loc)
         {
             string key = SoundKeys.KeyFor(loc);
-            string display = Lang.GetIfExists("volumesliders:sound-" + key)
-                ?? SoundKeys.CategoryFor(loc) + ": " + SoundKeys.NameFor(loc);
+            string langKey = "volumesliders:sound-" + key;
+            string display = Lang.HasTranslation(langKey, false, false)
+                ? Lang.Get(langKey)
+                : SoundKeys.CategoryFor(loc) + ": " + SoundKeys.NameFor(loc);
             return new SoundEntry { Key = key, Display = display, Search = (display + " " + key).ToLowerInvariant(), Location = loc };
         }
 

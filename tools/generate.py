@@ -16,7 +16,13 @@ UI = {
     "recent": "Heard in the last 30 seconds:",
     "reset-shown": "Reset Shown to 100",
     "count": "Showing {0} of {1} sounds",
+    "imm-open-window": "Open the full searchable window, with a slider for every sound (press Apply)",
 }
+
+
+# Integrated Mod Manager draws every setting into one texture, so a list of 800+ sliders renders blank.
+# It gets the ambient/weather sounds plus the Shiver sounds; everything else is in the in-game window.
+IMM_PREFIXES = ("environment_", "weather_", "creature_shiver")
 
 
 def title_case(s):
@@ -70,9 +76,15 @@ def main():
 
     keys = sorted(found)
     lang = dict(UI)
-    settings = []
+    settings = [{
+        "Type": "Boolean",
+        "Label": "volumesliders:imm-open-window",
+        "Map": "OpenWindow",
+    }]
     for k in keys:
         lang["sound-" + k] = found[k]
+        if not k.startswith(IMM_PREFIXES):
+            continue
         settings.append({
             "Type": "Slider",
             "Label": "volumesliders:sound-" + k,
@@ -92,7 +104,7 @@ def main():
         json.dump(imm, f, indent="\t")
     with open(os.path.join(ROOT, "assets/volumesliders/lang/en.json"), "w", encoding="utf-8") as f:
         json.dump(lang, f, indent="\t", ensure_ascii=False)
-    print(f"{len(keys)} sounds")
+    print(f"{len(keys)} sounds, {len(settings) - 1} in IMM")
 
 
 main()

@@ -19,6 +19,9 @@ namespace VolumeSliders
         static ILogger? log;
         static DateTime lastKnownWrite;
 
+        /// <summary>Set when the config file has OpenWindow:true (the IMM "open full window" checkbox). The mod clears it after acting.</summary>
+        public static bool OpenWindowRequested;
+
         // Replaced wholesale on load so the audio thread never sees a half-updated dictionary.
         static Dictionary<string, int> volumes = new Dictionary<string, int>();
 
@@ -53,6 +56,7 @@ namespace VolumeSliders
                 {
                     lastKnownWrite = File.GetLastWriteTimeUtc(path);
                     var obj = JObject.Parse(File.ReadAllText(path));
+                    OpenWindowRequested = obj["OpenWindow"]?.Type == JTokenType.Boolean && obj["OpenWindow"]!.Value<bool>();
                     foreach (var p in obj.Properties())
                     {
                         if (p.Value.Type == JTokenType.Integer || p.Value.Type == JTokenType.Float)
@@ -77,6 +81,7 @@ namespace VolumeSliders
                 var obj = new JObject();
                 var keys = new SortedSet<string>(allKeys, StringComparer.Ordinal);
                 foreach (var k in volumes.Keys) keys.Add(k);
+                obj["OpenWindow"] = false;
                 foreach (var k in keys) obj[k] = Get(k);
                 Directory.CreateDirectory(Path.GetDirectoryName(path)!);
                 File.WriteAllText(path, obj.ToString(Newtonsoft.Json.Formatting.Indented));
