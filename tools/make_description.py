@@ -172,8 +172,7 @@ body = [
 ]
 
 title_cell = (f'<td style="background: #403529;" align="center">'
-              f'<span style="{SERIF} font-size: 34px; font-weight: bold; letter-spacing: 3px; color: #e9ddce;">VOLUME</span><br>'
-              f'<span style="{SERIF} font-size: 22px; font-weight: bold; letter-spacing: 6px; color: #edce98;">SLIDERS</span><br><br>'
+              f'<span style="{SERIF} font-size: 34px; font-weight: bold; letter-spacing: 3px; color: #e9ddce;">VOLUME SLIDERS</span><br><br>'
               f'<span style="{SANS} font-size: 12px; letter-spacing: 3px; color: #b5a48c;">WATER &nbsp;&#10022;&nbsp; RAIN &nbsp;&#10022;&nbsp; WIND &nbsp;&#10022;&nbsp; THUNDER &nbsp;&#10022;&nbsp; MOBS &nbsp;&#10022;&nbsp; MACHINES</span><br><br>'
               f'<span style="{SANS} font-size: 12px; font-weight: bold; letter-spacing: 2px; color: #c58948;">v{VERSION} &mdash; VINTAGE STORY {GAME} &mdash; A SLIDER FOR EVERY SOUND</span></td>')
 footer = (f'<td style="background: #5a4530;" align="center">'
