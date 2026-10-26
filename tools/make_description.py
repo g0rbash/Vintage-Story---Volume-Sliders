@@ -90,15 +90,15 @@ INSTALL = [
     'Start the game. The first run writes <b>ModConfig/volumesliders.json</b> with every sound at 100.',
     'To reset everything, delete that file, or use <i>Reset Shown to 100</i> in the window.',
 ]
-CREDITS = [
-    ('G0rbash', 'design, testing, and the Vintage Story 1.22.7 build.'),
-    ('ApacheTech Solutions', 'for <a href="https://mods.vintagestory.at/accessibilitytweaks">Accessibility Tweaks</a>, '
-                             'whose Sound Effects feature showed the way to scale a single sound.'),
+# G0rbash's own wording (edited on GitHub); one string per line, as written. There is no credits section.
+NOTE_LINES = [
+    "I have not coded in C# since 1996, and json is just pure black magic I don't have time to relearn that skill while "
+    "also learning skills for my #dayjob.",
+    "I tested and reviewed the code to the best of my ability.",
+    'I do not condone the unethical training and use of "AI" coding tools, but there is value for small projects like '
+    'this that improve the happy times we have playing video games.',
+    "All code is available for review on the GitHub page.",
 ]
-NOTE = ("I have not coded in C# since 1996 and don't have time to relearn that skill while also learning skill for my "
-        "#dayjob. I tested and reviewed the code to the best of my ability. I do not condone the unethical training "
-        "and use of &quot;AI&quot; coding tools, but there is value for small projects like this that improve the "
-        "happy times we have playing video games.")
 SIGN = 'Thank you,<br>G0rbash'
 
 # ---------------------------------------------------------------- sound data
@@ -176,8 +176,9 @@ moddb_description = ''.join([
     '<h3>Using it</h3>\n', items(USING),
     '<h3>Compatibility</h3>\n', items([f'<b>{a}</b> {b}' for a, b in COMPAT]),
     '<h3>Installation</h3>\n', items(INSTALL, 'ol'),
-    '<h3>Credits</h3>\n', items([f'<b>{a}</b> {b}' for a, b in CREDITS]),
-    '<h3>A note from G0rbash</h3>\n', f'<p>{NOTE}</p>\n<p>{SIGN}</p>\n',
+    '<h3>A note from G0rbash</h3>\n',
+    '<p>' + ' '.join(NOTE_LINES).replace('"', '&quot;') + '</p>\n',
+    f'<p>{SIGN}</p>\n',
 ])
 with open(os.path.join(docs, 'moddb-description.html'), 'w', encoding='utf-8', newline='\n') as f:
     f.write(moddb_description)
@@ -276,8 +277,7 @@ readme = [
     '## Using it\n\n' + bullets(USING),
     '## Compatibility\n\n' + bullets([f'<b>{a}</b> {b}' for a, b in COMPAT]),
     '## Installation\n\n' + ''.join(f'{i}. {md(t)}\n' for i, t in enumerate(INSTALL, 1)),
-    '## Credits\n\n' + bullets([f'<b>{a}</b> {b}' for a, b in CREDITS]),
-    f'## A note from G0rbash\n\n{md(NOTE)}\n\n{md(SIGN)}\n',
+    '## A note from G0rbash\n' + '\n'.join(NOTE_LINES) + f'\n\n{md(SIGN)}\n',
     '---\n\nBuilding from source: see [BUILDING.md](BUILDING.md).\n',
 ]
 with open(os.path.join(ROOT, 'README.md'), 'w', encoding='utf-8', newline='\n') as f:
