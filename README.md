@@ -72,14 +72,11 @@ The window opens on these sounds, the ones people most often want quieter, and c
 2. Start the game. The first run writes **ModConfig/volumesliders.json** with every sound at 100.
 3. To reset everything, delete that file, or use *Reset Shown to 100* in the window.
 
-## Credits
-
-- **G0rbash** design, testing, and the Vintage Story 1.22.7 build.
-- **ApacheTech Solutions** for [Accessibility Tweaks](https://mods.vintagestory.at/accessibilitytweaks), whose Sound Effects feature showed the way to scale a single sound.
-
 ## A note from G0rbash
-
-I have not coded in C# since 1996 and don't have time to relearn that skill while also learning skill for my #dayjob. I tested and reviewed the code to the best of my ability. I do not condone the unethical training and use of "AI" coding tools, but there is value for small projects like this that improve the happy times we have playing video games.
+I have not coded in C# since 1996, and json is just pure black magic I don't have time to relearn that skill while also learning skills for my #dayjob.
+I tested and reviewed the code to the best of my ability.
+I do not condone the unethical training and use of "AI" coding tools, but there is value for small projects like this that improve the happy times we have playing video games.
+All code is available for review on the GitHub page.
 
 Thank you,  
 G0rbash
