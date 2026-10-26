@@ -5,7 +5,7 @@ namespace VolumeSliders
 {
     /// <summary>
     /// Turns asset locations into the stable config keys stored in volumesliders.json, and into readable names.
-    /// tools/generate.py must produce identical keys for the vanilla sounds it writes into imm.json.
+    /// tools/generate.py must produce identical keys for the vanilla sounds it lists in lang/en.json and major.json.
     /// </summary>
     public static class SoundKeys
     {

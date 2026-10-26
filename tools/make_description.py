@@ -61,22 +61,16 @@ GROUPS = [
     ('Bells', 'The deep bell'),
     ('Machines', 'Quern, gears, bellows'),
 ]
-MOBS_IMM = 'Drifter, Shiver, Bowtorn, Locust, and Bell sounds'
-MOBS_WINDOW = 'every creature sound: wolves, bears, goats, chickens, and the rest'
+MOBS = 'Every creature sound: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest'
 
 USING = [
-    '<b>The window.</b> Press <b>Ctrl+Shift+V</b> (you can rebind it in the controls settings), or type '
-    '<b>.volumesliders</b> in chat. It opens on the sounds most people want quieter plus every creature sound; the '
-    '<i>Show every sound</i> switch lists all of them, including other mods\'.',
-    '<b>Integrated Mod Manager.</b> Open it, choose <i>Volume Sliders</i>, and move the sliders. IMM can\'t draw a list of '
-    'hundreds of settings, so it shows the major sounds above; tick <i>Open the full searchable window</i> and press '
-    '<i>Apply</i> to jump to the full window.',
-    '<b>Both are the same settings.</b> Whichever you use, the values live in <b>ModConfig/volumesliders.json</b>, and '
-    'edits made in one show up in the other while the game is running.',
+    'Press <b>Ctrl+Shift+V</b> (you can rebind it in the controls settings), or type <b>.volumesliders</b> in chat.',
+    'The window opens on the sounds most people want quieter, plus every creature sound. Flip <i>Show every sound</i> '
+    "to list all of them, including other mods'.",
+    'Your settings are saved in <b>ModConfig/volumesliders.json</b>.',
 ]
 COMPAT = [
     ('Vintage Story 1.22.7.', 'Client-side only: single player, or any server, with nothing to install on the server.'),
-    ('Integrated Mod Manager.', 'The sliders appear in its config window.'),
     ('Accessibility Tweaks.', 'Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to '
                               '50% in each plays at 25%.'),
     ('Other mods.', 'Their sounds get sliders in the full window. A mod that plays sound through its own audio code, '
@@ -89,8 +83,6 @@ INSTALL = [
 ]
 CREDITS = [
     ('G0rbash', 'design, testing, and the Vintage Story 1.22.7 build.'),
-    ('YangWenLi', 'for <a href="https://mods.vintagestory.at/integratedmodmanager">Integrated Mod Manager</a>, which '
-                  'this mod plugs into.'),
     ('ApacheTech Solutions', 'for <a href="https://mods.vintagestory.at/accessibilitytweaks">Accessibility Tweaks</a>, '
                              'whose Sound Effects feature showed the way to scale a single sound.'),
 ]
@@ -104,8 +96,6 @@ SIGN = 'Thank you,<br>G0rbash'
 cfg = os.path.join(ROOT, 'assets', 'volumesliders')
 lang = json.load(open(os.path.join(cfg, 'lang', 'en.json'), encoding='utf-8'))
 major = json.load(open(os.path.join(cfg, 'config', 'major.json'), encoding='utf-8'))['keys']
-imm = json.load(open(os.path.join(cfg, 'config', 'imm.json'), encoding='utf-8'))
-imm_keys = [s['Map'] for s in imm['Configuration'][0]['Settings'] if s['Type'] == 'Slider']
 total = len([k for k in lang if k.startswith('sound-')])
 
 
@@ -114,18 +104,18 @@ def group_of(key):
 
 
 counts = {}
-for k in imm_keys:
+for k in major:
     counts[group_of(k)] = counts.get(group_of(k), 0) + 1
-mob_count = sum(n for g, n in counts.items() if g == 'Creature')
+creature_total = len([k for k in lang if k.startswith('sound-creature_')])
 
 sound_rows = []
 for label, examples in GROUPS:
-    n = counts.get(label.replace('&', '&'), 0)
+    n = counts.get(label, 0)
     if n:
         sound_rows.append((f'<b>{label.replace("&", "&amp;")}</b>', examples, str(n)))
-sound_rows.insert(8, ('<b>Mobs</b>', f'In IMM: {MOBS_IMM}. In the window: {MOBS_WINDOW}.', str(mob_count) + ' in IMM'))
-SOUNDS_INTRO = (f'The window opens on the sounds people most often want quieter, and can show all {total} of the game\'s '
-                f'own. IMM gets the {len(imm_keys)} marked below.')
+sound_rows.insert(8, ('<b>Mobs</b>', MOBS, str(creature_total)))
+SOUNDS_INTRO = (f'The window opens on these sounds, the ones people most often want quieter, and can show all {total} of '
+                "the game's own, plus any added by other mods.")
 
 # ---------------------------------------------------------------- styles
 SERIF = "font-family: Lora, Georgia, 'Times New Roman', serif;"
@@ -168,7 +158,7 @@ body = [
     ul(FEATURES),
     h('The Sounds'),
     f'<p style="{P}">{SOUNDS_INTRO}</p>\n',
-    table(['Group', 'Includes', 'IMM sliders'], sound_rows),
+    table(['Group', 'Includes', 'Sliders'], sound_rows),
     h('Using It'),
     ul(USING),
     h('Compatibility'),
@@ -237,7 +227,7 @@ r = [
     f'*{AI_NOTE}*\n',
     INTRO + '\n',
     '### What You Get\n\n' + ''.join(f'- {md(t)}\n' for t in FEATURES),
-    f'### The Sounds\n\n{SOUNDS_INTRO}\n\n| Group | Includes | IMM sliders |\n|---|---|---|\n'
+    f'### The Sounds\n\n{SOUNDS_INTRO}\n\n| Group | Includes | Sliders |\n|---|---|---|\n'
     + ''.join(f'| {md(a)} | {md(b)} | {c} |\n' for a, b, c in sound_rows),
     '### Using It\n\n' + ''.join(f'- {md(t)}\n' for t in USING),
     '### Compatibility\n\n' + ''.join(f'- **{a}** {b}\n' for a, b in COMPAT),
@@ -250,8 +240,7 @@ if shots:
     r.append('### Screenshots\n\n' + '\n'.join(
         f'<img src="docs/images/screenshots/{os.path.basename(s)}" width="440" alt="Volume Sliders screenshot">'
         for s in shots) + '\n')
-r.append('**Links:** [Integrated Mod Manager](https://mods.vintagestory.at/integratedmodmanager) · '
-         '[Accessibility Tweaks](https://mods.vintagestory.at/accessibilitytweaks)\n\n'
+r.append('**Links:** [Accessibility Tweaks](https://mods.vintagestory.at/accessibilitytweaks)\n\n'
          '**Building from source:** see [BUILDING.md](BUILDING.md).\n')
 with open(os.path.join(ROOT, 'README.md'), 'w', encoding='utf-8', newline='\n') as f:
     f.write('\n'.join(r))

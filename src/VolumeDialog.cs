@@ -46,7 +46,7 @@ namespace VolumeSliders
             return true;
         }
 
-        /// <summary>Re-reads values after the config or sound list changed underneath an open dialog.</summary>
+        /// <summary>Re-reads the list after the sound list changed underneath an open dialog.</summary>
         public void Refresh()
         {
             if (IsOpened()) { ApplyFilter(); FillRows(); }
@@ -197,7 +197,7 @@ namespace VolumeSliders
             saveListener = capi.Event.RegisterCallback(_ =>
             {
                 saveListener = 0;
-                VolumeConfig.Save(system.Sounds.Select(s => s.Key));
+                VolumeConfig.Save();
             }, 400);
         }
 
@@ -213,7 +213,7 @@ namespace VolumeSliders
         public override void OnGuiClosed()
         {
             base.OnGuiClosed();
-            VolumeConfig.Save(system.Sounds.Select(s => s.Key));
+            VolumeConfig.Save();
         }
     }
 }

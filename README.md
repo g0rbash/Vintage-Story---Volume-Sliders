@@ -18,9 +18,9 @@ Some sounds in Vintage Story you'll love for a hundred hours, and some will wear
 
 ### The Sounds
 
-The window opens on the sounds people most often want quieter, and can show all 813 of the game's own. IMM gets the 91 marked below.
+The window opens on these sounds, the ones people most often want quieter, and can show all 813 of the game's own, plus any added by other mods.
 
-| Group | Includes | IMM sliders |
+| Group | Includes | Sliders |
 |---|---|---|
 | **Anvil & Helve Hammer** | The anvil hit, which is also the helve hammer's sound | 4 |
 | **Water** | Rapids, creek, waterfall, waves, underwater, splashes, waterwheel, wading, swimming | 15 |
@@ -30,7 +30,7 @@ The window opens on the sounds people most often want quieter, and can show all 
 | **Thunder** | Distant, near, very near, overhead, and the low rumbles | 7 |
 | **Fire** | Flames, fireplace | 2 |
 | **Lava** | Lava ambience | 1 |
-| **Mobs** | In IMM: Drifter, Shiver, Bowtorn, Locust, and Bell sounds. In the window: every creature sound: wolves, bears, goats, chickens, and the rest. | 36 in IMM |
+| **Mobs** | Every creature sound: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest | 271 |
 | **Insects** | Cicadas, grasshoppers, coqui frogs | 4 |
 | **Bees** | Hives, swarms, stings | 4 |
 | **Temporal** | Stability warnings, rifts, rift wards | 5 |
@@ -39,14 +39,13 @@ The window opens on the sounds people most often want quieter, and can show all 
 
 ### Using It
 
-- **The window.** Press **Ctrl+Shift+V** (you can rebind it in the controls settings), or type **.volumesliders** in chat. It opens on the sounds most people want quieter plus every creature sound; the *Show every sound* switch lists all of them, including other mods'.
-- **Integrated Mod Manager.** Open it, choose *Volume Sliders*, and move the sliders. IMM can't draw a list of hundreds of settings, so it shows the major sounds above; tick *Open the full searchable window* and press *Apply* to jump to the full window.
-- **Both are the same settings.** Whichever you use, the values live in **ModConfig/volumesliders.json**, and edits made in one show up in the other while the game is running.
+- Press **Ctrl+Shift+V** (you can rebind it in the controls settings), or type **.volumesliders** in chat.
+- The window opens on the sounds most people want quieter, plus every creature sound. Flip *Show every sound* to list all of them, including other mods'.
+- Your settings are saved in **ModConfig/volumesliders.json**.
 
 ### Compatibility
 
 - **Vintage Story 1.22.7.** Client-side only: single player, or any server, with nothing to install on the server.
-- **Integrated Mod Manager.** The sliders appear in its config window.
 - **Accessibility Tweaks.** Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to 50% in each plays at 25%.
 - **Other mods.** Their sounds get sliders in the full window. A mod that plays sound through its own audio code, instead of the game's sound engine, may not respond to them.
 
@@ -59,7 +58,6 @@ The window opens on the sounds people most often want quieter, and can show all 
 ### Credits
 
 - **G0rbash** design, testing, and the Vintage Story 1.22.7 build.
-- **YangWenLi** for [Integrated Mod Manager](https://mods.vintagestory.at/integratedmodmanager), which this mod plugs into.
 - **ApacheTech Solutions** for [Accessibility Tweaks](https://mods.vintagestory.at/accessibilitytweaks), whose Sound Effects feature showed the way to scale a single sound.
 
 ### A Note from G0rbash
@@ -71,6 +69,6 @@ G0rbash
 
 </details>
 
-**Links:** [Integrated Mod Manager](https://mods.vintagestory.at/integratedmodmanager) · [Accessibility Tweaks](https://mods.vintagestory.at/accessibilitytweaks)
+**Links:** [Accessibility Tweaks](https://mods.vintagestory.at/accessibilitytweaks)
 
 **Building from source:** see [BUILDING.md](BUILDING.md).

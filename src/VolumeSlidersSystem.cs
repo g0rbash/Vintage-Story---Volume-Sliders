@@ -5,7 +5,6 @@ using HarmonyLib;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
-using Vintagestory.API.Datastructures;
 
 namespace VolumeSliders
 {
@@ -53,33 +52,6 @@ namespace VolumeSliders
             api.ChatCommands.Create("volumesliders")
                 .WithDescription(Lang.Get("volumesliders:command-description"))
                 .HandleWith(_ => { dialog.TryOpen(); return TextCommandResult.Success(); });
-
-            // IMM saves the config file, then pushes "imm.<modid>" on the event bus. Listening for that is the
-            // reliable route; the file check below also catches edits made by hand or by anything else.
-            api.Event.RegisterEventBusListener((string name, ref EnumHandling handling, IAttribute data) =>
-            {
-                VolumeConfig.Load();
-                ApplyExternalChange("Integrated Mod Manager");
-            }, 0.5, "imm.volumesliders");
-
-            api.Event.RegisterGameTickListener(_ =>
-            {
-                if (VolumeConfig.ReloadIfChangedExternally()) ApplyExternalChange("a config file edit");
-            }, 1500);
-        }
-
-        /// <summary>The config file was just re-read: push it to playing sounds and the window, and honour the open-window checkbox.</summary>
-        void ApplyExternalChange(string source)
-        {
-            capi.Logger.Notification("[volumesliders] Settings changed by {0}; applied to playing sounds.", source);
-            SoundPatch.RefreshPlaying(null);
-            dialog?.Refresh();
-            if (VolumeConfig.OpenWindowRequested)
-            {
-                VolumeConfig.OpenWindowRequested = false;
-                VolumeConfig.Save(Sounds.Select(s => s.Key));
-                dialog?.TryOpen();
-            }
         }
 
         void OnLevelFinalize()
@@ -102,8 +74,6 @@ namespace VolumeSliders
                 .OrderBy(e => e.Display, StringComparer.OrdinalIgnoreCase)
                 .ToList();
 
-            // Write every key so IMM's sliders start at 100 instead of empty.
-            VolumeConfig.Save(Sounds.Select(s => s.Key));
             dialog?.Refresh();
             capi.Logger.Notification("[volumesliders] Loaded {0} sounds ({1} major).", Sounds.Count, Sounds.Count(s => s.Major));
         }

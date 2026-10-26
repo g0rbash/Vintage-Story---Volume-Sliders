@@ -9,7 +9,7 @@ namespace VolumeSliders
 {
     /// <summary>
     /// ModConfig/volumesliders.json: a flat { "walk_wood1": 40, ... } map of sound key -> 0..100.
-    /// Flat so Integrated Mod Manager can bind a slider to each key. Missing key = 100 (default volume).
+    /// Only sounds turned below 100 are stored; a missing key means 100 (default volume).
     /// </summary>
     public static class VolumeConfig
     {
@@ -17,10 +17,6 @@ namespace VolumeSliders
 
         static string path = "";
         static ILogger? log;
-        static DateTime lastKnownWrite;
-
-        /// <summary>Set when the config file has OpenWindow:true (the IMM "open full window" checkbox). The mod clears it after acting.</summary>
-        public static bool OpenWindowRequested;
 
         // Replaced wholesale on load so the audio thread never sees a half-updated dictionary.
         static Dictionary<string, int> volumes = new Dictionary<string, int>();
@@ -54,9 +50,7 @@ namespace VolumeSliders
                 var loaded = new Dictionary<string, int>();
                 if (File.Exists(path))
                 {
-                    lastKnownWrite = File.GetLastWriteTimeUtc(path);
                     var obj = JObject.Parse(File.ReadAllText(path));
-                    OpenWindowRequested = obj["OpenWindow"]?.Type == JTokenType.Boolean && obj["OpenWindow"]!.Value<bool>();
                     foreach (var p in obj.Properties())
                     {
                         if (p.Value.Type == JTokenType.Integer || p.Value.Type == JTokenType.Float)
@@ -73,36 +67,22 @@ namespace VolumeSliders
             }
         }
 
-        /// <summary>Writes every known key (default 100) so IMM's sliders show 100 rather than an empty value.</summary>
-        public static void Save(IEnumerable<string> allKeys)
+        public static void Save()
         {
             try
             {
                 var obj = new JObject();
-                var keys = new SortedSet<string>(allKeys, StringComparer.Ordinal);
-                foreach (var k in volumes.Keys) keys.Add(k);
-                obj["OpenWindow"] = false;
-                foreach (var k in keys) obj[k] = Get(k);
+                foreach (var kv in new SortedDictionary<string, int>(volumes, StringComparer.Ordinal))
+                {
+                    if (kv.Value != Max) obj[kv.Key] = kv.Value;
+                }
                 Directory.CreateDirectory(Path.GetDirectoryName(path)!);
                 File.WriteAllText(path, obj.ToString(Newtonsoft.Json.Formatting.Indented));
-                lastKnownWrite = File.GetLastWriteTimeUtc(path);
             }
             catch (Exception e)
             {
                 log?.Error("[volumesliders] Could not write {0}: {1}", path, e.Message);
             }
-        }
-
-        /// <summary>True (and reloads) if something else, such as IMM, changed the file since we last touched it.</summary>
-        public static bool ReloadIfChangedExternally()
-        {
-            try
-            {
-                if (!File.Exists(path) || File.GetLastWriteTimeUtc(path) == lastKnownWrite) return false;
-                Load();
-                return true;
-            }
-            catch { return false; }
         }
     }
 }

@@ -1,4 +1,4 @@
-"""Generate assets/volumesliders/config/imm.json and lang/en.json from the installed game's sounds.
+"""Generate assets/volumesliders/config/major.json and lang/en.json from the installed game's sounds.
 
 Keys and display names must match src/SoundKeys.cs exactly.
 Usage: python tools/generate.py [path to Vintagestory install]
@@ -17,13 +17,11 @@ UI = {
     "reset-shown": "Reset Shown to 100",
     "count": "Showing {0} of {1} sounds",
     "all-sounds": "Show every sound:",
-    "imm-open-window": "Open the full searchable window, with a slider for every sound (press Apply)",
 }
 
 
-# The "major" sounds people most often want quieter. Integrated Mod Manager draws every setting into one
-# texture, so a list of 800+ sliders renders blank; IMM gets just these, and the in-game window opens on these
-# plus every creature sound (MAJOR_PREFIXES) with a switch to show everything.
+# The "major" sounds people most often want quieter. The in-game window opens on these plus every creature
+# sound (MAJOR_PREFIXES), with a switch to show everything.
 # Sources: forum/mod-page complaints (helve hammer anvil hit, boat water, quern, cicadas/insects, loud bells,
 # temporal sounds) plus the user's own list (water, rain, wind, thunder, mobs). Gears/bellows/fire are judgment calls.
 MAJOR_PATTERNS = [
@@ -141,39 +139,17 @@ def main():
 
     keys = sorted(found)
     lang = dict(UI)
-    settings = [{
-        "Type": "Boolean",
-        "Label": "volumesliders:imm-open-window",
-        "Map": "OpenWindow",
-    }]
     major = []
     for k in keys:
         lang["sound-" + k] = override_name(k) or found[k]
-        if not is_major(k):
-            continue
-        major.append(k)
-        settings.append({
-            "Type": "Slider",
-            "Label": "volumesliders:sound-" + k,
-            "Map": k,
-            "Min": 0,
-            "Max": 100,
-            "Step": 1,
-        })
-    imm = {"Configuration": [{
-        "ConfigFile": "volumesliders.json",
-        "ConfigLabel": "volumesliders:title",
-        "ConfigSide": "Client",
-        "Settings": settings,
-    }]}
+        if is_major(k):
+            major.append(k)
 
-    with open(os.path.join(ROOT, "assets/volumesliders/config/imm.json"), "w", encoding="utf-8") as f:
-        json.dump(imm, f, indent="\t")
     with open(os.path.join(ROOT, "assets/volumesliders/config/major.json"), "w", encoding="utf-8") as f:
         json.dump({"keys": major, "prefixes": MAJOR_PREFIXES}, f, indent="	")
     with open(os.path.join(ROOT, "assets/volumesliders/lang/en.json"), "w", encoding="utf-8") as f:
         json.dump(lang, f, indent="\t", ensure_ascii=False)
-    print(f"{len(keys)} sounds, {len(settings) - 1} in IMM")
+    print(f"{len(keys)} sounds, {len(major)} major")
 
 
 main()
