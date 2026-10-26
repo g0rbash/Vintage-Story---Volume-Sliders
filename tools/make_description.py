@@ -144,7 +144,7 @@ SANS = "font-family: Montserrat, Verdana, sans-serif;"
 INK = '#403529'
 ACCENT = '#8a5426'
 P = 'margin: 0 0 12px 0;'
-TD = 'border: 1px solid #c9a66b;'
+TD = 'border: 1px solid #c9a66b; padding: 6px;'
 ROW = ['#efe0b8', '#f6ebcd']
 
 
@@ -155,7 +155,7 @@ def h(title):
 
 def table(headers, rows):
     out = [f'<table style="border-collapse: collapse; margin: 0 0 14px 0; width: 100%; {SANS} font-size: 13px; '
-           f'color: {INK};" cellpadding="6"><tbody>',
+           f'color: {INK};"><tbody>',
            '<tr style="background: #e3cc94;">' + ''.join(f'<td style="{TD}"><b>{c}</b></td>' for c in headers) + '</tr>']
     for i, r in enumerate(rows):
         out.append(f'<tr style="background: {ROW[i % 2]};">' + ''.join(f'<td style="{TD}">{c}</td>' for c in r) + '</tr>')
@@ -168,7 +168,7 @@ def ul(items, tag='ul'):
 
 
 def frame(color, pad, inner):
-    return (f'<table style="border-collapse: collapse; width: 100%;" cellpadding="0"><tbody><tr>'
+    return (f'<table style="border-collapse: collapse; width: 100%;"><tbody><tr>'
             f'<td style="background: {color}; padding: {pad}px;">{inner}</td></tr></tbody></table>')
 
 
@@ -190,7 +190,7 @@ def data_uri(key):
 
 def figure(key, src):
     caption = SHOTS[key][1].replace('>', '&gt;')
-    return (f'<p style="margin: 4px 0 14px 0;" align="center"><img src="{src}" width="560" alt="{caption}"><br>'
+    return (f'<p style="margin: 4px 0 14px 0; text-align: center;"><img src="{src}" width="560" alt="{caption}"><br>'
             f'<span style="font-size: 12px; color: #6e5a44;"><i>{caption}</i></span></p>\n')
 
 
@@ -237,22 +237,23 @@ def make_body(src_for, spoiler):
     ]
 
 
-title_cell = (f'<td style="background: #403529;" align="center">'
+title_cell = (f'<td style="background: #403529; padding: 16px; text-align: center;">'
               f'<span style="{SERIF} font-size: 34px; font-weight: bold; letter-spacing: 3px; color: #e9ddce;">VOLUME SLIDERS</span><br><br>'
               f'<span style="{SANS} font-size: 12px; letter-spacing: 3px; color: #b5a48c;">WATER &nbsp;&#10022;&nbsp; RAIN &nbsp;&#10022;&nbsp; WIND &nbsp;&#10022;&nbsp; THUNDER &nbsp;&#10022;&nbsp; MOBS &nbsp;&#10022;&nbsp; MACHINES</span><br><br>'
               f'<span style="{SANS} font-size: 12px; font-weight: bold; letter-spacing: 2px; color: #c58948;">v{VERSION} &mdash; VINTAGE STORY {GAME} &mdash; A SLIDER FOR EVERY SOUND</span></td>')
-footer = (f'<td style="background: #5a4530;" align="center">'
+footer = (f'<td style="background: #5a4530; padding: 8px; text-align: center;">'
           f'<span style="{SANS} font-size: 12px; letter-spacing: 2px; color: #e9ddce;">VOLUME SLIDERS &nbsp;v{VERSION} &nbsp;&#10022;&nbsp; VINTAGE STORY {GAME} &nbsp;&#10022;&nbsp; CLIENT SIDE &nbsp;&#10022;&nbsp; BY G0RBASH</span><br>'
           f'<span style="{SANS} font-size: 10px; color: #b5a48c;">Made with AI assistance.</span></td>')
 
 
 def make_panel(body):
-    content = (f'<table style="border-collapse: collapse; width: 100%;" cellpadding="16"><tbody><tr>{title_cell}</tr></tbody></table>'
-               f'<table style="border-collapse: collapse; width: 100%;" cellpadding="18"><tbody><tr>'
-               f'<td style="background: #f6ebcd; color: {INK}; {SANS} font-size: 14px; line-height: 1.55;">\n{"".join(body)}</td></tr></tbody></table>'
-               f'<table style="border-collapse: collapse; width: 100%;" cellpadding="8"><tbody><tr>{footer}</tr></tbody></table>')
-    return ('<div style="max-width: 920px;">'
-            + frame('#2a1f16', 4, frame('#845c43', 3, frame('#5a4530', 3, content))) + '</div>\n')
+    content = (f'<table style="border-collapse: collapse; width: 100%;"><tbody><tr>{title_cell}</tr></tbody></table>'
+               f'<table style="border-collapse: collapse; width: 100%;"><tbody><tr>'
+               f'<td style="background: #f6ebcd; color: {INK}; padding: 18px; {SANS} font-size: 14px; line-height: 1.55;">\n{"".join(body)}</td></tr></tbody></table>'
+               f'<table style="border-collapse: collapse; width: 100%;"><tbody><tr>{footer}</tr></tbody></table>')
+    html_out = ('<div style="max-width: 920px;">'
+                + frame('#2a1f16', 4, frame('#845c43', 3, frame('#5a4530', 3, content))) + '</div>\n')
+    return re.sub(r'<(/?)i>', r'<\1em>', re.sub(r'<(/?)b>', r'<\1strong>', html_out))
 
 
 moddb_panel = make_panel(make_body(lambda k: RAW + SHOTS[k][0], spoiler=True))
