@@ -79,8 +79,8 @@ COMPAT = [
     ('Integrated Mod Manager.', 'The sliders appear in its config window.'),
     ('Accessibility Tweaks.', 'Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to '
                               '50% in each plays at 25%.'),
-    ('Other mods.', 'Their sounds get sliders in the full window. Sounds that a mod plays through its own audio code '
-                    'instead of the game\'s sound engine can\'t be reached.'),
+    ('Other mods.', 'Their sounds get sliders in the full window. A mod that plays sound through its own audio code, '
+                    'instead of the game\'s sound engine, may not respond to them.'),
 ]
 INSTALL = [
     'Drop <b>volumesliders_{v}.zip</b> into your Mods folder.'.format(v=VERSION),

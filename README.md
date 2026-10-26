@@ -48,7 +48,7 @@ The window opens on the sounds people most often want quieter, and can show all 
 - **Vintage Story 1.22.7.** Client-side only: single player, or any server, with nothing to install on the server.
 - **Integrated Mod Manager.** The sliders appear in its config window.
 - **Accessibility Tweaks.** Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to 50% in each plays at 25%.
-- **Other mods.** Their sounds get sliders in the full window. Sounds that a mod plays through its own audio code instead of the game's sound engine can't be reached.
+- **Other mods.** Their sounds get sliders in the full window. A mod that plays sound through its own audio code, instead of the game's sound engine, may not respond to them.
 
 ### Installation
 
