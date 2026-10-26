@@ -9,11 +9,11 @@ Some sounds in Vintage Story you'll love for a hundred hours, and some will wear
 <details>
 <summary><b>Screenshots</b></summary>
 
-<img src="docs/images/screenshots/window.png" width="700" alt="The window, opened with Ctrl+Shift+V. A group marked with &gt; opens to show its sounds.">
+<img src="docs/images/screenshots/window.png" width="700" alt="Screenshot of the Volume Sliders window">
 
 *The window, opened with Ctrl+Shift+V. A group marked with > opens to show its sounds.*
 
-<img src="docs/images/screenshots/mods-section.png" width="700" alt="Sounds from other mods are listed under Mods, one group per mod.">
+<img src="docs/images/screenshots/mods-section.png" width="700" alt="Screenshot of the Mods group opened in the Volume Sliders window">
 
 *Sounds from other mods are listed under Mods, one group per mod.*
 

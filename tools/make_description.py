@@ -131,13 +131,22 @@ SOUNDS_INTRO = (f'The window opens on these sounds, the ones people most often w
                 "the game's own, plus the sounds of any mods you have.")
 
 # Real in-game screenshots (docs/images/screenshots).
-SHOTS = {
-    'window': ('window.png', 'The window, opened with Ctrl+Shift+V. A group marked with > opens to show its sounds.'),
-    'mods': ('mods-section.png', 'Sounds from other mods are listed under Mods, one group per mod.'),
+SHOTS = {  # file, caption, short alt text for when the image can't load
+    'window': ('window.png', 'The window, opened with Ctrl+Shift+V. A group marked with > opens to show its sounds.',
+               'Screenshot of the Volume Sliders window'),
+    'mods': ('mods-section.png', 'Sounds from other mods are listed under Mods, one group per mod.',
+             'Screenshot of the Mods group opened in the Volume Sliders window'),
 }
-# The Mod DB can't read local files, so its spoiler links to the repository's copies. These work once the repository is
-# public; until then, upload the screenshots to the mod page and swap the addresses.
+# The Mod DB can't read local files, so its spoiler needs web addresses for the screenshots. Put the addresses of the
+# images you uploaded to the mod page in docs/moddb-image-urls.json ({"window": "https://...", "mods": "https://..."}).
+# Until then it falls back to the repository's copies, which only load once the repository is public.
 RAW = 'https://raw.githubusercontent.com/g0rbash/Vintage-Story---Volume-Sliders/main/docs/images/screenshots/'
+_urls_file = os.path.join(ROOT, 'docs', 'moddb-image-urls.json')
+IMAGE_URLS = json.load(open(_urls_file, encoding='utf-8')) if os.path.exists(_urls_file) else {}
+
+
+def moddb_src(key):
+    return IMAGE_URLS.get(key) or RAW + SHOTS[key][0]
 REPO = 'https://github.com/g0rbash/Vintage-Story---Volume-Sliders'
 SUMMARY = 'A searchable list of volume sliders for every sound in the game.'
 assert len(SUMMARY) <= 100, 'the Mod DB summary is limited to 100 characters'
@@ -171,7 +180,7 @@ def moddb_spoiler():
     for key in ('window', 'mods'):
         width, height = shot_size(key)
         caption = SHOTS[key][1].replace('>', '&gt;')
-        parts.append(f'<p><img src="{RAW + SHOTS[key][0]}" width="{width}" height="{height}" alt="{caption}"></p>\n'
+        parts.append(f'<p><img src="{moddb_src(key)}" width="{width}" height="{height}" alt="{SHOTS[key][2]}"></p>\n'
                      f'<p><em>{caption}</em></p>\n')
     return ('<div class="spoiler">\n<div class="spoiler-toggle">Screenshots</div>\n<div class="spoiler-text">\n'
             + ''.join(parts) + '</div>\n</div>\n')
@@ -227,9 +236,11 @@ box instead shows the tags as literal text. The description uses only what the e
 headings, bold and italic, lists, and the site's own spoiler (the same kind as the one under the intro on the Deciduous
 Trees page). The two icons at the end of the toolbar look like spoiler controls, if you'd rather build the spoiler by hand.
 
-The screenshots inside the spoiler link to this repository's copies, which load once the repository is public. Until then,
-after you upload the screenshots below, swap the two image addresses in the spoiler for the uploaded ones (right-click a
-gallery image and copy its image address), or delete the images there and add them with the editor's image button.
+The screenshots inside the spoiler need web addresses. Until you give it some they point at this repository's copies, which
+only load once the repository is public (while it is private they show as missing, with just a caption). Once the
+screenshots are uploaded below, right-click each one in the gallery, choose copy image address, and put the two addresses in
+`docs/moddb-image-urls.json` (`window` and `mods`). Then run `python -I tools/make_description.py .` and paste the new
+`docs/moddb-description.html` into the source-code window again. Or edit the two `src=` addresses in that window by hand.
 
 ## Screenshots (drag to upload; drag to reorder)
 
@@ -280,8 +291,7 @@ def readme_screenshots():
     parts = []
     for key in ('window', 'mods'):
         width, _ = shot_size(key)
-        name, caption = SHOTS[key]
-        alt = caption.replace('>', '&gt;')
+        name, caption, alt = SHOTS[key]
         parts.append(f'<img src="docs/images/screenshots/{name}" width="{width}" alt="{alt}">\n\n*{caption}*\n')
     return '<details>\n<summary><b>Screenshots</b></summary>\n\n' + '\n'.join(parts) + '\n</details>\n'
 

@@ -26,9 +26,11 @@ box instead shows the tags as literal text. The description uses only what the e
 headings, bold and italic, lists, and the site's own spoiler (the same kind as the one under the intro on the Deciduous
 Trees page). The two icons at the end of the toolbar look like spoiler controls, if you'd rather build the spoiler by hand.
 
-The screenshots inside the spoiler link to this repository's copies, which load once the repository is public. Until then,
-after you upload the screenshots below, swap the two image addresses in the spoiler for the uploaded ones (right-click a
-gallery image and copy its image address), or delete the images there and add them with the editor's image button.
+The screenshots inside the spoiler need web addresses. Until you give it some they point at this repository's copies, which
+only load once the repository is public (while it is private they show as missing, with just a caption). Once the
+screenshots are uploaded below, right-click each one in the gallery, choose copy image address, and put the two addresses in
+`docs/moddb-image-urls.json` (`window` and `mods`). Then run `python -I tools/make_description.py .` and paste the new
+`docs/moddb-description.html` into the source-code window again. Or edit the two `src=` addresses in that window by hand.
 
 ## Screenshots (drag to upload; drag to reorder)
 
