@@ -281,7 +281,8 @@ def readme_screenshots():
     for key in ('window', 'mods'):
         width, _ = shot_size(key)
         name, caption = SHOTS[key]
-        parts.append(f'<img src="docs/images/screenshots/{name}" width="{width}" alt="{caption}">\n\n*{caption}*\n')
+        alt = caption.replace('>', '&gt;')
+        parts.append(f'<img src="docs/images/screenshots/{name}" width="{width}" alt="{alt}">\n\n*{caption}*\n')
     return '<details>\n<summary><b>Screenshots</b></summary>\n\n' + '\n'.join(parts) + '\n</details>\n'
 
 
