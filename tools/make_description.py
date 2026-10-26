@@ -70,7 +70,7 @@ USING = [
     'Your settings are saved in <b>ModConfig/volumesliders.json</b>.',
 ]
 COMPAT = [
-    ('Vintage Story 1.22.7.', 'Client-side only: single player, or any server, with nothing to install on the server.'),
+    ('Vintage Story 1.22.7.', 'Client-side only.'),
     ('Accessibility Tweaks.', 'Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to '
                               '50% in each plays at 25%.'),
     ('Other mods.', 'Their sounds get sliders in the full window. A mod that plays sound through its own audio code, '
