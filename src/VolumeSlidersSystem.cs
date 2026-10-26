@@ -57,6 +57,7 @@ namespace VolumeSliders
             api.Event.RegisterGameTickListener(_ =>
             {
                 if (!VolumeConfig.ReloadIfChangedExternally()) return;
+                api.Logger.Notification("[volumesliders] Settings changed outside the game window (e.g. Integrated Mod Manager); applied to playing sounds.");
                 SoundPatch.RefreshPlaying(null);
                 dialog?.Refresh();
                 if (VolumeConfig.OpenWindowRequested)
