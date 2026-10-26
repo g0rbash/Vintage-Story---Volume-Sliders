@@ -59,20 +59,26 @@ namespace VolumeSliders
             var combos = capi.Assets.TryGet(new AssetLocation("volumesliders", "config/combined.json"))?.ToObject<CombinedDef[]>()
                 ?? new CombinedDef[0];
 
-            // Mods' assets are all loaded by now, so this includes sounds from other mods.
-            Sounds = capi.Assets.AllAssets
+            // Only the game's own sounds. An asset counts as the game's if its file lives in the game's assets folder;
+            // a mod's sound, or a vanilla sound a mod replaced, is left to that mod.
+            var all = capi.Assets.AllAssets
                 .Where(p => (p.Key.Category == AssetCategory.sounds || p.Key.Category == AssetCategory.music) && p.Key.Path.EndsWith(".ogg"))
-                .Select(p => p.Key)
+                .ToList();
+            var vanilla = all.Where(p => SoundKeys.IsInside(p.Value.Origin?.OriginPath ?? "", GamePaths.AssetsPath)).Select(p => p.Key).ToList();
+
+            Sounds = vanilla
                 .GroupBy(SoundKeys.KeyFor)
                 .Select(g => g.First())
                 .Select(Describe)
                 .OrderBy(e => e.Display, StringComparer.OrdinalIgnoreCase)
                 .ToList();
+            VolumeConfig.SetVanilla(new HashSet<string>(Sounds.Select(e => e.Key)));
 
             Tree = SoundTree.Build(Sounds, combos, out var rules);
             VolumeConfig.SetRules(rules);
             dialog?.Refresh();
-            capi.Logger.Notification("[volumesliders] Loaded {0} sounds ({1} major) in {2} groups.", Sounds.Count, Sounds.Count(s => s.Major), Tree.Count);
+            capi.Logger.Notification("[volumesliders] {0} vanilla sounds ({1} major) in {2} groups; {3} sounds from mods left alone.",
+                Sounds.Count, Sounds.Count(s => s.Major), Tree.Count, all.Count - vanilla.Count);
         }
 
         SoundEntry Describe(AssetLocation loc)

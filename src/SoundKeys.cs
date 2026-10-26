@@ -11,6 +11,16 @@ namespace VolumeSliders
     {
         static readonly string[] VanillaDomains = { "game", "survival", "creative" };
 
+        /// <summary>True if an asset's origin (a folder or zip) lies inside the game's own assets folder, i.e. it is vanilla content.</summary>
+        public static bool IsInside(string originPath, string assetsPath)
+        {
+            if (string.IsNullOrEmpty(originPath) || string.IsNullOrEmpty(assetsPath)) return false;
+            char[] seps = { System.IO.Path.DirectorySeparatorChar, System.IO.Path.AltDirectorySeparatorChar };
+            string root = System.IO.Path.GetFullPath(assetsPath).TrimEnd(seps) + System.IO.Path.DirectorySeparatorChar;
+            string origin = System.IO.Path.GetFullPath(originPath).TrimEnd(seps) + System.IO.Path.DirectorySeparatorChar;
+            return origin.StartsWith(root, System.StringComparison.OrdinalIgnoreCase);
+        }
+
         /// <summary>"game:sounds/walk/wood1.ogg" -> "walk_wood1"; "music/x" -> "music_x"; other domains are prefixed.</summary>
         public static string KeyFor(AssetLocation loc)
         {

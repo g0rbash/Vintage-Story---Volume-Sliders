@@ -30,6 +30,8 @@ namespace VolumeSliders
                 keys.AddOrUpdate(loc, key);
             }
 
+            if (!VolumeConfig.IsVanilla(key)) return;   // a mod's own sound: leave it to that mod's volume settings
+
             VolumeConfig.LastHeard[key] = Environment.TickCount64;
             __result *= VolumeConfig.Factor(key);
         }

@@ -47,7 +47,8 @@ FEATURES = [
     'that is bugging you right now.',
     '<b>Changes apply immediately</b>, including sounds that are already playing, like a river loop.',
     '<b>Preview button</b> beside every slider.',
-    '<b>Other mods\' sounds</b> show up in the window automatically.',
+    '<b>Only the game\'s own sounds.</b> Sounds that come from other mods are never touched; they keep using that '
+    'mod\'s own volume settings.',
 ]
 
 # group label -> examples. The label is the text before ":" in each sound's name (see tools/generate.py).
@@ -75,15 +76,15 @@ USING = [
     'Click a group, or its <b>&gt;</b>, to open or close it. The group\'s slider scales everything inside, and each '
     'sound keeps its own slider too. They multiply, so a group at 50% and a sound at 50% plays at 25%.',
     'The window opens on the sounds most people want quieter, plus every creature sound. Flip <i>Show every sound</i> '
-    "to list all of them, including other mods'.",
+    "to list all of the game's sounds.",
     'Your settings are saved in <b>ModConfig/volumesliders.json</b>.',
 ]
 COMPAT = [
     ('Vintage Story 1.22.7.', 'Client-side only.'),
     ('Accessibility Tweaks.', 'Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to '
                               '50% in each plays at 25%.'),
-    ('Other mods.', 'Their sounds get sliders in the full window. A mod that plays sound through its own audio code, '
-                    'instead of the game\'s sound engine, may not respond to them.'),
+    ('Other mods.', 'Only the game\'s own sounds get sliders. A sound a mod adds, or a vanilla sound a mod replaces with '
+                    'its own file, is left alone and keeps using that mod\'s own volume settings.'),
 ]
 INSTALL = [
     'Drop <b>volumesliders_{v}.zip</b> into your Mods folder.'.format(v=VERSION),
@@ -127,7 +128,7 @@ for label, examples in GROUPS:
 sound_rows.insert(0, ('<b>Helve Hammer</b>', HELVE, str(combined_total)))
 sound_rows.insert(9, ('<b>Mobs</b>', MOBS, str(creature_total)))
 SOUNDS_INTRO = (f'The window opens on these sounds, the ones people most often want quieter, and can show all {total} of '
-                "the game's own, plus any added by other mods.")
+                "the game's own.")
 
 # ---------------------------------------------------------------- styles
 SERIF = "font-family: Lora, Georgia, 'Times New Roman', serif;"

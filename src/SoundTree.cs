@@ -62,7 +62,6 @@ namespace VolumeSliders
     public static class SoundTree
     {
         static readonly HashSet<string> GenericFolders = new HashSet<string> { "animal", "mammal", "hooved", "large", "medium", "small", "bird", "birds", "generic", "strange" };
-        static readonly string[] VanillaDomains = { "game", "survival", "creative" };
 
         public static List<SoundNode> Build(IEnumerable<SoundEntry> sounds, IEnumerable<CombinedDef> combos, out Dictionary<string, SoundRule> rules)
         {
@@ -177,13 +176,6 @@ namespace VolumeSliders
                 int colon = s.Display.IndexOf(": ", StringComparison.Ordinal);
                 group = colon < 0 ? "Other" : s.Display.Substring(0, colon);
                 leafName = colon < 0 ? s.Display : s.Display.Substring(colon + 2);
-                return;
-            }
-
-            if (loc.Domain != null && Array.IndexOf(VanillaDomains, loc.Domain) < 0)
-            {
-                group = SoundKeys.TitleCase(loc.Domain) + " (mod)";
-                leafName = SoundKeys.CategoryFor(loc) + ": " + SoundKeys.NameFor(loc);
                 return;
             }
 

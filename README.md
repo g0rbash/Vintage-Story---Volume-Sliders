@@ -16,11 +16,11 @@ Some sounds in Vintage Story you'll love for a hundred hours, and some will wear
 - **Heard in the last 30 seconds.** One switch lists only the sounds that just played, so you can find the one that is bugging you right now.
 - **Changes apply immediately**, including sounds that are already playing, like a river loop.
 - **Preview button** beside every slider.
-- **Other mods' sounds** show up in the window automatically.
+- **Only the game's own sounds.** Sounds that come from other mods are never touched; they keep using that mod's own volume settings.
 
 ### The Sounds
 
-The window opens on these sounds, the ones people most often want quieter, and can show all 813 of the game's own, plus any added by other mods.
+The window opens on these sounds, the ones people most often want quieter, and can show all 813 of the game's own.
 
 | Group | Includes | Sounds |
 |---|---|---|
@@ -44,14 +44,14 @@ The window opens on these sounds, the ones people most often want quieter, and c
 
 - Press **Ctrl+Shift+V** (you can rebind it in the controls settings), or type **.volumesliders** in chat.
 - Click a group, or its **&gt;**, to open or close it. The group's slider scales everything inside, and each sound keeps its own slider too. They multiply, so a group at 50% and a sound at 50% plays at 25%.
-- The window opens on the sounds most people want quieter, plus every creature sound. Flip *Show every sound* to list all of them, including other mods'.
+- The window opens on the sounds most people want quieter, plus every creature sound. Flip *Show every sound* to list all of the game's sounds.
 - Your settings are saved in **ModConfig/volumesliders.json**.
 
 ### Compatibility
 
 - **Vintage Story 1.22.7.** Client-side only.
 - **Accessibility Tweaks.** Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to 50% in each plays at 25%.
-- **Other mods.** Their sounds get sliders in the full window. A mod that plays sound through its own audio code, instead of the game's sound engine, may not respond to them.
+- **Other mods.** Only the game's own sounds get sliders. A sound a mod adds, or a vanilla sound a mod replaces with its own file, is left alone and keeps using that mod's own volume settings.
 
 ### Installation
 
