@@ -3,3 +3,6 @@ obj/
 *.zip
 dist/
 __pycache__/
+
+# Test screenshots
+/*.png
