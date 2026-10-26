@@ -42,12 +42,16 @@ The window opens on these sounds, the ones people most often want quieter, and c
 | **Machines** | Quern, gears, bellows | 3 |
 | **Mods** | Sounds added by other mods, grouped by mod. Temporal Symphony's temporal storm, thunder, and creature sounds are one example. | Varies |
 
+<p align="center"><img src="docs/images/screenshots/mods-section.png" width="560" alt="Sounds from other mods are listed under Mods, one group per mod."><br><i>Sounds from other mods are listed under Mods, one group per mod.</i></p>
+
 ### Using It
 
 - Press **Ctrl+Shift+V** (you can rebind it in the controls settings), or type **.volumesliders** in chat.
 - Click a group, or its **&gt;**, to open or close it. The group's slider scales everything inside, and each sound keeps its own slider too. They multiply, so a group at 50% and a sound at 50% plays at 25%.
 - The window opens on the sounds most people want quieter, plus every creature sound. Flip *Show every sound* to list every sound, including mods' quieter ones.
 - Your settings are saved in **ModConfig/volumesliders.json**.
+
+<p align="center"><img src="docs/images/screenshots/window.png" width="560" alt="The window, opened with Ctrl+Shift+V. A group marked with > opens to show its sounds."><br><i>The window, opened with Ctrl+Shift+V. A group marked with > opens to show its sounds.</i></p>
 
 ### Compatibility
 

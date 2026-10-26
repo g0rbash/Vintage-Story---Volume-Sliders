@@ -60,9 +60,15 @@ namespace VolumeSliders
                 ?? new CombinedDef[0];
 
             // Every sound file, from the game and from mods. Which mod a file comes from is found by matching the file's
-            // origin (a zip or a folder) against each loaded mod's source path.
-            var mods = capi.ModLoader.Mods.Where(m => !string.IsNullOrEmpty(m.SourcePath)).ToList();
-            string? ModFor(string originPath) => mods.FirstOrDefault(m => SoundKeys.IsInside(originPath, m.SourcePath))?.Info?.Name;
+            // origin against each loaded mod's folders. A zipped mod is unpacked into a cache folder when the game starts,
+            // and that folder (ModContainer.FolderPath), not the zip, is where its files are read from.
+            var mods = capi.ModLoader.Mods
+                .Select(m => (Mod: m, Roots: new[] { (m as Vintagestory.Common.ModContainer)?.FolderPath, m.SourcePath }
+                    .Where(r => !string.IsNullOrEmpty(r)).ToList()))
+                .ToList();
+            string? ModFor(string originPath) => mods
+                .FirstOrDefault(m => m.Roots.Any(r => SoundKeys.IsInside(originPath, r!)))
+                .Mod?.Info?.Name;
 
             Sounds = capi.Assets.AllAssets
                 .Where(p => (p.Key.Category == AssetCategory.sounds || p.Key.Category == AssetCategory.music) && p.Key.Path.EndsWith(".ogg"))
@@ -93,7 +99,10 @@ namespace VolumeSliders
             bool replaced = false;
             if (!SoundKeys.IsInside(origin, GamePaths.AssetsPath))
             {
-                mod = modFor(origin) ?? SoundKeys.TitleCase(loc.Domain ?? "mod");
+                // The mod whose folder holds the file; failing that, the mod that owns the sound's domain (domain = mod id).
+                mod = modFor(origin)
+                    ?? (loc.Domain != null ? capi.ModLoader.GetMod(loc.Domain)?.Info?.Name : null)
+                    ?? SoundKeys.TitleCase(loc.Domain ?? "mod");
                 replaced = System.IO.File.Exists(System.IO.Path.Combine(GamePaths.AssetsPath, loc.Domain ?? "game", loc.Path));
             }
 

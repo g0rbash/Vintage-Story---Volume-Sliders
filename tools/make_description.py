@@ -14,10 +14,12 @@ lang/en.json, so run tools/generate.py first (build.py does).
 
 usage: python -I make_description.py <repo root>
 """
+import base64
 import glob
 import json
 import os
 import re
+import struct
 import subprocess
 import sys
 
@@ -170,25 +172,70 @@ def frame(color, pad, inner):
             f'<td style="background: {color}; padding: {pad}px;">{inner}</td></tr></tbody></table>')
 
 
-body = [
-    f'<p style="{P} font-size: 12px; color: #6e5a44;"><i>{AI_NOTE}</i></p>\n',
-    f'<p style="{P}">{INTRO}</p>\n',
-    h('What You Get'),
-    ul(FEATURES),
-    h('The Sounds'),
-    f'<p style="{P}">{SOUNDS_INTRO}</p>\n',
-    table(['Group', 'Includes', 'Sounds'], sound_rows),
-    h('Using It'),
-    ul(USING),
-    h('Compatibility'),
-    ul([f'<b>{a}</b> {b}' for a, b in COMPAT]),
-    h('Installation'),
-    ul(INSTALL, 'ol'),
-    h('Credits'),
-    ul([f'<b>{a}</b> {b}' for a, b in CREDITS]),
-    h('A Note from G0rbash'),
-    f'<p style="{P}">{NOTE}</p>\n<p style="{P}">{SIGN}</p>\n',
-]
+# Real in-game screenshots (docs/images/screenshots). The README image shows them inline in their sections; the Mod DB
+# page keeps them in one collapsed "spoiler" block so they don't clutter the description.
+SHOTS = {
+    'window': ('window.png', 'The window, opened with Ctrl+Shift+V. A group marked with > opens to show its sounds.'),
+    'mods': ('mods-section.png', 'Sounds from other mods are listed under Mods, one group per mod.'),
+}
+# The Mod DB can't read local files, so the spoiler links to the repository's copies. These work once the repository
+# is public; until then, upload the screenshots to the mod page and swap the addresses.
+RAW = 'https://raw.githubusercontent.com/g0rbash/Vintage-Story---Volume-Sliders/main/docs/images/screenshots/'
+
+
+def data_uri(key):
+    with open(os.path.join(ROOT, 'docs', 'images', 'screenshots', SHOTS[key][0]), 'rb') as fh:
+        return 'data:image/png;base64,' + base64.b64encode(fh.read()).decode()
+
+
+def figure(key, src):
+    caption = SHOTS[key][1].replace('>', '&gt;')
+    return (f'<p style="margin: 4px 0 14px 0;" align="center"><img src="{src}" width="560" alt="{caption}"><br>'
+            f'<span style="font-size: 12px; color: #6e5a44;"><i>{caption}</i></span></p>\n')
+
+
+def moddb_spoiler(src_for):
+    """The Mod DB's own spoiler markup (div.spoiler > div.spoiler-toggle + div.spoiler-text; the site styles it), the
+    same as the "Features" spoiler under the intro on mods.vintagestory.at/deciduoustrees."""
+    parts = []
+    for key in ('window', 'mods'):
+        with open(os.path.join(ROOT, 'docs', 'images', 'screenshots', SHOTS[key][0]), 'rb') as fh:
+            px_w, px_h = struct.unpack('>II', fh.read(24)[16:24])
+        width = 700
+        caption = SHOTS[key][1].replace('>', '&gt;')
+        parts.append(f'<p><img src="{src_for(key)}" width="{width}" height="{round(px_h * width / px_w)}" alt="{caption}"></p>\n'
+                     f'<p><i>{caption}</i></p>\n')
+    return ('<div class="spoiler">\n<div class="spoiler-toggle">Screenshots</div>\n<div class="spoiler-text">\n'
+            + ''.join(parts) + '</div>\n</div>\n')
+
+
+def make_body(src_for, spoiler):
+    """src_for(key) gives an image address. With spoiler=False the screenshots sit inline in their sections; with
+    spoiler=True they go in one Mod DB spoiler block under the intro."""
+    inline = (lambda k: figure(k, src_for(k))) if not spoiler else (lambda k: '')
+    return [
+        f'<p style="{P} font-size: 12px; color: #6e5a44;"><i>{AI_NOTE}</i></p>\n',
+        f'<p style="{P}">{INTRO}</p>\n',
+        moddb_spoiler(src_for) if spoiler else '',
+        h('What You Get'),
+        ul(FEATURES),
+        h('The Sounds'),
+        f'<p style="{P}">{SOUNDS_INTRO}</p>\n',
+        table(['Group', 'Includes', 'Sounds'], sound_rows),
+        inline('mods'),
+        h('Using It'),
+        ul(USING),
+        inline('window'),
+        h('Compatibility'),
+        ul([f'<b>{a}</b> {b}' for a, b in COMPAT]),
+        h('Installation'),
+        ul(INSTALL, 'ol'),
+        h('Credits'),
+        ul([f'<b>{a}</b> {b}' for a, b in CREDITS]),
+        h('A Note from G0rbash'),
+        f'<p style="{P}">{NOTE}</p>\n<p style="{P}">{SIGN}</p>\n',
+    ]
+
 
 title_cell = (f'<td style="background: #403529;" align="center">'
               f'<span style="{SERIF} font-size: 34px; font-weight: bold; letter-spacing: 3px; color: #e9ddce;">VOLUME SLIDERS</span><br><br>'
@@ -197,18 +244,25 @@ title_cell = (f'<td style="background: #403529;" align="center">'
 footer = (f'<td style="background: #5a4530;" align="center">'
           f'<span style="{SANS} font-size: 12px; letter-spacing: 2px; color: #e9ddce;">VOLUME SLIDERS &nbsp;v{VERSION} &nbsp;&#10022;&nbsp; VINTAGE STORY {GAME} &nbsp;&#10022;&nbsp; CLIENT SIDE &nbsp;&#10022;&nbsp; BY G0RBASH</span><br>'
           f'<span style="{SANS} font-size: 10px; color: #b5a48c;">Made with AI assistance.</span></td>')
-content = (f'<table style="border-collapse: collapse; width: 100%;" cellpadding="16"><tbody><tr>{title_cell}</tr></tbody></table>'
-           f'<table style="border-collapse: collapse; width: 100%;" cellpadding="18"><tbody><tr>'
-           f'<td style="background: #f6ebcd; color: {INK}; {SANS} font-size: 14px; line-height: 1.55;">\n{"".join(body)}</td></tr></tbody></table>'
-           f'<table style="border-collapse: collapse; width: 100%;" cellpadding="8"><tbody><tr>{footer}</tr></tbody></table>')
-panel = ('<div style="max-width: 920px;">'
-         + frame('#2a1f16', 4, frame('#845c43', 3, frame('#5a4530', 3, content))) + '</div>\n')
+
+
+def make_panel(body):
+    content = (f'<table style="border-collapse: collapse; width: 100%;" cellpadding="16"><tbody><tr>{title_cell}</tr></tbody></table>'
+               f'<table style="border-collapse: collapse; width: 100%;" cellpadding="18"><tbody><tr>'
+               f'<td style="background: #f6ebcd; color: {INK}; {SANS} font-size: 14px; line-height: 1.55;">\n{"".join(body)}</td></tr></tbody></table>'
+               f'<table style="border-collapse: collapse; width: 100%;" cellpadding="8"><tbody><tr>{footer}</tr></tbody></table>')
+    return ('<div style="max-width: 920px;">'
+            + frame('#2a1f16', 4, frame('#845c43', 3, frame('#5a4530', 3, content))) + '</div>\n')
+
+
+moddb_panel = make_panel(make_body(lambda k: RAW + SHOTS[k][0], spoiler=True))
+panel = make_panel(make_body(data_uri, spoiler=False))     # the README image: screenshots inline
 
 docs = os.path.join(ROOT, 'docs')
 os.makedirs(os.path.join(docs, 'images'), exist_ok=True)
 with open(os.path.join(docs, 'moddb-description.html'), 'w', encoding='utf-8', newline='\n') as f:
     f.write('<!-- Paste into the mod description editor on mods.vintagestory.at (source / HTML view). '
-            'Generated by tools/make_description.py; edit the content there. -->\n' + panel)
+            'Generated by tools/make_description.py; edit the content there. -->\n' + moddb_panel)
 
 # ---------------------------------------------------------------- render for GitHub
 page = os.path.join(docs, '_render.html')
@@ -237,7 +291,12 @@ def md(text):
     return text
 
 
-shots = sorted(glob.glob(os.path.join(docs, 'images', 'screenshots', '*.png')))
+def shot_md(key):
+    name, caption = SHOTS[key]
+    return (f'<p align="center"><img src="docs/images/screenshots/{name}" width="560" alt="{caption}"><br>'
+            f'<i>{caption}</i></p>\n')
+
+
 r = [
     '<p align="center"><img src="docs/images/description.png" alt="Volume Sliders, a searchable list for every '
     'sound in Vintage Story 1.22.7. The full text is below." width="920"></p>\n',
@@ -247,20 +306,17 @@ r = [
     '### What You Get\n\n' + ''.join(f'- {md(t)}\n' for t in FEATURES),
     f'### The Sounds\n\n{SOUNDS_INTRO}\n\n| Group | Includes | Sounds |\n|---|---|---|\n'
     + ''.join(f'| {md(a)} | {md(b)} | {c} |\n' for a, b, c in sound_rows),
+    shot_md('mods'),
     '### Using It\n\n' + ''.join(f'- {md(t)}\n' for t in USING),
+    shot_md('window'),
     '### Compatibility\n\n' + ''.join(f'- **{a}** {b}\n' for a, b in COMPAT),
     '### Installation\n\n' + ''.join(f'{i}. {md(t)}\n' for i, t in enumerate(INSTALL, 1)),
     '### Credits\n\n' + ''.join(f'- **{a}** {md(b)}\n' for a, b in CREDITS),
     f'### A Note from G0rbash\n\n{md(NOTE)}\n\n{md(SIGN)}\n',
     '</details>\n',
+    '**Links:** [Accessibility Tweaks](https://mods.vintagestory.at/accessibilitytweaks)\n\n'
+    '**Building from source:** see [BUILDING.md](BUILDING.md).\n',
 ]
-if shots:
-    r.append('### Screenshots\n\n' + '\n'.join(
-        f'<img src="docs/images/screenshots/{os.path.basename(s)}" width="440" alt="Volume Sliders screenshot">'
-        for s in shots) + '\n')
-r.append('**Links:** [Accessibility Tweaks](https://mods.vintagestory.at/accessibilitytweaks)\n\n'
-         '**Building from source:** see [BUILDING.md](BUILDING.md).\n')
 with open(os.path.join(ROOT, 'README.md'), 'w', encoding='utf-8', newline='\n') as f:
     f.write('\n'.join(r))
-print(f'wrote docs/moddb-description.html, docs/images/description.png (920x{height}), and README.md '
-      f'({len(shots)} screenshots)')
+print(f'wrote docs/moddb-description.html, docs/images/description.png (920x{height}), and README.md')
