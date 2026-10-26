@@ -1,7 +1,7 @@
 """Build the mod description once and publish it three ways, from the same text:
 
   docs/moddb-description.html   the Mod DB's description box (paste it in the editor's source-code view). Paragraphs,
-                                headings, lists, and the site's own spoiler for the screenshots; no layout of its own.
+                                headings, and lists; no layout of its own.
   docs/moddb-entry.md           the other fields of the Mod DB form, and what to put in each
   README.md                     the same description for GitHub, with the screenshots in a collapsed section
 
@@ -137,16 +137,6 @@ SHOTS = {  # file, caption, short alt text for when the image can't load
     'mods': ('mods-section.png', 'Sounds from other mods are listed under Mods, one group per mod.',
              'Screenshot of the Mods group opened in the Volume Sliders window'),
 }
-# The Mod DB can't read local files, so its spoiler needs web addresses for the screenshots. Put the addresses of the
-# images you uploaded to the mod page in docs/moddb-image-urls.json ({"window": "https://...", "mods": "https://..."}).
-# Until then it falls back to the repository's copies, which only load once the repository is public.
-RAW = 'https://raw.githubusercontent.com/g0rbash/Vintage-Story---Volume-Sliders/main/docs/images/screenshots/'
-_urls_file = os.path.join(ROOT, 'docs', 'moddb-image-urls.json')
-IMAGE_URLS = json.load(open(_urls_file, encoding='utf-8')) if os.path.exists(_urls_file) else {}
-
-
-def moddb_src(key):
-    return IMAGE_URLS.get(key) or RAW + SHOTS[key][0]
 REPO = 'https://github.com/g0rbash/Vintage-Story---Volume-Sliders'
 SUMMARY = 'A searchable list of volume sliders for every sound in the game.'
 assert len(SUMMARY) <= 100, 'the Mod DB summary is limited to 100 characters'
@@ -173,27 +163,13 @@ def items(entries, tag='ul'):
     return f'<{tag}>\n' + ''.join(f'<li>{plain(e)}</li>\n' for e in entries) + f'</{tag}>\n'
 
 
-def moddb_spoiler():
-    """The Mod DB's own spoiler markup (div.spoiler > div.spoiler-toggle + div.spoiler-text; the site styles it), the
-    same as the "Features" spoiler under the intro on mods.vintagestory.at/deciduoustrees."""
-    parts = []
-    for key in ('window', 'mods'):
-        width, height = shot_size(key)
-        caption = SHOTS[key][1].replace('>', '&gt;')
-        parts.append(f'<p><img src="{moddb_src(key)}" width="{width}" height="{height}" alt="{SHOTS[key][2]}"></p>\n'
-                     f'<p><em>{caption}</em></p>\n')
-    return ('<div class="spoiler">\n<div class="spoiler-toggle">Screenshots</div>\n<div class="spoiler-text">\n'
-            + ''.join(parts) + '</div>\n</div>\n')
-
-
 docs = os.path.join(ROOT, 'docs')
 os.makedirs(docs, exist_ok=True)
 
-# Same order as the Deciduous Trees page: the intro, then the screenshots in a spoiler, then the details.
+# The screenshots are in the Mod DB's gallery above the description, so they aren't repeated here.
 moddb_description = ''.join([
     f'<p><em>{AI_NOTE}</em></p>\n',
     f'<p>{plain(INTRO)}</p>\n',
-    moddb_spoiler(),
     '<h3>What you get</h3>\n', items(FEATURES),
     '<h3>The sounds</h3>\n', f'<p>{plain(SOUNDS_INTRO)}</p>\n',
     items([sound_line(e) for e in sound_rows]),
@@ -232,17 +208,10 @@ numbers match the README.
 
 Click the **source code** button in the editor toolbar (the `<>` icon, or Tools > Source code), paste the whole of
 `docs/moddb-description.html` into the window that opens, and press Save in that window. Pasting straight into the text
-box instead shows the tags as literal text. The description uses only what the editor itself writes: paragraphs,
-headings, bold and italic, lists, and the site's own spoiler (the same kind as the one under the intro on the Deciduous
-Trees page). The two icons at the end of the toolbar look like spoiler controls, if you'd rather build the spoiler by hand.
+box instead shows the tags as literal text. The description uses only what the editor itself writes (paragraphs,
+headings, bold and italic, lists) and has no screenshots of its own, because the gallery above the description shows them.
 
-The screenshots inside the spoiler need web addresses. Until you give it some they point at this repository's copies, which
-only load once the repository is public (while it is private they show as missing, with just a caption). Once the
-screenshots are uploaded below, right-click each one in the gallery, choose copy image address, and put the two addresses in
-`docs/moddb-image-urls.json` (`window` and `mods`). Then run `python -I tools/make_description.py .` and paste the new
-`docs/moddb-description.html` into the source-code window again. Or edit the two `src=` addresses in that window by hand.
-
-## Screenshots (drag to upload; drag to reorder)
+## Screenshots (drag to upload; drag to reorder; they appear in the gallery above the description)
 
 1. `docs/images/screenshots/window.png`
 2. `docs/images/screenshots/mods-section.png`

@@ -22,17 +22,10 @@ A searchable list of volume sliders for every sound in the game.  (64 characters
 
 Click the **source code** button in the editor toolbar (the `<>` icon, or Tools > Source code), paste the whole of
 `docs/moddb-description.html` into the window that opens, and press Save in that window. Pasting straight into the text
-box instead shows the tags as literal text. The description uses only what the editor itself writes: paragraphs,
-headings, bold and italic, lists, and the site's own spoiler (the same kind as the one under the intro on the Deciduous
-Trees page). The two icons at the end of the toolbar look like spoiler controls, if you'd rather build the spoiler by hand.
+box instead shows the tags as literal text. The description uses only what the editor itself writes (paragraphs,
+headings, bold and italic, lists) and has no screenshots of its own, because the gallery above the description shows them.
 
-The screenshots inside the spoiler need web addresses. Until you give it some they point at this repository's copies, which
-only load once the repository is public (while it is private they show as missing, with just a caption). Once the
-screenshots are uploaded below, right-click each one in the gallery, choose copy image address, and put the two addresses in
-`docs/moddb-image-urls.json` (`window` and `mods`). Then run `python -I tools/make_description.py .` and paste the new
-`docs/moddb-description.html` into the source-code window again. Or edit the two `src=` addresses in that window by hand.
-
-## Screenshots (drag to upload; drag to reorder)
+## Screenshots (drag to upload; drag to reorder; they appear in the gallery above the description)
 
 1. `docs/images/screenshots/window.png`
 2. `docs/images/screenshots/mods-section.png`
