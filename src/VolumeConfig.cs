@@ -33,12 +33,12 @@ namespace VolumeSliders
 
         public static int Get(string key) => volumes.TryGetValue(key, out int v) ? v : Max;
 
-        // Keys of the game's own sounds. Anything else (a mod's sound, or a vanilla sound a mod replaced) is never touched.
-        static HashSet<string> vanilla = new HashSet<string>();
+        // Keys of every sound that has a slider. A sound the game builds some other way is left alone.
+        static HashSet<string> known = new HashSet<string>();
 
-        public static void SetVanilla(HashSet<string> keys) => vanilla = keys;
+        public static void SetKnown(HashSet<string> keys) => known = keys;
 
-        public static bool IsVanilla(string key) => vanilla.Contains(key);
+        public static bool IsKnown(string key) => known.Contains(key);
 
         // Sound key -> the group/combo sliders it answers to. Replaced wholesale once the sound list is known.
         static Dictionary<string, SoundRule> rules = new Dictionary<string, SoundRule>();

@@ -14,6 +14,8 @@ namespace VolumeSliders
         public Vintagestory.API.Common.AssetLocation Location = null!;
         public bool Major;
         public bool HasLangName;      // Display came from lang/en.json ("Group: Name") rather than the file name
+        public string? ModName;       // set when the sound's file comes from a mod rather than the game
+        public bool Replaced;         // ...and that mod replaced one of the game's own sound files
     }
 
     /// <summary>One of the "combo" sliders from config/combined.json: several sounds, one slider.</summary>
@@ -38,6 +40,8 @@ namespace VolumeSliders
         public string Name = "";
         public string Search = "";                    // lower case, leaves and combos only
         public SoundNode? Parent;
+        public string? Note;                          // shown beside a sound a mod has replaced
+        public int ModdedCount;                       // how many sounds at or under this row a mod has replaced
         public List<SoundNode> Children = new List<SoundNode>();
         public bool IsGroup;
         public bool Major;
@@ -104,7 +108,8 @@ namespace VolumeSliders
                 parent.Children.Add(new SoundNode
                 {
                     ConfigKey = s.Key, Name = leafName, Sound = s, Major = s.Major, Parent = parent, Members = { s },
-                    Search = (group + " " + string.Join(" ", subs) + " " + leafName + " " + s.Display + " " + s.Key).ToLowerInvariant(),
+                    Note = s.Replaced ? ShortName(s.ModName) : null, ModdedCount = s.Replaced ? 1 : 0,
+                    Search = (group + " " + string.Join(" ", subs) + " " + leafName + " " + s.Display + " " + s.Key + " " + (s.Replaced ? s.ModName : "")).ToLowerInvariant(),
                 });
             }
             foreach (var c in usedCombos)
@@ -142,6 +147,7 @@ namespace VolumeSliders
                 c.Parent = n;
                 n.Members.AddRange(c.Members);
                 n.Major |= c.Major;
+                n.ModdedCount += c.ModdedCount;
             }
             return n;
         }
@@ -165,11 +171,39 @@ namespace VolumeSliders
             }
         }
 
+        /// <summary>A mod's name as it fits beside a slider.</summary>
+        public static string ShortName(string? name)
+        {
+            name = (name ?? "a mod").Trim();
+            return name.Length <= 36 ? name : name.Substring(0, 35).TrimEnd() + "...";
+        }
+
         /// <summary>Which group (and, for mobs, which creature and folder) a sound lists under, and what to call it there.</summary>
         public static void Classify(SoundEntry s, out string group, out List<string> subs, out string leafName)
         {
             subs = new List<string>();
             var loc = s.Location;
+            bool fromMod = s.ModName != null && !s.Replaced;   // a replaced vanilla sound stays in its vanilla group
+
+            if (fromMod)
+            {
+                // Mods > <mod> > <the mod's own group, or the sound's folder> > sound
+                group = "Mods";
+                subs.Add(ShortName(s.ModName));
+                if (s.HasLangName)
+                {
+                    int colon = s.Display.IndexOf(": ", StringComparison.Ordinal);
+                    if (colon >= 0) { subs.Add(s.Display.Substring(0, colon)); leafName = s.Display.Substring(colon + 2); return; }
+                    leafName = s.Display;
+                    return;
+                }
+                string cat = SoundKeys.FolderOf(loc);
+                leafName = SoundKeys.NameFor(loc);
+                if (cat.Length == 0) return;
+                if (cat == "creature") { subs.Add("Mobs"); ClassifyCreature(loc, subs, out leafName); return; }
+                subs.Add(SoundKeys.TitleCase(cat));
+                return;
+            }
 
             if (s.HasLangName)
             {
@@ -184,6 +218,12 @@ namespace VolumeSliders
             if (group != "Creature") return;
 
             group = "Mobs";
+            ClassifyCreature(loc, subs, out leafName);
+        }
+
+        /// <summary>Adds the creature (and first folder) a creature sound belongs to, and names the sound within it.</summary>
+        static void ClassifyCreature(Vintagestory.API.Common.AssetLocation loc, List<string> subs, out string leafName)
+        {
             string path = loc.Path;
             if (path.EndsWith(".ogg")) path = path.Substring(0, path.Length - 4);
             if (path.StartsWith("sounds/")) path = path.Substring(7);

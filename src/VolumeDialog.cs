@@ -18,7 +18,7 @@ namespace VolumeSliders
         const int RowCount = 12;
         const double RowHeight = 34;
         const double Width = 700;
-        const double NameWidth = 370;   // clicks left of this open or close a group
+        const double NameWidth = 410;   // the name column; the slider starts just after it
         const long RecentMs = 30_000;
 
         class Row
@@ -37,6 +37,7 @@ namespace VolumeSliders
         bool recentOnly;
         bool showAll;
         int offset;
+        int soundsShown;
         ElementBounds? listBounds;
 
         public override string ToggleKeyCombinationCode => "volumesliders";
@@ -102,8 +103,8 @@ namespace VolumeSliders
                 // The caret and the name are clickable text: the composer calls their click handler directly.
                 comp.AddInteractiveElement(new ClickableText(capi, CairoFont.WhiteSmallText(), ElementBounds.Fixed(8, y + 5, 20, 28), () => ToggleRow(row)), "caret" + i)
                     .AddInteractiveElement(new ClickableText(capi, CairoFont.WhiteSmallText(), ElementBounds.Fixed(28, y + 5, NameWidth - 30, 28), () => ToggleRow(row)), "name" + i)
-                    .AddSlider(v => OnSliderChanged(row, v), ElementBounds.Fixed(375, y + 4, 215, 26), "slider" + i)
-                    .AddSmallButton("▶", () => PlayPreview(row), ElementBounds.Fixed(600, y + 3, 40, 28), EnumButtonStyle.Normal, "play" + i);
+                    .AddSlider(v => OnSliderChanged(row, v), ElementBounds.Fixed(NameWidth + 5, y + 4, 175, 26), "slider" + i)
+                    .AddSmallButton(Lang.Get("volumesliders:play"), () => PlayPreview(row), ElementBounds.Fixed(NameWidth + 185, y + 3, 56, 28), EnumButtonStyle.Normal, "play" + i);
             }
 
             comp.AddVerticalScrollbar(OnScroll, scrollBounds, "scroll")
@@ -159,7 +160,13 @@ namespace VolumeSliders
             }
 
             rows = new List<Row>();
-            foreach (var root in system.Tree) rows.AddRange(Visit(root, 0).Item1);
+            soundsShown = 0;
+            foreach (var root in system.Tree)
+            {
+                var (r, leaves) = Visit(root, 0);
+                rows.AddRange(r);
+                soundsShown += leaves;
+            }
             offset = Math.Clamp(offset, 0, Math.Max(0, rows.Count - RowCount));
         }
 
@@ -178,15 +185,25 @@ namespace VolumeSliders
                 var row = has ? rows[idx] : null;
 
                 SingleComposer.GetDynamicText("caret" + i).SetNewText(row == null || !row.Header ? "" : row.Open ? "v" : ">");
-                string name = row == null ? "" : new string(' ', row.Depth * 4) + row.Node.Name
-                    + (row.Header ? "  (" + row.Leaves + ")" : "");
+                string name = row == null ? "" : new string(' ', row.Depth * 4) + row.Node.Name + RowNote(row);
                 SingleComposer.GetDynamicText("name" + i).SetNewText(name);
 
                 var slider = SingleComposer.GetSlider("slider" + i);
                 slider.SetValues(row == null ? 0 : VolumeConfig.Get(row.Node.ConfigKey), 0, VolumeConfig.Max, 1, "%");
                 slider.Enabled = has;
             }
-            SingleComposer.GetDynamicText("count").SetNewText(Lang.Get("volumesliders:count", rows.Sum(r => r.Header ? 0 : 1), system.Sounds.Count));
+            SingleComposer.GetDynamicText("count").SetNewText(Lang.Get("volumesliders:count", soundsShown, system.Sounds.Count));
+        }
+
+        /// <summary>What follows a row's name: a group's size, and which mod changed a sound.</summary>
+        static string RowNote(Row row)
+        {
+            if (row.Header)
+            {
+                string n = "  (" + row.Leaves + ")";
+                return row.Node.ModdedCount > 0 ? n + "  [" + row.Node.ModdedCount + " changed by mods]" : n;
+            }
+            return row.Node.Note != null ? "  [" + row.Node.Note + "]" : "";
         }
 
         // ---------------------------------------------------------------- input
@@ -250,8 +267,6 @@ namespace VolumeSliders
         void ToggleRow(int row)
         {
             int idx = offset + row;
-            capi.Logger.Debug("[volumesliders] clicked row {0} (list index {1} of {2}){3}", row, idx, rows.Count,
-                idx < rows.Count ? ": " + rows[idx].Node.Name + (rows[idx].Header ? " (group)" : "") : "");
             if (idx < 0 || idx >= rows.Count || !rows[idx].Header) return;
 
             string key = rows[idx].Node.ConfigKey;

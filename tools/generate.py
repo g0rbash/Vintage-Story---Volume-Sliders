@@ -13,7 +13,8 @@ UI = {
     "hotkey": "Open Volume Sliders",
     "command-description": "Open the Volume Sliders window",
     "search": "Search:",
-    "recent": "Heard in the last 30 seconds:",
+    "recent": "Recently heard:",
+    "play": "Play",
     "reset-shown": "Reset Shown to 100",
     "count": "Showing {0} of {1} sounds",
     "all-sounds": "Show every sound:",
@@ -79,6 +80,30 @@ OVERRIDES = [
     (r"effect_woodgrind", "Machines: Wood Grinding"), (r"effect_metalgrinding", "Machines: Metal Grinding"),
     (r"effect_bellows", "Machines: Bellows"),
 ]
+
+
+# Friendly names for a popular mod's own sounds. The window finds mod sounds by itself and names them from their
+# file paths; these just give the best-known ones a clearer name. Keys are "<domain>_<path without sounds/ and .ogg>".
+# Salty's Temporal Symphony ships its own temporal-storm audio, which is what people most often want to quiet.
+def mod_sound_names():
+    d = "temporalsymphony_"
+    names = {}
+    for n in (1, 2, 3):
+        names[f"{d}tempintense{n}"] = f"Temporal Storm: Intense {n}"
+        names[f"{d}tempquake{n}"] = f"Temporal Storm: Quake {n}"
+        names[f"{d}thunderlord_roar{n}"] = f"Thunder Lord: Roar {n}"
+        names[f"{d}thunderlord_steam{n}"] = f"Thunder Lord: Steam {n}"
+        names[f"{d}thunderlord_step{n}"] = f"Thunder Lord: Step {n}"
+    for n in (1, 2):
+        names[f"{d}tempwarning{n}"] = f"Temporal Storm: Warning {n}"
+        names[f"{d}bass{n}"] = f"Temporal Storm: Bass {n}"
+        names[f"{d}music_stormmusic{n}"] = f"Temporal Storm: Storm Music {n}"
+    for n in range(1, 9):
+        names[f"{d}thunder_specialthunder{n}"] = f"Temporal Storm: Special Thunder {n}"
+    names[f"{d}tempwarningbell"] = "Temporal Storm: Warning Bell"
+    names[f"{d}tempwarningbell_waning"] = "Temporal Storm: Warning Bell (Waning)"
+    names[f"{d}riftweather_apocalyptic"] = "Temporal Storm: Apocalyptic Rift Weather"
+    return names
 
 
 def is_major(key):
@@ -151,6 +176,9 @@ def main():
             lang["sound-" + k] = name
         if is_major(k):
             major.append(k)
+
+    for k, name in mod_sound_names().items():
+        lang["sound-" + k] = name
 
     combined = []
     for c in COMBINED:

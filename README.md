@@ -13,14 +13,15 @@ Some sounds in Vintage Story you'll love for a hundred hours, and some will wear
 - **Groups that open.** Related sounds sit under a group marked with a **&gt;**. Open it to see each sound; the group's own slider turns the whole group up or down. Mobs are grouped by creature: Drifter, Bear, Bowtorn, and so on.
 - **One slider for the helve hammer.** Everything the helve hammer plays is a single slider, instead of a handful of near-identical hits.
 - **A searchable window** in the same style as the game's own settings.
-- **Heard in the last 30 seconds.** One switch lists only the sounds that just played, so you can find the one that is bugging you right now.
+- **Recently heard.** One switch lists only the sounds that played in the last 30 seconds, so you can find the one that is bugging you right now.
 - **Changes apply immediately**, including sounds that are already playing, like a river loop.
 - **Preview button** beside every slider.
-- **Only the game's own sounds.** Sounds that come from other mods are never touched; they keep using that mod's own volume settings.
+- **Mod sounds too.** Sounds that other mods add get sliders under **Mods**, grouped by mod. Salty's Temporal Symphony, for example, has a **Temporal Storm** group for its storm rumbles, warnings, and thunder.
+- **Changes are marked.** When a mod replaces one of the game's own sounds, that slider shows the mod's name beside it, and its group counts how many of its sounds were changed.
 
 ### The Sounds
 
-The window opens on these sounds, the ones people most often want quieter, and can show all 813 of the game's own.
+The window opens on these sounds, the ones people most often want quieter, and can show all 813 of the game's own, plus the sounds of any mods you have.
 
 | Group | Includes | Sounds |
 |---|---|---|
@@ -39,19 +40,20 @@ The window opens on these sounds, the ones people most often want quieter, and c
 | **Temporal** | Stability warnings, rifts, rift wards | 5 |
 | **Bells** | The deep bell | 1 |
 | **Machines** | Quern, gears, bellows | 3 |
+| **Mods** | Sounds added by other mods, grouped by mod. Temporal Symphony's temporal storm, thunder, and creature sounds are one example. | Varies |
 
 ### Using It
 
 - Press **Ctrl+Shift+V** (you can rebind it in the controls settings), or type **.volumesliders** in chat.
 - Click a group, or its **&gt;**, to open or close it. The group's slider scales everything inside, and each sound keeps its own slider too. They multiply, so a group at 50% and a sound at 50% plays at 25%.
-- The window opens on the sounds most people want quieter, plus every creature sound. Flip *Show every sound* to list all of the game's sounds.
+- The window opens on the sounds most people want quieter, plus every creature sound. Flip *Show every sound* to list every sound, including mods' quieter ones.
 - Your settings are saved in **ModConfig/volumesliders.json**.
 
 ### Compatibility
 
 - **Vintage Story 1.22.7.** Client-side only.
 - **Accessibility Tweaks.** Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to 50% in each plays at 25%.
-- **Other mods.** Only the game's own sounds get sliders. A sound a mod adds, or a vanilla sound a mod replaces with its own file, is left alone and keeps using that mod's own volume settings.
+- **Other mods.** Their sounds get sliders under Mods, and a game sound a mod replaces is marked with the mod's name. If a mod has its own volume setting, it still applies on top of these sliders. A mod that plays sound through its own audio code, instead of the game's sound engine, may not respond.
 
 ### Installation
 

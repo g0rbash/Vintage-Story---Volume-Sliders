@@ -59,38 +59,51 @@ namespace VolumeSliders
             var combos = capi.Assets.TryGet(new AssetLocation("volumesliders", "config/combined.json"))?.ToObject<CombinedDef[]>()
                 ?? new CombinedDef[0];
 
-            // Only the game's own sounds. An asset counts as the game's if its file lives in the game's assets folder;
-            // a mod's sound, or a vanilla sound a mod replaced, is left to that mod.
-            var all = capi.Assets.AllAssets
-                .Where(p => (p.Key.Category == AssetCategory.sounds || p.Key.Category == AssetCategory.music) && p.Key.Path.EndsWith(".ogg"))
-                .ToList();
-            var vanilla = all.Where(p => SoundKeys.IsInside(p.Value.Origin?.OriginPath ?? "", GamePaths.AssetsPath)).Select(p => p.Key).ToList();
+            // Every sound file, from the game and from mods. Which mod a file comes from is found by matching the file's
+            // origin (a zip or a folder) against each loaded mod's source path.
+            var mods = capi.ModLoader.Mods.Where(m => !string.IsNullOrEmpty(m.SourcePath)).ToList();
+            string? ModFor(string originPath) => mods.FirstOrDefault(m => SoundKeys.IsInside(originPath, m.SourcePath))?.Info?.Name;
 
-            Sounds = vanilla
-                .GroupBy(SoundKeys.KeyFor)
-                .Select(g => g.First())
-                .Select(Describe)
+            Sounds = capi.Assets.AllAssets
+                .Where(p => (p.Key.Category == AssetCategory.sounds || p.Key.Category == AssetCategory.music) && p.Key.Path.EndsWith(".ogg"))
+                .GroupBy(p => SoundKeys.KeyFor(p.Key))
+                .Select(g => Describe(g.First().Key, g.First().Value, ModFor))
                 .OrderBy(e => e.Display, StringComparer.OrdinalIgnoreCase)
                 .ToList();
-            VolumeConfig.SetVanilla(new HashSet<string>(Sounds.Select(e => e.Key)));
+            VolumeConfig.SetKnown(new HashSet<string>(Sounds.Select(e => e.Key)));
 
             Tree = SoundTree.Build(Sounds, combos, out var rules);
             VolumeConfig.SetRules(rules);
             dialog?.Refresh();
-            capi.Logger.Notification("[volumesliders] {0} vanilla sounds ({1} major) in {2} groups; {3} sounds from mods left alone.",
-                Sounds.Count, Sounds.Count(s => s.Major), Tree.Count, all.Count - vanilla.Count);
+            capi.Logger.Notification("[volumesliders] {0} sounds ({1} major) in {2} groups; {3} come from mods, {4} of those replace a game sound.",
+                Sounds.Count, Sounds.Count(s => s.Major), Tree.Count, Sounds.Count(s => s.ModName != null), Sounds.Count(s => s.Replaced));
         }
 
-        SoundEntry Describe(AssetLocation loc)
+        SoundEntry Describe(AssetLocation loc, IAsset asset, System.Func<string, string?> modFor)
         {
             string key = SoundKeys.KeyFor(loc);
             string langKey = "volumesliders:sound-" + key;
-            string display = Lang.HasTranslation(langKey, false, false)
-                ? Lang.Get(langKey)
-                : SoundKeys.CategoryFor(loc) + ": " + SoundKeys.NameFor(loc);
-            return new SoundEntry { Key = key, Display = display, Search = (display + " " + key).ToLowerInvariant(), Location = loc,
-                HasLangName = Lang.HasTranslation(langKey, false, false),
-                Major = majorKeys.Contains(key) || majorPrefixes.Any(p => key.StartsWith(p)) };
+            bool hasName = Lang.HasTranslation(langKey, false, false);
+            string display = hasName ? Lang.Get(langKey) : SoundKeys.CategoryFor(loc) + ": " + SoundKeys.NameFor(loc);
+
+            // A file that isn't in the game's assets folder came from a mod. If the game has a file at the same path,
+            // the mod replaced it; otherwise the mod added it.
+            string origin = asset.Origin?.OriginPath ?? "";
+            string? mod = null;
+            bool replaced = false;
+            if (!SoundKeys.IsInside(origin, GamePaths.AssetsPath))
+            {
+                mod = modFor(origin) ?? SoundKeys.TitleCase(loc.Domain ?? "mod");
+                replaced = System.IO.File.Exists(System.IO.Path.Combine(GamePaths.AssetsPath, loc.Domain ?? "game", loc.Path));
+            }
+
+            return new SoundEntry
+            {
+                Key = key, Display = display, Search = (display + " " + key).ToLowerInvariant(), Location = loc, HasLangName = hasName,
+                ModName = mod, Replaced = replaced,
+                // A mod's own sounds show up by default; a replaced game sound is major only if the game's own would be.
+                Major = majorKeys.Contains(key) || majorPrefixes.Any(p => key.StartsWith(p)) || (mod != null && !replaced),
+            };
         }
 
         public override void Dispose()

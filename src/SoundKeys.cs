@@ -40,6 +40,15 @@ namespace VolumeSliders
             return sb.ToString();
         }
 
+        /// <summary>First folder under sounds/ (lower case), or empty if the file sits directly in it: "creature/bear/growl" -> "creature".</summary>
+        public static string FolderOf(AssetLocation loc)
+        {
+            string path = loc.Path;
+            if (path.StartsWith("sounds/")) path = path.Substring(7);
+            int slash = path.IndexOf('/');
+            return slash < 0 ? "" : path.Substring(0, slash);
+        }
+
         /// <summary>First folder of the sound, title-cased: "walk/wood1" -> "Walk".</summary>
         public static string CategoryFor(AssetLocation loc)
         {

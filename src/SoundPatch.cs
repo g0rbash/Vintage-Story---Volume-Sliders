@@ -30,7 +30,7 @@ namespace VolumeSliders
                 keys.AddOrUpdate(loc, key);
             }
 
-            if (!VolumeConfig.IsVanilla(key)) return;   // a mod's own sound: leave it to that mod's volume settings
+            if (!VolumeConfig.IsKnown(key)) return;   // not a sound with a slider
 
             VolumeConfig.LastHeard[key] = Environment.TickCount64;
             __result *= VolumeConfig.Factor(key);
