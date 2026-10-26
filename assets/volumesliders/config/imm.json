@@ -1,0 +1,6515 @@
+{
+	"Configuration": [
+		{
+			"ConfigFile": "volumesliders.json",
+			"ConfigLabel": "volumesliders:title",
+			"ConfigSide": "Client",
+			"Settings": [
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-arrow_impact",
+					"Map": "arrow_impact",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_anvil1",
+					"Map": "block_anvil1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_anvil2",
+					"Map": "block_anvil2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_anvil3",
+					"Map": "block_anvil3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_barrel",
+					"Map": "block_barrel",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_barrelclose",
+					"Map": "block_barrelclose",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_barrelopen",
+					"Map": "block_barrelopen",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_basketclose",
+					"Map": "block_basketclose",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_basketopen",
+					"Map": "block_basketopen",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_bellowslarge_bellowlarge_in1",
+					"Map": "block_bellowslarge_bellowlarge_in1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_bellowslarge_bellowlarge_in2",
+					"Map": "block_bellowslarge_bellowlarge_in2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_bellowslarge_bellowlarge_in3",
+					"Map": "block_bellowslarge_bellowlarge_in3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_bellowslarge_bellowlarge_out1",
+					"Map": "block_bellowslarge_bellowlarge_out1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_bellowslarge_bellowlarge_out2",
+					"Map": "block_bellowslarge_bellowlarge_out2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_bellowslarge_bellowlarge_out3",
+					"Map": "block_bellowslarge_bellowlarge_out3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_ceramicbreak",
+					"Map": "block_ceramicbreak",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_ceramichit",
+					"Map": "block_ceramichit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_ceramicplace",
+					"Map": "block_ceramicplace",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_chandelier_break",
+					"Map": "block_chandelier_break",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_chandelier_hit",
+					"Map": "block_chandelier_hit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_charcoal1",
+					"Map": "block_charcoal1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_charcoal2",
+					"Map": "block_charcoal2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_charcoal3",
+					"Map": "block_charcoal3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_chestclose",
+					"Map": "block_chestclose",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_chestopen",
+					"Map": "block_chestopen",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_chop1",
+					"Map": "block_chop1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_chop2",
+					"Map": "block_chop2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_chop3",
+					"Map": "block_chop3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_chute",
+					"Map": "block_chute",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_cloth",
+					"Map": "block_cloth",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_cokeovendoor_close",
+					"Map": "block_cokeovendoor_close",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_cokeovendoor_open",
+					"Map": "block_cokeovendoor_open",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_creak_woodcreak_1",
+					"Map": "block_creak_woodcreak_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_creak_woodcreak_2",
+					"Map": "block_creak_woodcreak_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_creak_woodcreak_3",
+					"Map": "block_creak_woodcreak_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_creak_woodcreak_4",
+					"Map": "block_creak_woodcreak_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_creak_woodcreak_long1",
+					"Map": "block_creak_woodcreak_long1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_creak_woodcreak_long2",
+					"Map": "block_creak_woodcreak_long2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_creak_woodcreak_long3",
+					"Map": "block_creak_woodcreak_long3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_dirt1",
+					"Map": "block_dirt1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_dirt2",
+					"Map": "block_dirt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_dirt3",
+					"Map": "block_dirt3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_dirt4",
+					"Map": "block_dirt4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_door",
+					"Map": "block_door",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_glass",
+					"Map": "block_glass",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_gravel",
+					"Map": "block_gravel",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_grindingwheel",
+					"Map": "block_grindingwheel",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_heavyice",
+					"Map": "block_heavyice",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_heavymetal_hit",
+					"Map": "block_heavymetal_hit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_heavymetal_hit2",
+					"Map": "block_heavymetal_hit2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_hewnfancegate",
+					"Map": "block_hewnfancegate",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_hopperopen",
+					"Map": "block_hopperopen",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_hoppertumble",
+					"Map": "block_hoppertumble",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_ice",
+					"Map": "block_ice",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_ingot",
+					"Map": "block_ingot",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_largechestclose",
+					"Map": "block_largechestclose",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_largechestopen",
+					"Map": "block_largechestopen",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_largedoor_close",
+					"Map": "block_largedoor_close",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_largedoor_open",
+					"Map": "block_largedoor_open",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_lava",
+					"Map": "block_lava",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_leafy_picking",
+					"Map": "block_leafy_picking",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_leather",
+					"Map": "block_leather",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_loosestick",
+					"Map": "block_loosestick",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_loosestone1",
+					"Map": "block_loosestone1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_loosestone2",
+					"Map": "block_loosestone2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_loosestone3",
+					"Map": "block_loosestone3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_loosestone4",
+					"Map": "block_loosestone4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_metaldoor",
+					"Map": "block_metaldoor",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_metaldoor_place",
+					"Map": "block_metaldoor_place",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_meteoriciron_hit_pickaxe",
+					"Map": "block_meteoriciron_hit_pickaxe",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_meteoriciron_hit_pickaxe0",
+					"Map": "block_meteoriciron_hit_pickaxe0",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_planks",
+					"Map": "block_planks",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_plant",
+					"Map": "block_plant",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_plate",
+					"Map": "block_plate",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_pump",
+					"Map": "block_pump",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_pumpkin",
+					"Map": "block_pumpkin",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_quern",
+					"Map": "block_quern",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_reedtrapshake1",
+					"Map": "block_reedtrapshake1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_reedtrapshake2",
+					"Map": "block_reedtrapshake2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_reedtrapshake3",
+					"Map": "block_reedtrapshake3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_reedtrapshut",
+					"Map": "block_reedtrapshut",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_riftward",
+					"Map": "block_riftward",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_rock_break_pickaxe",
+					"Map": "block_rock_break_pickaxe",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_rock_hit_pickaxe",
+					"Map": "block_rock_hit_pickaxe",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_sand",
+					"Map": "block_sand",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_snow",
+					"Map": "block_snow",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_stickbreak",
+					"Map": "block_stickbreak",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_stickhit",
+					"Map": "block_stickhit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_stickplace",
+					"Map": "block_stickplace",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_teleporter",
+					"Map": "block_teleporter",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_torch",
+					"Map": "block_torch",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_vesselclose",
+					"Map": "block_vesselclose",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_vesselopen",
+					"Map": "block_vesselopen",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_vinyl",
+					"Map": "block_vinyl",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_water",
+					"Map": "block_water",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_waterwheel_water",
+					"Map": "block_waterwheel_water",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_waterwheel_wood",
+					"Map": "block_waterwheel_wood",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_wood_tool",
+					"Map": "block_wood_tool",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_woodcreak_1",
+					"Map": "block_woodcreak_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_woodcreak_2",
+					"Map": "block_woodcreak_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_woodcreak_3",
+					"Map": "block_woodcreak_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_woodcreak_4",
+					"Map": "block_woodcreak_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-bow_draw",
+					"Map": "bow_draw",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-bow_release",
+					"Map": "bow_release",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-camerasnap",
+					"Map": "camerasnap",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_eat1",
+					"Map": "creature_animal_eat1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_eat2",
+					"Map": "creature_animal_eat2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_eat_small",
+					"Map": "creature_animal_eat_small",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_bellow1",
+					"Map": "creature_animal_mammal_hooved_deer_elk_bellow1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_bellow2",
+					"Map": "creature_animal_mammal_hooved_deer_elk_bellow2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_bellowafter",
+					"Map": "creature_animal_mammal_hooved_deer_elk_bellowafter",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_bugle1",
+					"Map": "creature_animal_mammal_hooved_deer_elk_bugle1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_bugle2",
+					"Map": "creature_animal_mammal_hooved_deer_elk_bugle2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_death1",
+					"Map": "creature_animal_mammal_hooved_deer_elk_death1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_death2",
+					"Map": "creature_animal_mammal_hooved_deer_elk_death2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_death3",
+					"Map": "creature_animal_mammal_hooved_deer_elk_death3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_death4",
+					"Map": "creature_animal_mammal_hooved_deer_elk_death4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_hurt1",
+					"Map": "creature_animal_mammal_hooved_deer_elk_hurt1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_hurt2",
+					"Map": "creature_animal_mammal_hooved_deer_elk_hurt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_hurt3",
+					"Map": "creature_animal_mammal_hooved_deer_elk_hurt3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_hurt4",
+					"Map": "creature_animal_mammal_hooved_deer_elk_hurt4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_hurt5",
+					"Map": "creature_animal_mammal_hooved_deer_elk_hurt5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_animal_mammal_hooved_deer_elk_hurt6",
+					"Map": "creature_animal_mammal_hooved_deer_elk_hurt6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_aggro",
+					"Map": "creature_bear_aggro",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_attack",
+					"Map": "creature_bear_attack",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_flee",
+					"Map": "creature_bear_flee",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_footsteps_dirt_bear_footstep_dirt1",
+					"Map": "creature_bear_footsteps_dirt_bear_footstep_dirt1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_footsteps_dirt_bear_footstep_dirt2",
+					"Map": "creature_bear_footsteps_dirt_bear_footstep_dirt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_footsteps_dirt_bear_footstep_dirt3",
+					"Map": "creature_bear_footsteps_dirt_bear_footstep_dirt3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_footsteps_dirt_bear_footstep_dirt4",
+					"Map": "creature_bear_footsteps_dirt_bear_footstep_dirt4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_growl1",
+					"Map": "creature_bear_growl1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_growl2",
+					"Map": "creature_bear_growl2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bear_hurt",
+					"Map": "creature_bear_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_beehive",
+					"Map": "creature_beehive",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_beehive_wild",
+					"Map": "creature_beehive_wild",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_beemob",
+					"Map": "creature_beemob",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_beesting",
+					"Map": "creature_beesting",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_alarm",
+					"Map": "creature_bell_alarm",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_bell",
+					"Map": "creature_bell_bell",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_death_charlemange_death3",
+					"Map": "creature_bell_charlemange_death_charlemange_death3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_chirp1",
+					"Map": "creature_bell_charlemange_happy_char_happy_chirp1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_chirp2",
+					"Map": "creature_bell_charlemange_happy_char_happy_chirp2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_chirp3",
+					"Map": "creature_bell_charlemange_happy_char_happy_chirp3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_chirp4",
+					"Map": "creature_bell_charlemange_happy_char_happy_chirp4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_chirp5",
+					"Map": "creature_bell_charlemange_happy_char_happy_chirp5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_chirp6",
+					"Map": "creature_bell_charlemange_happy_char_happy_chirp6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_chirp7",
+					"Map": "creature_bell_charlemange_happy_char_happy_chirp7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_chirp8",
+					"Map": "creature_bell_charlemange_happy_char_happy_chirp8",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_chirp9",
+					"Map": "creature_bell_charlemange_happy_char_happy_chirp9",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_wag1",
+					"Map": "creature_bell_charlemange_happy_char_happy_wag1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_wag2",
+					"Map": "creature_bell_charlemange_happy_char_happy_wag2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_wag3",
+					"Map": "creature_bell_charlemange_happy_char_happy_wag3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_wag4",
+					"Map": "creature_bell_charlemange_happy_char_happy_wag4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_happy_char_happy_wag5",
+					"Map": "creature_bell_charlemange_happy_char_happy_wag5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_hide_char_hide_loop",
+					"Map": "creature_bell_charlemange_hide_char_hide_loop",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_hurt_char_hit1",
+					"Map": "creature_bell_charlemange_hurt_char_hit1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_hurt_char_hit2",
+					"Map": "creature_bell_charlemange_hurt_char_hit2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_hurt_char_hit3",
+					"Map": "creature_bell_charlemange_hurt_char_hit3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_hurt_char_hit4",
+					"Map": "creature_bell_charlemange_hurt_char_hit4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_hurt_char_hit5",
+					"Map": "creature_bell_charlemange_hurt_char_hit5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_listen_char_listen",
+					"Map": "creature_bell_charlemange_listen_char_listen",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_look_char_look",
+					"Map": "creature_bell_charlemange_look_char_look",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_move1",
+					"Map": "creature_bell_charlemange_run_char_run_move1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_move2",
+					"Map": "creature_bell_charlemange_run_char_run_move2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_move3",
+					"Map": "creature_bell_charlemange_run_char_run_move3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_move4",
+					"Map": "creature_bell_charlemange_run_char_run_move4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_rebound1",
+					"Map": "creature_bell_charlemange_run_char_run_rebound1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_rebound2",
+					"Map": "creature_bell_charlemange_run_char_run_rebound2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_rebound3",
+					"Map": "creature_bell_charlemange_run_char_run_rebound3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_rebound4",
+					"Map": "creature_bell_charlemange_run_char_run_rebound4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_rebound5",
+					"Map": "creature_bell_charlemange_run_char_run_rebound5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_run_rebound6",
+					"Map": "creature_bell_charlemange_run_char_run_rebound6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_walk_step1",
+					"Map": "creature_bell_charlemange_run_char_walk_step1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_walk_step2",
+					"Map": "creature_bell_charlemange_run_char_walk_step2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_walk_step3",
+					"Map": "creature_bell_charlemange_run_char_walk_step3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_walk_step4",
+					"Map": "creature_bell_charlemange_run_char_walk_step4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_walk_step5",
+					"Map": "creature_bell_charlemange_run_char_walk_step5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_run_char_walk_step6",
+					"Map": "creature_bell_charlemange_run_char_walk_step6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_sleep_char_sleep",
+					"Map": "creature_bell_charlemange_sleep_char_sleep",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_move1",
+					"Map": "creature_bell_charlemange_walk_char_walk_move1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_move2",
+					"Map": "creature_bell_charlemange_walk_char_walk_move2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_move3",
+					"Map": "creature_bell_charlemange_walk_char_walk_move3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_move4",
+					"Map": "creature_bell_charlemange_walk_char_walk_move4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_step1",
+					"Map": "creature_bell_charlemange_walk_char_walk_step1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_step2",
+					"Map": "creature_bell_charlemange_walk_char_walk_step2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_step3",
+					"Map": "creature_bell_charlemange_walk_char_walk_step3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_step4",
+					"Map": "creature_bell_charlemange_walk_char_walk_step4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_step5",
+					"Map": "creature_bell_charlemange_walk_char_walk_step5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_charlemange_walk_char_walk_step6",
+					"Map": "creature_bell_charlemange_walk_char_walk_step6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_death",
+					"Map": "creature_bell_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_hurt",
+					"Map": "creature_bell_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_listen",
+					"Map": "creature_bell_listen",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_walk",
+					"Map": "creature_bell_walk",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_death",
+					"Map": "creature_bowtorn_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_draw",
+					"Map": "creature_bowtorn_draw",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_hurt",
+					"Map": "creature_bowtorn_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_idle",
+					"Map": "creature_bowtorn_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_release",
+					"Map": "creature_bowtorn_release",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_reload",
+					"Map": "creature_bowtorn_reload",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_chick1",
+					"Map": "creature_chicken_chick1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_chick2",
+					"Map": "creature_chicken_chick2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_chick3",
+					"Map": "creature_chicken_chick3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_hen_flee",
+					"Map": "creature_chicken_hen_flee",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_hen_idle1",
+					"Map": "creature_chicken_hen_idle1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_hen_idle2",
+					"Map": "creature_chicken_hen_idle2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_hen_idle3",
+					"Map": "creature_chicken_hen_idle3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_hen_idle4",
+					"Map": "creature_chicken_hen_idle4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_hen_lay1",
+					"Map": "creature_chicken_hen_lay1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_hen_lay2",
+					"Map": "creature_chicken_hen_lay2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_hurt",
+					"Map": "creature_chicken_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_rooster_alarm",
+					"Map": "creature_chicken_rooster_alarm",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_rooster_alarm2",
+					"Map": "creature_chicken_rooster_alarm2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_chicken_rooster_call",
+					"Map": "creature_chicken_rooster_call",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_cicada",
+					"Map": "creature_cicada",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_cicada_short_looping",
+					"Map": "creature_cicada_short_looping",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_coqui",
+					"Map": "creature_coqui",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_aggro1",
+					"Map": "creature_drifter_aggro1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_aggro2",
+					"Map": "creature_drifter_aggro2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_death",
+					"Map": "creature_drifter_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_hit",
+					"Map": "creature_drifter_hit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_hurt",
+					"Map": "creature_drifter_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_idle1",
+					"Map": "creature_drifter_idle1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_idle2",
+					"Map": "creature_drifter_idle2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_idle3",
+					"Map": "creature_drifter_idle3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_idle4",
+					"Map": "creature_drifter_idle4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_eidolon_awake",
+					"Map": "creature_eidolon_awake",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_eidolon_awaken",
+					"Map": "creature_eidolon_awaken",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_eidolon_death",
+					"Map": "creature_eidolon_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_eidolon_hit",
+					"Map": "creature_eidolon_hit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_eidolon_rockfallslam",
+					"Map": "creature_eidolon_rockfallslam",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_eidolon_throw",
+					"Map": "creature_eidolon_throw",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_alive",
+					"Map": "creature_erel_alive",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_annoyed",
+					"Map": "creature_erel_annoyed",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_call1",
+					"Map": "creature_erel_call1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_call2",
+					"Map": "creature_erel_call2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_dive",
+					"Map": "creature_erel_dive",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_fire",
+					"Map": "creature_erel_fire",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_flap1",
+					"Map": "creature_erel_flap1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_flap2",
+					"Map": "creature_erel_flap2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_flap3",
+					"Map": "creature_erel_flap3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_glide",
+					"Map": "creature_erel_glide",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_hurt",
+					"Map": "creature_erel_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_erel_slam",
+					"Map": "creature_erel_slam",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_fox_attack",
+					"Map": "creature_fox_attack",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_fox_die",
+					"Map": "creature_fox_die",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_fox_growl",
+					"Map": "creature_fox_growl",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_fox_hurt",
+					"Map": "creature_fox_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_fox_yip",
+					"Map": "creature_fox_yip",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_bleat1",
+					"Map": "creature_goat_bleat1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_bleat2",
+					"Map": "creature_goat_bleat2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_bleat3",
+					"Map": "creature_goat_bleat3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_bleat4",
+					"Map": "creature_goat_bleat4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_bleatweird",
+					"Map": "creature_goat_bleatweird",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_death1",
+					"Map": "creature_goat_death1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_death2",
+					"Map": "creature_goat_death2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_death3",
+					"Map": "creature_goat_death3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_goatkidbleat1",
+					"Map": "creature_goat_goatkidbleat1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_goatkidbleat2",
+					"Map": "creature_goat_goatkidbleat2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_goatkidbleat3",
+					"Map": "creature_goat_goatkidbleat3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_goatkidhurt1",
+					"Map": "creature_goat_goatkidhurt1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_goatkidhurt2",
+					"Map": "creature_goat_goatkidhurt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_goatkidhurt3",
+					"Map": "creature_goat_goatkidhurt3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_hurt1",
+					"Map": "creature_goat_hurt1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_hurt2",
+					"Map": "creature_goat_hurt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_hurt3",
+					"Map": "creature_goat_hurt3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_attack1",
+					"Map": "creature_goat_large_adult_attack1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_attack2",
+					"Map": "creature_goat_large_adult_attack2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_attack3",
+					"Map": "creature_goat_large_adult_attack3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_death1",
+					"Map": "creature_goat_large_adult_death1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_death2",
+					"Map": "creature_goat_large_adult_death2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_death3",
+					"Map": "creature_goat_large_adult_death3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_hurt1",
+					"Map": "creature_goat_large_adult_hurt1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_hurt2",
+					"Map": "creature_goat_large_adult_hurt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_hurt3",
+					"Map": "creature_goat_large_adult_hurt3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_idle1",
+					"Map": "creature_goat_large_adult_idle1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_idle2",
+					"Map": "creature_goat_large_adult_idle2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_idle3",
+					"Map": "creature_goat_large_adult_idle3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_goat_large_adult_idle4",
+					"Map": "creature_goat_large_adult_idle4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_grasshopper",
+					"Map": "creature_grasshopper",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hare_hurt",
+					"Map": "creature_hare_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hare_idle",
+					"Map": "creature_hare_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_gallop",
+					"Map": "creature_hooved_gallop",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_generic_call1",
+					"Map": "creature_hooved_generic_call1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_generic_call2",
+					"Map": "creature_hooved_generic_call2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_generic_sniff",
+					"Map": "creature_hooved_generic_sniff",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_large_redstag_bellow1",
+					"Map": "creature_hooved_large_redstag_bellow1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_large_redstag_bellow2",
+					"Map": "creature_hooved_large_redstag_bellow2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_large_redstag_roar1",
+					"Map": "creature_hooved_large_redstag_roar1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_large_redstag_roar2",
+					"Map": "creature_hooved_large_redstag_roar2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_large_redstag_roar3",
+					"Map": "creature_hooved_large_redstag_roar3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_medium_buck_bellow1",
+					"Map": "creature_hooved_medium_buck_bellow1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_medium_buck_bellow2",
+					"Map": "creature_hooved_medium_buck_bellow2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_medium_buck_bellow3",
+					"Map": "creature_hooved_medium_buck_bellow3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_medium_deer_call1",
+					"Map": "creature_hooved_medium_deer_call1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_medium_deer_call2",
+					"Map": "creature_hooved_medium_deer_call2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_medium_deer_call3",
+					"Map": "creature_hooved_medium_deer_call3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_callsmall1",
+					"Map": "creature_hooved_small_callsmall1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_callsmall2",
+					"Map": "creature_hooved_small_callsmall2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_callsmall3",
+					"Map": "creature_hooved_small_callsmall3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_fawn_fawn1",
+					"Map": "creature_hooved_small_fawn_fawn1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_fawn_fawn2",
+					"Map": "creature_hooved_small_fawn_fawn2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_smallscream1",
+					"Map": "creature_hooved_small_smallscream1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_smallscream2",
+					"Map": "creature_hooved_small_smallscream2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_strange_mew1",
+					"Map": "creature_hooved_small_strange_mew1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_strange_mew2",
+					"Map": "creature_hooved_small_strange_mew2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_small_strange_mew3",
+					"Map": "creature_hooved_small_strange_mew3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hooved_trot",
+					"Map": "creature_hooved_trot",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hyena_attack",
+					"Map": "creature_hyena_attack",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hyena_death",
+					"Map": "creature_hyena_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hyena_growl",
+					"Map": "creature_hyena_growl",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hyena_hurt",
+					"Map": "creature_hyena_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_hyena_laugh",
+					"Map": "creature_hyena_laugh",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_locust_death",
+					"Map": "creature_locust_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_locust_hurt",
+					"Map": "creature_locust_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_locust_idle",
+					"Map": "creature_locust_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_locust_saw",
+					"Map": "creature_locust_saw",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_pig_attack",
+					"Map": "creature_pig_attack",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_pig_hurt",
+					"Map": "creature_pig_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_pig_idle",
+					"Map": "creature_pig_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_pig_piglet_hurt",
+					"Map": "creature_pig_piglet_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_pig_piglet_idle",
+					"Map": "creature_pig_piglet_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_raccoon_aggro",
+					"Map": "creature_raccoon_aggro",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_raccoon_death",
+					"Map": "creature_raccoon_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_raccoon_hurt",
+					"Map": "creature_raccoon_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_raccoon_idle",
+					"Map": "creature_raccoon_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_raccoon_pup_death",
+					"Map": "creature_raccoon_pup_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_raccoon_pup_hurt",
+					"Map": "creature_raccoon_pup_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_raccoon_pup_idle",
+					"Map": "creature_raccoon_pup_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_sheep_hurt",
+					"Map": "creature_sheep_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_sheep_hurt2",
+					"Map": "creature_sheep_hurt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_sheep_idle",
+					"Map": "creature_sheep_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_sheep_lamb_hurt",
+					"Map": "creature_sheep_lamb_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_sheep_lamb_hurt2",
+					"Map": "creature_sheep_lamb_hurt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_sheep_milking",
+					"Map": "creature_sheep_milking",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_aggro",
+					"Map": "creature_shiver_aggro",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_death",
+					"Map": "creature_shiver_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_hurt",
+					"Map": "creature_shiver_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_idle1",
+					"Map": "creature_shiver_idle1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_idle2",
+					"Map": "creature_shiver_idle2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_idle3",
+					"Map": "creature_shiver_idle3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_idle4",
+					"Map": "creature_shiver_idle4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_shock",
+					"Map": "creature_shiver_shock",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_thump1",
+					"Map": "creature_shiver_thump1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_thump2",
+					"Map": "creature_shiver_thump2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_shiver_thump3",
+					"Map": "creature_shiver_thump3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_strawdummy_hit",
+					"Map": "creature_strawdummy_hit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_attack1",
+					"Map": "creature_wolf_attack1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_attack2",
+					"Map": "creature_wolf_attack2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_attack3",
+					"Map": "creature_wolf_attack3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_attack4",
+					"Map": "creature_wolf_attack4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_attack5",
+					"Map": "creature_wolf_attack5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_attack6",
+					"Map": "creature_wolf_attack6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_attack7",
+					"Map": "creature_wolf_attack7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_attack8",
+					"Map": "creature_wolf_attack8",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_footsteps_dirt_footstep_wolf_dirt1",
+					"Map": "creature_wolf_footsteps_dirt_footstep_wolf_dirt1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_footsteps_dirt_footstep_wolf_dirt2",
+					"Map": "creature_wolf_footsteps_dirt_footstep_wolf_dirt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_footsteps_dirt_footstep_wolf_dirt3",
+					"Map": "creature_wolf_footsteps_dirt_footstep_wolf_dirt3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_footsteps_dirt_footstep_wolf_dirt4",
+					"Map": "creature_wolf_footsteps_dirt_footstep_wolf_dirt4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_footsteps_dirt_footstep_wolf_dirt5",
+					"Map": "creature_wolf_footsteps_dirt_footstep_wolf_dirt5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_growl1",
+					"Map": "creature_wolf_growl1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_growl2",
+					"Map": "creature_wolf_growl2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_growl3",
+					"Map": "creature_wolf_growl3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_growl4",
+					"Map": "creature_wolf_growl4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_howl1",
+					"Map": "creature_wolf_howl1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_howl2",
+					"Map": "creature_wolf_howl2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_howl3",
+					"Map": "creature_wolf_howl3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_howl4",
+					"Map": "creature_wolf_howl4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_howl5",
+					"Map": "creature_wolf_howl5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_howl6",
+					"Map": "creature_wolf_howl6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_howl7",
+					"Map": "creature_wolf_howl7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_hurt",
+					"Map": "creature_wolf_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_pup_bark",
+					"Map": "creature_wolf_pup_bark",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_pup_flop",
+					"Map": "creature_wolf_pup_flop",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_pup_howl1",
+					"Map": "creature_wolf_pup_howl1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_pup_howl2",
+					"Map": "creature_wolf_pup_howl2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_wolf_pup_hurt",
+					"Map": "creature_wolf_pup_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_anvilhit1",
+					"Map": "effect_anvilhit1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_anvilhit2",
+					"Map": "effect_anvilhit2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_anvilhit3",
+					"Map": "effect_anvilhit3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_anvilmergehit",
+					"Map": "effect_anvilmergehit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_bellows",
+					"Map": "effect_bellows",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_cashregister",
+					"Map": "effect_cashregister",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_clayform",
+					"Map": "effect_clayform",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_clothrip",
+					"Map": "effect_clothrip",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_cooking",
+					"Map": "effect_cooking",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_crusher_impact1",
+					"Map": "effect_crusher_impact1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_crusher_impact2",
+					"Map": "effect_crusher_impact2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_crusher_impact3",
+					"Map": "effect_crusher_impact3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_deepbell",
+					"Map": "effect_deepbell",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_echochamber",
+					"Map": "effect_echochamber",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_echochamber2",
+					"Map": "effect_echochamber2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_embers",
+					"Map": "effect_embers",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_extinguish1",
+					"Map": "effect_extinguish1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_extinguish2",
+					"Map": "effect_extinguish2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_fuse",
+					"Map": "effect_fuse",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_gearbox_turn",
+					"Map": "effect_gearbox_turn",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_gears",
+					"Map": "effect_gears",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_gliding",
+					"Map": "effect_gliding",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_largeexplosion",
+					"Map": "effect_largeexplosion",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_latch",
+					"Map": "effect_latch",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_longfuse",
+					"Map": "effect_longfuse",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_mediumexplosion",
+					"Map": "effect_mediumexplosion",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_metalgrinding",
+					"Map": "effect_metalgrinding",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_moltenmetal",
+					"Map": "effect_moltenmetal",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_noise",
+					"Map": "effect_noise",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_planetary_gears",
+					"Map": "effect_planetary_gears",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_poleswing",
+					"Map": "effect_poleswing",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_portal",
+					"Map": "effect_portal",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_receptionbell",
+					"Map": "effect_receptionbell",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_rift",
+					"Map": "effect_rift",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_rockslide",
+					"Map": "effect_rockslide",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_roperip",
+					"Map": "effect_roperip",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_ropestretch",
+					"Map": "effect_ropestretch",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_smallexplosion",
+					"Map": "effect_smallexplosion",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_snowshovelling",
+					"Map": "effect_snowshovelling",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_squish1",
+					"Map": "effect_squish1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_squish2",
+					"Map": "effect_squish2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_stonecrush",
+					"Map": "effect_stonecrush",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_swoosh",
+					"Map": "effect_swoosh",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_tempstab_drain",
+					"Map": "effect_tempstab_drain",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_tempstab_low",
+					"Map": "effect_tempstab_low",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_tempstab_verylow",
+					"Map": "effect_tempstab_verylow",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_timeswitch",
+					"Map": "effect_timeswitch",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_toolbreak",
+					"Map": "effect_toolbreak",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_translocate_active",
+					"Map": "effect_translocate_active",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_translocate_breakdimension",
+					"Map": "effect_translocate_breakdimension",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_translocate_idle",
+					"Map": "effect_translocate_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_treefell",
+					"Map": "effect_treefell",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_water_fill",
+					"Map": "effect_water_fill",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_water_fill1",
+					"Map": "effect_water_fill1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_water_fill2",
+					"Map": "effect_water_fill2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_water_pour",
+					"Map": "effect_water_pour",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_watering",
+					"Map": "effect_watering",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_watering_loop",
+					"Map": "effect_watering_loop",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_woodgrind",
+					"Map": "effect_woodgrind",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_woodswitch",
+					"Map": "effect_woodswitch",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_wormgrunting",
+					"Map": "effect_wormgrunting",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_writing",
+					"Map": "effect_writing",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_creek",
+					"Map": "environment_creek",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_drip1",
+					"Map": "environment_drip1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_drip2",
+					"Map": "environment_drip2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_drip3",
+					"Map": "environment_drip3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_fire",
+					"Map": "environment_fire",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_fireplace",
+					"Map": "environment_fireplace",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_largesplash1",
+					"Map": "environment_largesplash1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_largesplash2",
+					"Map": "environment_largesplash2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_lava",
+					"Map": "environment_lava",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_mediumsplash",
+					"Map": "environment_mediumsplash",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_rainwindow",
+					"Map": "environment_rainwindow",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_rapids",
+					"Map": "environment_rapids",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_smallsplash",
+					"Map": "environment_smallsplash",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_underwater",
+					"Map": "environment_underwater",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_waterfall",
+					"Map": "environment_waterfall",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_waterwaves",
+					"Map": "environment_waterwaves",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-environment_wind",
+					"Map": "environment_wind",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_bookclose1",
+					"Map": "held_bookclose1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_bookclose2",
+					"Map": "held_bookclose2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_bookclose3",
+					"Map": "held_bookclose3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_bookturn1",
+					"Map": "held_bookturn1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_bookturn2",
+					"Map": "held_bookturn2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_bookturn3",
+					"Map": "held_bookturn3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_shieldblock_metal_heavy",
+					"Map": "held_shieldblock_metal_heavy",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_shieldblock_metal_light",
+					"Map": "held_shieldblock_metal_light",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_shieldblock_wood_heavy",
+					"Map": "held_shieldblock_wood_heavy",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_shieldblock_wood_light",
+					"Map": "held_shieldblock_wood_light",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_torch_attack",
+					"Map": "held_torch_attack",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_torch_equip",
+					"Map": "held_torch_equip",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_torch_idle",
+					"Map": "held_torch_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-held_torch_unequip",
+					"Map": "held_torch_unequip",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-instrument_elkcall",
+					"Map": "instrument_elkcall",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-menubutton",
+					"Map": "menubutton",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-menubutton_down",
+					"Map": "menubutton_down",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-menubutton_press",
+					"Map": "menubutton_press",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-menubutton_up",
+					"Map": "menubutton_up",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-menubutton_wood",
+					"Map": "menubutton_wood",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-moltenmetal",
+					"Map": "moltenmetal",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_adventuring",
+					"Map": "music_adventuring",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_arcticwinds",
+					"Map": "music_arcticwinds",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_building",
+					"Map": "music_building",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_chilly_village",
+					"Map": "music_chilly_village",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_creating",
+					"Map": "music_creating",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_daylight",
+					"Map": "music_daylight",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_aquatic_drone_1a",
+					"Map": "music_deepunderground_aquatic_drone_1a",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_aquatic_drone_1b",
+					"Map": "music_deepunderground_aquatic_drone_1b",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_aquatic_drone_2a",
+					"Map": "music_deepunderground_aquatic_drone_2a",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_aquatic_drone_2b",
+					"Map": "music_deepunderground_aquatic_drone_2b",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bell_piano_1",
+					"Map": "music_deepunderground_bell_piano_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bell_piano_2",
+					"Map": "music_deepunderground_bell_piano_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bell_piano_3",
+					"Map": "music_deepunderground_bell_piano_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bell_piano_4",
+					"Map": "music_deepunderground_bell_piano_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bell_piano_5",
+					"Map": "music_deepunderground_bell_piano_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bell_piano_6",
+					"Map": "music_deepunderground_bell_piano_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bell_piano_7",
+					"Map": "music_deepunderground_bell_piano_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bell_piano_8",
+					"Map": "music_deepunderground_bell_piano_8",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bells_1",
+					"Map": "music_deepunderground_bells_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_bells_2",
+					"Map": "music_deepunderground_bells_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_deep_drone_1",
+					"Map": "music_deepunderground_deep_drone_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_deep_drone_2",
+					"Map": "music_deepunderground_deep_drone_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_deep_drone_3",
+					"Map": "music_deepunderground_deep_drone_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_metal_bass_1",
+					"Map": "music_deepunderground_metal_bass_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_metal_bass_2",
+					"Map": "music_deepunderground_metal_bass_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_metal_bass_3",
+					"Map": "music_deepunderground_metal_bass_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_piece_1",
+					"Map": "music_deepunderground_piece_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_piece_2",
+					"Map": "music_deepunderground_piece_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_piece_3",
+					"Map": "music_deepunderground_piece_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_piece_4",
+					"Map": "music_deepunderground_piece_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_piece_5",
+					"Map": "music_deepunderground_piece_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_piece_6",
+					"Map": "music_deepunderground_piece_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_piece_7",
+					"Map": "music_deepunderground_piece_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_piece_8",
+					"Map": "music_deepunderground_piece_8",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_piece_9",
+					"Map": "music_deepunderground_piece_9",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_ticking_1",
+					"Map": "music_deepunderground_ticking_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_ticking_2",
+					"Map": "music_deepunderground_ticking_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_ticking_3",
+					"Map": "music_deepunderground_ticking_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_deepunderground_ticking_4",
+					"Map": "music_deepunderground_ticking_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_devastation_baselayer",
+					"Map": "music_devastation_baselayer",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_devastation_bellsandrust",
+					"Map": "music_devastation_bellsandrust",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_devastation_erelfight",
+					"Map": "music_devastation_erelfight",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_devastation_erelharrass",
+					"Map": "music_devastation_erelharrass",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_fall",
+					"Map": "music_fall",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_fall_o__croft",
+					"Map": "music_fall_o__croft",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_groove",
+					"Map": "music_groove",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_hallowcroft",
+					"Map": "music_hallowcroft",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_heartbeat_create",
+					"Map": "music_heartbeat_create",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_heartbeat_survive",
+					"Map": "music_heartbeat_survive",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_latvia",
+					"Map": "music_latvia",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_midnight",
+					"Map": "music_midnight",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_mirror",
+					"Map": "music_mirror",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_nadiya_fall",
+					"Map": "music_nadiya_fall",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_nadiya_spring",
+					"Map": "music_nadiya_spring",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_nadiya_summer",
+					"Map": "music_nadiya_summer",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_nadiya_winter",
+					"Map": "music_nadiya_winter",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_night_to_day",
+					"Map": "music_night_to_day",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_nostalgic",
+					"Map": "music_nostalgic",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_peaceful_village",
+					"Map": "music_peaceful_village",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_radianceandrust",
+					"Map": "music_radianceandrust",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_roots",
+					"Map": "music_roots",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_safety_of_a_warm_fire",
+					"Map": "music_safety_of_a_warm_fire",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_setting_sun",
+					"Map": "music_setting_sun",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_spring",
+					"Map": "music_spring",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_substitute_epitaph",
+					"Map": "music_substitute_epitaph",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_summer_day",
+					"Map": "music_summer_day",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_summer_stroll",
+					"Map": "music_summer_stroll",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_sunny_village",
+					"Map": "music_sunny_village",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_sunny_village_create",
+					"Map": "music_sunny_village_create",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_sunny_village_survive",
+					"Map": "music_sunny_village_survive",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_the_lazaret",
+					"Map": "music_the_lazaret",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_theresonancearchives_barren",
+					"Map": "music_theresonancearchives_barren",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_theresonancearchives_eidolon",
+					"Map": "music_theresonancearchives_eidolon",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_theresonancearchives_library",
+					"Map": "music_theresonancearchives_library",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_through_the_grass_create",
+					"Map": "music_through_the_grass_create",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_through_the_grass_survive",
+					"Map": "music_through_the_grass_survive",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_to_dawn",
+					"Map": "music_to_dawn",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_tobias",
+					"Map": "music_tobias",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_tuningcylinder_culturedtavern",
+					"Map": "music_tuningcylinder_culturedtavern",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_tuningcylinder_quirkytavern",
+					"Map": "music_tuningcylinder_quirkytavern",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_tuningcylinder_the_seraphs",
+					"Map": "music_tuningcylinder_the_seraphs",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_tuningcylinder_theinvention",
+					"Map": "music_tuningcylinder_theinvention",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_vintagestory",
+					"Map": "music_vintagestory",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_windy_village",
+					"Map": "music_windy_village",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-music_winter",
+					"Map": "music_winter",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_build",
+					"Map": "player_build",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_buildhigh",
+					"Map": "player_buildhigh",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_chalkdraw1",
+					"Map": "player_chalkdraw1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_chalkdraw2",
+					"Map": "player_chalkdraw2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_chalkdraw3",
+					"Map": "player_chalkdraw3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_clayform",
+					"Map": "player_clayform",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_clayformhi",
+					"Map": "player_clayformhi",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_clothrepair",
+					"Map": "player_clothrepair",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_coin1",
+					"Map": "player_coin1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_coin2",
+					"Map": "player_coin2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_coin3",
+					"Map": "player_coin3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_coin4",
+					"Map": "player_coin4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_coin5",
+					"Map": "player_coin5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_coin6",
+					"Map": "player_coin6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_collect1",
+					"Map": "player_collect1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_collect2",
+					"Map": "player_collect2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_collect3",
+					"Map": "player_collect3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_death1",
+					"Map": "player_death1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_death2",
+					"Map": "player_death2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_destruct",
+					"Map": "player_destruct",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_drink1",
+					"Map": "player_drink1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_drink2",
+					"Map": "player_drink2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_eat",
+					"Map": "player_eat",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_eat_crunchy",
+					"Map": "player_eat_crunchy",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_gluerepair1",
+					"Map": "player_gluerepair1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_gluerepair2",
+					"Map": "player_gluerepair2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_gluerepair3",
+					"Map": "player_gluerepair3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_gluerepair4",
+					"Map": "player_gluerepair4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_hackingspearhit",
+					"Map": "player_hackingspearhit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_handdrill",
+					"Map": "player_handdrill",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_hurt1",
+					"Map": "player_hurt1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_hurt2",
+					"Map": "player_hurt2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_hurt3",
+					"Map": "player_hurt3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_hurt4",
+					"Map": "player_hurt4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_jump",
+					"Map": "player_jump",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_knap1",
+					"Map": "player_knap1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_knap2",
+					"Map": "player_knap2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_messycraft",
+					"Map": "player_messycraft",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_panning",
+					"Map": "player_panning",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_poultice",
+					"Map": "player_poultice",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_poultice_applied",
+					"Map": "player_poultice_applied",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_projectilehit",
+					"Map": "player_projectilehit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_quickthrow",
+					"Map": "player_quickthrow",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_scrape",
+					"Map": "player_scrape",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_seal",
+					"Map": "player_seal",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_slap",
+					"Map": "player_slap",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_squeezehoneycomb",
+					"Map": "player_squeezehoneycomb",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_stab",
+					"Map": "player_stab",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_strike1",
+					"Map": "player_strike1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_strike2",
+					"Map": "player_strike2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_swim",
+					"Map": "player_swim",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_throw",
+					"Map": "player_throw",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_wetclothsqueeze",
+					"Map": "player_wetclothsqueeze",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-pourmetal",
+					"Map": "pourmetal",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-raft_idle",
+					"Map": "raft_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-raft_moving",
+					"Map": "raft_moving",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-sizzle",
+					"Map": "sizzle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-stone_switch",
+					"Map": "stone_switch",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-thud",
+					"Map": "thud",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tick",
+					"Map": "tick",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-toggleswitch",
+					"Map": "toggleswitch",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_breakreinforced",
+					"Map": "tool_breakreinforced",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_boneflute1",
+					"Map": "tool_groundcrafting_boneflute1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_boneflute2",
+					"Map": "tool_groundcrafting_boneflute2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_boneflute3",
+					"Map": "tool_groundcrafting_boneflute3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_boneflute4",
+					"Map": "tool_groundcrafting_boneflute4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_hidecut1",
+					"Map": "tool_groundcrafting_hidecut1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_hidecut2",
+					"Map": "tool_groundcrafting_hidecut2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_hidecut3",
+					"Map": "tool_groundcrafting_hidecut3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_hidescrape1",
+					"Map": "tool_groundcrafting_hidescrape1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_hidescrape2",
+					"Map": "tool_groundcrafting_hidescrape2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_hidescrape3",
+					"Map": "tool_groundcrafting_hidescrape3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_hidescrape4",
+					"Map": "tool_groundcrafting_hidescrape4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_hidescrape5",
+					"Map": "tool_groundcrafting_hidescrape5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_saw1",
+					"Map": "tool_groundcrafting_saw1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_saw2",
+					"Map": "tool_groundcrafting_saw2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_saw3",
+					"Map": "tool_groundcrafting_saw3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_saw4",
+					"Map": "tool_groundcrafting_saw4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_shears1",
+					"Map": "tool_groundcrafting_shears1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_shears2",
+					"Map": "tool_groundcrafting_shears2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_shears3",
+					"Map": "tool_groundcrafting_shears3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_groundcrafting_shears4",
+					"Map": "tool_groundcrafting_shears4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_padlock",
+					"Map": "tool_padlock",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_reinforce",
+					"Map": "tool_reinforce",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_scythe1",
+					"Map": "tool_scythe1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_scythe2",
+					"Map": "tool_scythe2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_slash",
+					"Map": "tool_slash",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tool_sling1",
+					"Map": "tool_sling1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-torch_ignite",
+					"Map": "torch_ignite",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-tutorialstepsuccess",
+					"Map": "tutorialstepsuccess",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_accordion",
+					"Map": "voice_accordion",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_accordion_1",
+					"Map": "voice_accordion_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_accordion_2",
+					"Map": "voice_accordion_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_accordion_3",
+					"Map": "voice_accordion_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_accordion_4",
+					"Map": "voice_accordion_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_accordion_5",
+					"Map": "voice_accordion_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_accordion_6",
+					"Map": "voice_accordion_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_accordion_7",
+					"Map": "voice_accordion_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_altoflute",
+					"Map": "voice_altoflute",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_altoflute_1",
+					"Map": "voice_altoflute_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_altoflute_2",
+					"Map": "voice_altoflute_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_altoflute_3",
+					"Map": "voice_altoflute_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_altoflute_4",
+					"Map": "voice_altoflute_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_altoflute_5",
+					"Map": "voice_altoflute_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_altoflute_6",
+					"Map": "voice_altoflute_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_altoflute_7",
+					"Map": "voice_altoflute_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_clarinet",
+					"Map": "voice_clarinet",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_clarinet_1",
+					"Map": "voice_clarinet_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_clarinet_2",
+					"Map": "voice_clarinet_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_clarinet_3",
+					"Map": "voice_clarinet_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_clarinet_4",
+					"Map": "voice_clarinet_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_clarinet_5",
+					"Map": "voice_clarinet_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_clarinet_6",
+					"Map": "voice_clarinet_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_clarinet_7",
+					"Map": "voice_clarinet_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_duduk_1",
+					"Map": "voice_duduk_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_duduk_2",
+					"Map": "voice_duduk_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_duduk_3",
+					"Map": "voice_duduk_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_duduk_4",
+					"Map": "voice_duduk_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_duduk_5",
+					"Map": "voice_duduk_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_duduk_6",
+					"Map": "voice_duduk_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_duduk_7",
+					"Map": "voice_duduk_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harmonica",
+					"Map": "voice_harmonica",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harmonica_1",
+					"Map": "voice_harmonica_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harmonica_2",
+					"Map": "voice_harmonica_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harmonica_3",
+					"Map": "voice_harmonica_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harmonica_4",
+					"Map": "voice_harmonica_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harmonica_5",
+					"Map": "voice_harmonica_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harmonica_6",
+					"Map": "voice_harmonica_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harmonica_7",
+					"Map": "voice_harmonica_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harp_1",
+					"Map": "voice_harp_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harp_2",
+					"Map": "voice_harp_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harp_3",
+					"Map": "voice_harp_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harp_4",
+					"Map": "voice_harp_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harp_5",
+					"Map": "voice_harp_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harp_6",
+					"Map": "voice_harp_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harp_7",
+					"Map": "voice_harp_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harpsichord_1",
+					"Map": "voice_harpsichord_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harpsichord_2",
+					"Map": "voice_harpsichord_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harpsichord_3",
+					"Map": "voice_harpsichord_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harpsichord_4",
+					"Map": "voice_harpsichord_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harpsichord_5",
+					"Map": "voice_harpsichord_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harpsichord_6",
+					"Map": "voice_harpsichord_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_harpsichord_7",
+					"Map": "voice_harpsichord_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_oboe",
+					"Map": "voice_oboe",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_oboe_1",
+					"Map": "voice_oboe_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_oboe_2",
+					"Map": "voice_oboe_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_oboe_3",
+					"Map": "voice_oboe_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_oboe_4",
+					"Map": "voice_oboe_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_oboe_5",
+					"Map": "voice_oboe_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_oboe_6",
+					"Map": "voice_oboe_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_oboe_7",
+					"Map": "voice_oboe_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_ocarina_1",
+					"Map": "voice_ocarina_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_ocarina_2",
+					"Map": "voice_ocarina_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_ocarina_3",
+					"Map": "voice_ocarina_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_ocarina_4",
+					"Map": "voice_ocarina_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_ocarina_5",
+					"Map": "voice_ocarina_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_ocarina_6",
+					"Map": "voice_ocarina_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_ocarina_7",
+					"Map": "voice_ocarina_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_sax",
+					"Map": "voice_sax",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_sax_1",
+					"Map": "voice_sax_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_sax_2",
+					"Map": "voice_sax_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_sax_3",
+					"Map": "voice_sax_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_sax_4",
+					"Map": "voice_sax_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_sax_5",
+					"Map": "voice_sax_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_sax_6",
+					"Map": "voice_sax_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_sax_7",
+					"Map": "voice_sax_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_saxophone",
+					"Map": "voice_saxophone",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_trumpet",
+					"Map": "voice_trumpet",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_trumpet_1",
+					"Map": "voice_trumpet_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_trumpet_2",
+					"Map": "voice_trumpet_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_trumpet_3",
+					"Map": "voice_trumpet_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_trumpet_4",
+					"Map": "voice_trumpet_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_trumpet_5",
+					"Map": "voice_trumpet_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_trumpet_6",
+					"Map": "voice_trumpet_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_trumpet_7",
+					"Map": "voice_trumpet_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_tuba",
+					"Map": "voice_tuba",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_tuba_1",
+					"Map": "voice_tuba_1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_tuba_2",
+					"Map": "voice_tuba_2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_tuba_3",
+					"Map": "voice_tuba_3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_tuba_4",
+					"Map": "voice_tuba_4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_tuba_5",
+					"Map": "voice_tuba_5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_tuba_6",
+					"Map": "voice_tuba_6",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-voice_tuba_7",
+					"Map": "voice_tuba_7",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_cloth",
+					"Map": "walk_cloth",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_deepsnow1",
+					"Map": "walk_deepsnow1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_deepsnow2",
+					"Map": "walk_deepsnow2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_deepsnow3",
+					"Map": "walk_deepsnow3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_default1",
+					"Map": "walk_default1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_default2",
+					"Map": "walk_default2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_default3",
+					"Map": "walk_default3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_default4",
+					"Map": "walk_default4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_glass1",
+					"Map": "walk_glass1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_glass2",
+					"Map": "walk_glass2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_glass3",
+					"Map": "walk_glass3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_grass1",
+					"Map": "walk_grass1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_grass2",
+					"Map": "walk_grass2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_grass3",
+					"Map": "walk_grass3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_gravel1",
+					"Map": "walk_gravel1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_gravel2",
+					"Map": "walk_gravel2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_gravel3",
+					"Map": "walk_gravel3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_ice1",
+					"Map": "walk_ice1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_ice2",
+					"Map": "walk_ice2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_ice3",
+					"Map": "walk_ice3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_ice4",
+					"Map": "walk_ice4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_inside_leafy_bushrustle1",
+					"Map": "walk_inside_leafy_bushrustle1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_inside_leafy_bushrustle2",
+					"Map": "walk_inside_leafy_bushrustle2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_inside_leafy_bushrustle3",
+					"Map": "walk_inside_leafy_bushrustle3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_inside_leafy_bushrustle4",
+					"Map": "walk_inside_leafy_bushrustle4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_inside_leafy_bushrustle5",
+					"Map": "walk_inside_leafy_bushrustle5",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_lava",
+					"Map": "walk_lava",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_sand1",
+					"Map": "walk_sand1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_sand2",
+					"Map": "walk_sand2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_sand3",
+					"Map": "walk_sand3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_sludge1",
+					"Map": "walk_sludge1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_sludge2",
+					"Map": "walk_sludge2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_sludge3",
+					"Map": "walk_sludge3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_snow1",
+					"Map": "walk_snow1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_snow2",
+					"Map": "walk_snow2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_snow3",
+					"Map": "walk_snow3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_stone1",
+					"Map": "walk_stone1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_stone2",
+					"Map": "walk_stone2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_stone3",
+					"Map": "walk_stone3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_water1",
+					"Map": "walk_water1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_water2",
+					"Map": "walk_water2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_wood1",
+					"Map": "walk_wood1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_wood2",
+					"Map": "walk_wood2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_wood3",
+					"Map": "walk_wood3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_brigandine1",
+					"Map": "wearable_brigandine1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_brigandine2",
+					"Map": "wearable_brigandine2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_chain1",
+					"Map": "wearable_chain1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_chain2",
+					"Map": "wearable_chain2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_leather1",
+					"Map": "wearable_leather1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_leather2",
+					"Map": "wearable_leather2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_leather3",
+					"Map": "wearable_leather3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_plate1",
+					"Map": "wearable_plate1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_plate2",
+					"Map": "wearable_plate2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_plate3",
+					"Map": "wearable_plate3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_plate4",
+					"Map": "wearable_plate4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_scale1",
+					"Map": "wearable_scale1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-wearable_scale2",
+					"Map": "wearable_scale2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_lightning_distant",
+					"Map": "weather_lightning_distant",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_lightning_near",
+					"Map": "weather_lightning_near",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_lightning_nodistance",
+					"Map": "weather_lightning_nodistance",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_lightning_verynear",
+					"Map": "weather_lightning_verynear",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_lowgrumble",
+					"Map": "weather_lowgrumble",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_tracks_hail",
+					"Map": "weather_tracks_hail",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_tracks_lowtremble",
+					"Map": "weather_tracks_lowtremble",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_tracks_rain_leafless",
+					"Map": "weather_tracks_rain_leafless",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_tracks_rain_leafy",
+					"Map": "weather_tracks_rain_leafy",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_tracks_verylowtremble",
+					"Map": "weather_tracks_verylowtremble",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_wind_leafless",
+					"Map": "weather_wind_leafless",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-weather_wind_leafy",
+					"Map": "weather_wind_leafy",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				}
+			]
+		}
+	]
+}

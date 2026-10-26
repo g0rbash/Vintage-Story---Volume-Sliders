@@ -1,0 +1,14 @@
+{
+	"type": "code",
+	"modid": "volumesliders",
+	"name": "Volume Sliders",
+	"description": "Gives every sound in the game its own 0-100 volume slider, with search. Reachable from Integrated Mod Manager or with Ctrl+Shift+V.",
+	"version": "0.1.0",
+	"authors": [ "G0rbash" ],
+	"side": "Client",
+	"requiredOnClient": true,
+	"requiredOnServer": false,
+	"dependencies": {
+		"game": "1.22.0"
+	}
+}

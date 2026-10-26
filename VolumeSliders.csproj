@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>volumesliders</AssemblyName>
+    <RootNamespace>VolumeSliders</RootNamespace>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <OutputPath>bin\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VintageStoryDir Condition="'$(VINTAGE_STORY)' != ''">$(VINTAGE_STORY)</VintageStoryDir>
+    <VintageStoryDir Condition="'$(VintageStoryDir)' == ''">$(APPDATA)\Vintagestory</VintageStoryDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="VintagestoryAPI"><HintPath>$(VintageStoryDir)\VintagestoryAPI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="VintagestoryLib"><HintPath>$(VintageStoryDir)\VintagestoryLib.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(VintageStoryDir)\Lib\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(VintageStoryDir)\Lib\Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="cairo-sharp"><HintPath>$(VintageStoryDir)\Lib\cairo-sharp.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+</Project>
