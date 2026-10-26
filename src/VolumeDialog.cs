@@ -99,8 +99,9 @@ namespace VolumeSliders
             {
                 double y = listTop + i * RowHeight;
                 int row = i;
-                comp.AddDynamicText("", CairoFont.WhiteSmallText(), ElementBounds.Fixed(8, y + 7, 20, 24), "caret" + i)
-                    .AddDynamicText("", CairoFont.WhiteSmallText(), ElementBounds.Fixed(28, y + 7, NameWidth - 30, 24), "name" + i)
+                // The caret and the name are clickable text: the composer calls their click handler directly.
+                comp.AddInteractiveElement(new ClickableText(capi, CairoFont.WhiteSmallText(), ElementBounds.Fixed(8, y + 5, 20, 28), () => ToggleRow(row)), "caret" + i)
+                    .AddInteractiveElement(new ClickableText(capi, CairoFont.WhiteSmallText(), ElementBounds.Fixed(28, y + 5, NameWidth - 30, 28), () => ToggleRow(row)), "name" + i)
                     .AddSlider(v => OnSliderChanged(row, v), ElementBounds.Fixed(375, y + 4, 215, 26), "slider" + i)
                     .AddSmallButton("▶", () => PlayPreview(row), ElementBounds.Fixed(600, y + 3, 40, 28), EnumButtonStyle.Normal, "play" + i);
             }
@@ -245,30 +246,18 @@ namespace VolumeSliders
             return true;
         }
 
-        public override void OnMouseDown(MouseEvent args)
+        /// <summary>Opens or closes the group shown on a row; rows that are single sounds ignore the click.</summary>
+        void ToggleRow(int row)
         {
-            // The base class marks every click inside the window as handled, so a group row has to be checked first.
-            if (!args.Handled && TryToggleGroup(args)) return;
-            base.OnMouseDown(args);
-        }
-
-        bool TryToggleGroup(MouseEvent args)
-        {
-            if (listBounds == null || args.Button != EnumMouseButton.Left || !IsOpened()) return false;
-            if (!listBounds.PointInside(args.X, args.Y)) return false;
-
-            double localX = args.X - listBounds.absX, localY = args.Y - listBounds.absY;
-            if (localX >= GuiElement.scaled(NameWidth)) return false;   // the slider and play button handle their own clicks
-
-            int idx = offset + (int)(localY / GuiElement.scaled(RowHeight));
-            if (idx < 0 || idx >= rows.Count || !rows[idx].Header) return false;
+            int idx = offset + row;
+            capi.Logger.Debug("[volumesliders] clicked row {0} (list index {1} of {2}){3}", row, idx, rows.Count,
+                idx < rows.Count ? ": " + rows[idx].Node.Name + (rows[idx].Header ? " (group)" : "") : "");
+            if (idx < 0 || idx >= rows.Count || !rows[idx].Header) return;
 
             string key = rows[idx].Node.ConfigKey;
             if (!openGroups.Remove(key)) openGroups.Add(key);
             BuildRows();
             FillRows();
-            args.Handled = true;
-            return true;
         }
 
         public override void OnMouseWheel(MouseWheelEventArgs args)
@@ -302,6 +291,23 @@ namespace VolumeSliders
         {
             base.OnGuiClosed();
             VolumeConfig.Save();
+        }
+    }
+
+    /// <summary>Text that can be changed with SetNewText and runs a callback when clicked.</summary>
+    public class ClickableText : GuiElementDynamicText
+    {
+        readonly Action onClick;
+
+        public ClickableText(ICoreClientAPI capi, CairoFont font, ElementBounds bounds, Action onClick) : base(capi, "", font, bounds)
+        {
+            this.onClick = onClick;
+        }
+
+        public override void OnMouseDownOnElement(ICoreClientAPI api, MouseEvent args)
+        {
+            base.OnMouseDownOnElement(api, args);
+            if (args.Button == EnumMouseButton.Left) onClick();
         }
     }
 }
