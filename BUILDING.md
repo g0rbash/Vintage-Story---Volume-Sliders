@@ -17,5 +17,5 @@ Then copy the zip from `dist/` into your Mods folder.
 | Script | What it does |
 |---|---|
 | `tools/generate.py` | Writes `major.json` and `lang/en.json` from the installed game's sounds. |
-| `tools/make_description.py` | Builds `docs/moddb-description.html` (screenshots in a Mod DB spoiler), the same panel as `docs/images/description.png` (screenshots inline), and `README.md`. The screenshots live in `docs/images/screenshots/`. Run it with `python -I tools/make_description.py .` |
+| `tools/make_description.py` | Builds `docs/moddb-description.html` (a plain description for the Mod DB's description box, screenshots in the site's spoiler), `docs/moddb-entry.md` (what goes in each field of the Mod DB form), the same panel as `docs/images/description.png` (screenshots inline), and `README.md`. The screenshots live in `docs/images/screenshots/`. Run it with `python -I tools/make_description.py .` |
 | `tools/make_thumbnail.py` | Makes the Mod DB thumbnail from a real screenshot of the sliders (`docs/images/thumbnail-source.png`): square crop, hard-edged upscale, colour grade (crushed shadows, S-curve, saturation, vignette), and "Sliders" in Almendra on a plank. Run it with `python -I tools/make_thumbnail.py docs/images/thumbnail-source.png docs/images/thumbnail.png`. |
