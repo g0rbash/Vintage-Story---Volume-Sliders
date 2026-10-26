@@ -1,32 +1,22 @@
-"""Build the mod description once and publish it twice, identical in style and content:
+"""Build the mod description once and publish it three ways, from the same text:
 
-  docs/moddb-description.html   a plain description for the Mod DB's description box: paragraphs, headings, lists, and
-                                the site's own spoiler for the screenshots (no layout of its own)
+  docs/moddb-description.html   the Mod DB's description box (paste it in the editor's source-code view). Paragraphs,
+                                headings, lists, and the site's own spoiler for the screenshots; no layout of its own.
   docs/moddb-entry.md           the other fields of the Mod DB form, and what to put in each
-  docs/images/description.png   that same panel rendered by Microsoft Edge (GitHub strips
-                                inline styles, so the README shows the rendered panel)
-  README.md                     the image, a plain-text copy of the same content, real screenshots
-                                from docs/images/screenshots/ (if any), and links
-
-Same look as the American Frontiersman: Western Wear description. Colours follow the Vintage Story
-handbook (GuiStyle): #403529 dialog panel, #e9ddce / #edce98 text, #845c43 wood, #5a4530 dark brown.
+  README.md                     the same description for GitHub, with the screenshots in a collapsed section
 
 The sound groups and slider counts are read from assets/volumesliders/config/major.json and
 lang/en.json, so run tools/generate.py first (build.py does).
 
 usage: python -I make_description.py <repo root>
 """
-import base64
-import glob
 import json
 import os
 import re
 import struct
-import subprocess
 import sys
 
 ROOT = sys.argv[1]
-EDGE = r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
 
 VERSION = json.load(open(os.path.join(ROOT, 'modinfo.json'), encoding='utf-8'))['version']
 GAME = '1.22.7'
@@ -133,133 +123,38 @@ sound_rows = []
 for label, examples in GROUPS:
     n = counts.get(label, 0)
     if n:
-        sound_rows.append((f'<b>{label.replace("&", "&amp;")}</b>', examples, str(n)))
+        sound_rows.append((f'<b>{label}</b>', examples, str(n)))
 sound_rows.insert(0, ('<b>Helve Hammer</b>', HELVE, str(combined_total)))
 sound_rows.insert(9, ('<b>Mobs</b>', MOBS, str(creature_total)))
 sound_rows.append(('<b>Mods</b>', MODS, 'Varies'))
 SOUNDS_INTRO = (f'The window opens on these sounds, the ones people most often want quieter, and can show all {total} of '
                 "the game's own, plus the sounds of any mods you have.")
 
-# ---------------------------------------------------------------- styles
-SERIF = "font-family: Lora, Georgia, 'Times New Roman', serif;"
-SANS = "font-family: Montserrat, Verdana, sans-serif;"
-INK = '#403529'
-ACCENT = '#8a5426'
-P = 'margin: 0 0 12px 0;'
-TD = 'border: 1px solid #c9a66b; padding: 6px;'
-ROW = ['#efe0b8', '#f6ebcd']
-
-
-def h(title):
-    return (f'<p style="margin: 20px 0 6px 0; color: {ACCENT}; {SERIF} font-size: 18px; font-weight: bold; '
-            f'letter-spacing: 1px;">&#10022;&nbsp; {title.upper()}</p>\n')
-
-
-def table(headers, rows):
-    out = [f'<table style="border-collapse: collapse; margin: 0 0 14px 0; width: 100%; {SANS} font-size: 13px; '
-           f'color: {INK};"><tbody>',
-           '<tr style="background: #e3cc94;">' + ''.join(f'<td style="{TD}"><b>{c}</b></td>' for c in headers) + '</tr>']
-    for i, r in enumerate(rows):
-        out.append(f'<tr style="background: {ROW[i % 2]};">' + ''.join(f'<td style="{TD}">{c}</td>' for c in r) + '</tr>')
-    return '\n'.join(out) + '</tbody></table>\n'
-
-
-def ul(items, tag='ul'):
-    return (f'<{tag} style="margin: 0 0 14px 22px; padding: 0;">'
-            + ''.join(f'<li style="margin: 0 0 4px 0;">{i}</li>' for i in items) + f'</{tag}>\n')
-
-
-def frame(color, pad, inner):
-    return (f'<table style="border-collapse: collapse; width: 100%;"><tbody><tr>'
-            f'<td style="background: {color}; padding: {pad}px;">{inner}</td></tr></tbody></table>')
-
-
-# Real in-game screenshots (docs/images/screenshots). The README image shows them inline in their sections; the Mod DB
-# page keeps them in one collapsed "spoiler" block so they don't clutter the description.
+# Real in-game screenshots (docs/images/screenshots).
 SHOTS = {
     'window': ('window.png', 'The window, opened with Ctrl+Shift+V. A group marked with > opens to show its sounds.'),
     'mods': ('mods-section.png', 'Sounds from other mods are listed under Mods, one group per mod.'),
 }
-# The Mod DB can't read local files, so the spoiler links to the repository's copies. These work once the repository
-# is public; until then, upload the screenshots to the mod page and swap the addresses.
+# The Mod DB can't read local files, so its spoiler links to the repository's copies. These work once the repository is
+# public; until then, upload the screenshots to the mod page and swap the addresses.
 RAW = 'https://raw.githubusercontent.com/g0rbash/Vintage-Story---Volume-Sliders/main/docs/images/screenshots/'
+REPO = 'https://github.com/g0rbash/Vintage-Story---Volume-Sliders'
+SUMMARY = 'A searchable list of volume sliders for every sound in the game.'
+assert len(SUMMARY) <= 100, 'the Mod DB summary is limited to 100 characters'
 
 
-def data_uri(key):
+def shot_size(key, width=700):
     with open(os.path.join(ROOT, 'docs', 'images', 'screenshots', SHOTS[key][0]), 'rb') as fh:
-        return 'data:image/png;base64,' + base64.b64encode(fh.read()).decode()
+        px_w, px_h = struct.unpack('>II', fh.read(24)[16:24])
+    return width, round(px_h * width / px_w)
 
 
-def figure(key, src):
-    caption = SHOTS[key][1].replace('>', '&gt;')
-    return (f'<p style="margin: 4px 0 14px 0; text-align: center;"><img src="{src}" width="560" alt="{caption}"><br>'
-            f'<span style="font-size: 12px; color: #6e5a44;"><i>{caption}</i></span></p>\n')
+def sound_line(entry):
+    group, includes, count = entry
+    return f'{group}{"" if count == "Varies" else f" ({count})"}: {includes}'
 
 
-def moddb_spoiler(src_for):
-    """The Mod DB's own spoiler markup (div.spoiler > div.spoiler-toggle + div.spoiler-text; the site styles it), the
-    same as the "Features" spoiler under the intro on mods.vintagestory.at/deciduoustrees."""
-    parts = []
-    for key in ('window', 'mods'):
-        with open(os.path.join(ROOT, 'docs', 'images', 'screenshots', SHOTS[key][0]), 'rb') as fh:
-            px_w, px_h = struct.unpack('>II', fh.read(24)[16:24])
-        width = 700
-        caption = SHOTS[key][1].replace('>', '&gt;')
-        parts.append(f'<p><img src="{src_for(key)}" width="{width}" height="{round(px_h * width / px_w)}" alt="{caption}"></p>\n'
-                     f'<p><i>{caption}</i></p>\n')
-    return ('<div class="spoiler">\n<div class="spoiler-toggle">Screenshots</div>\n<div class="spoiler-text">\n'
-            + ''.join(parts) + '</div>\n</div>\n')
-
-
-def make_body(src_for):
-    """The sections of the README image (the panel on GitHub). src_for(key) gives each screenshot's address."""
-    inline = lambda k: figure(k, src_for(k))
-    return [
-        f'<p style="{P} font-size: 12px; color: #6e5a44;"><i>{AI_NOTE}</i></p>\n',
-        f'<p style="{P}">{INTRO}</p>\n',
-        h('What You Get'),
-        ul(FEATURES),
-        h('The Sounds'),
-        f'<p style="{P}">{SOUNDS_INTRO}</p>\n',
-        table(['Group', 'Includes', 'Sounds'], sound_rows),
-        inline('mods'),
-        h('Using It'),
-        ul(USING),
-        inline('window'),
-        h('Compatibility'),
-        ul([f'<b>{a}</b> {b}' for a, b in COMPAT]),
-        h('Installation'),
-        ul(INSTALL, 'ol'),
-        h('Credits'),
-        ul([f'<b>{a}</b> {b}' for a, b in CREDITS]),
-        h('A Note from G0rbash'),
-        f'<p style="{P}">{NOTE}</p>\n<p style="{P}">{SIGN}</p>\n',
-    ]
-
-
-title_cell = (f'<td style="background: #403529; padding: 16px; text-align: center;">'
-              f'<span style="{SERIF} font-size: 34px; font-weight: bold; letter-spacing: 3px; color: #e9ddce;">VOLUME SLIDERS</span><br><br>'
-              f'<span style="{SANS} font-size: 12px; letter-spacing: 3px; color: #b5a48c;">WATER &nbsp;&#10022;&nbsp; RAIN &nbsp;&#10022;&nbsp; WIND &nbsp;&#10022;&nbsp; THUNDER &nbsp;&#10022;&nbsp; MOBS &nbsp;&#10022;&nbsp; MACHINES</span><br><br>'
-              f'<span style="{SANS} font-size: 12px; font-weight: bold; letter-spacing: 2px; color: #c58948;">v{VERSION} &mdash; VINTAGE STORY {GAME} &mdash; A SLIDER FOR EVERY SOUND</span></td>')
-footer = (f'<td style="background: #5a4530; padding: 8px; text-align: center;">'
-          f'<span style="{SANS} font-size: 12px; letter-spacing: 2px; color: #e9ddce;">VOLUME SLIDERS &nbsp;v{VERSION} &nbsp;&#10022;&nbsp; VINTAGE STORY {GAME} &nbsp;&#10022;&nbsp; CLIENT SIDE &nbsp;&#10022;&nbsp; BY G0RBASH</span><br>'
-          f'<span style="{SANS} font-size: 10px; color: #b5a48c;">Made with AI assistance.</span></td>')
-
-
-def make_panel(body):
-    content = (f'<table style="border-collapse: collapse; width: 100%;"><tbody><tr>{title_cell}</tr></tbody></table>'
-               f'<table style="border-collapse: collapse; width: 100%;"><tbody><tr>'
-               f'<td style="background: #f6ebcd; color: {INK}; padding: 18px; {SANS} font-size: 14px; line-height: 1.55;">\n{"".join(body)}</td></tr></tbody></table>'
-               f'<table style="border-collapse: collapse; width: 100%;"><tbody><tr>{footer}</tr></tbody></table>')
-    html_out = ('<div style="max-width: 920px;">'
-                + frame('#2a1f16', 4, frame('#845c43', 3, frame('#5a4530', 3, content))) + '</div>\n')
-    return re.sub(r'<(/?)i>', r'<\1em>', re.sub(r'<(/?)b>', r'<\1strong>', html_out))
-
-
-panel = make_panel(make_body(data_uri))     # the README image: screenshots inline
-
-docs = os.path.join(ROOT, 'docs')
-os.makedirs(os.path.join(docs, 'images'), exist_ok=True)
+# ---------------------------------------------------------------- Mod DB description (HTML)
 def plain(text):
     """The Mod DB's own editor writes <strong> and <em>."""
     return re.sub(r'<(/?)i>', r'<\1em>', re.sub(r'<(/?)b>', r'<\1strong>', text))
@@ -269,19 +164,30 @@ def items(entries, tag='ul'):
     return f'<{tag}>\n' + ''.join(f'<li>{plain(e)}</li>\n' for e in entries) + f'</{tag}>\n'
 
 
-def sound_line(group, includes, count):
-    n = '' if count == 'Varies' else f' ({count})'
-    return f'{group}{n}: {includes}'
+def moddb_spoiler():
+    """The Mod DB's own spoiler markup (div.spoiler > div.spoiler-toggle + div.spoiler-text; the site styles it), the
+    same as the "Features" spoiler under the intro on mods.vintagestory.at/deciduoustrees."""
+    parts = []
+    for key in ('window', 'mods'):
+        width, height = shot_size(key)
+        caption = SHOTS[key][1].replace('>', '&gt;')
+        parts.append(f'<p><img src="{RAW + SHOTS[key][0]}" width="{width}" height="{height}" alt="{caption}"></p>\n'
+                     f'<p><em>{caption}</em></p>\n')
+    return ('<div class="spoiler">\n<div class="spoiler-toggle">Screenshots</div>\n<div class="spoiler-text">\n'
+            + ''.join(parts) + '</div>\n</div>\n')
 
+
+docs = os.path.join(ROOT, 'docs')
+os.makedirs(docs, exist_ok=True)
 
 # Same order as the Deciduous Trees page: the intro, then the screenshots in a spoiler, then the details.
 moddb_description = ''.join([
     f'<p><em>{AI_NOTE}</em></p>\n',
     f'<p>{plain(INTRO)}</p>\n',
-    plain(moddb_spoiler(lambda k: RAW + SHOTS[k][0])),
+    moddb_spoiler(),
     '<h3>What you get</h3>\n', items(FEATURES),
     '<h3>The sounds</h3>\n', f'<p>{plain(SOUNDS_INTRO)}</p>\n',
-    items([sound_line(a, b, c) for a, b, c in sound_rows]),
+    items([sound_line(e) for e in sound_rows]),
     '<h3>Using it</h3>\n', items(USING),
     '<h3>Compatibility</h3>\n', items([f'<b>{a}</b> {b}' for a, b in COMPAT]),
     '<h3>Installation</h3>\n', items(INSTALL, 'ol'),
@@ -291,9 +197,7 @@ moddb_description = ''.join([
 with open(os.path.join(docs, 'moddb-description.html'), 'w', encoding='utf-8', newline='\n') as f:
     f.write(moddb_description)
 
-SUMMARY = 'A searchable list of volume sliders for every sound in the game.'
-assert len(SUMMARY) <= 100, 'the Mod DB summary is limited to 100 characters'
-REPO = 'https://github.com/g0rbash/Vintage-Story---Volume-Sliders'
+# ---------------------------------------------------------------- Mod DB form sheet
 with open(os.path.join(docs, 'moddb-entry.md'), 'w', encoding='utf-8', newline='\n') as f:
     f.write(f"""# Mod DB entry: Volume Sliders
 
@@ -318,13 +222,14 @@ numbers match the README.
 ## Text
 
 Click the **source code** button in the editor toolbar (the `<>` icon, or Tools > Source code), paste the whole of
-`docs/moddb-description.html`, and press Save in the dialog. It uses only what the editor itself writes: paragraphs,
+`docs/moddb-description.html` into the window that opens, and press Save in that window. Pasting straight into the text
+box instead shows the tags as literal text. The description uses only what the editor itself writes: paragraphs,
 headings, bold and italic, lists, and the site's own spoiler (the same kind as the one under the intro on the Deciduous
 Trees page). The two icons at the end of the toolbar look like spoiler controls, if you'd rather build the spoiler by hand.
 
 The screenshots inside the spoiler link to this repository's copies, which load once the repository is public. Until then,
-after you upload the screenshots below, swap the two image addresses in the spoiler for the uploaded ones, or delete the
-images there and add them with the editor's image button.
+after you upload the screenshots below, swap the two image addresses in the spoiler for the uploaded ones (right-click a
+gallery image and copy its image address), or delete the images there and add them with the editor's image button.
 
 ## Screenshots (drag to upload; drag to reorder)
 
@@ -358,59 +263,43 @@ Upload `dist/volumesliders_{VERSION}.zip` and set its game versions to 1.22.0 to
 """)
 
 
-# ---------------------------------------------------------------- render for GitHub
-page = os.path.join(docs, '_render.html')
-url = 'file:///' + page.replace('\\', '/')
-
-
-def edge(*args):
-    return subprocess.run([EDGE, '--headless=new', '--disable-gpu', '--hide-scrollbars', *args, url],
-                          check=True, capture_output=True, timeout=120, text=True, encoding='utf-8').stdout
-
-
-with open(page, 'w', encoding='utf-8') as f:
-    f.write('<!doctype html><meta charset="utf-8"><body style="margin:0;width:920px;background:#2a1f16">' + panel +
-            '<script>document.title="H"+document.body.scrollHeight</script>')
-height = int(re.search(r'<title>H(\d+)</title>', edge('--window-size=920,2000', '--dump-dom')).group(1))
-edge(f'--window-size=920,{height}', '--screenshot=' + os.path.join(docs, 'images', 'description.png'))
-os.remove(page)
-
-
-# ---------------------------------------------------------------- README
+# ---------------------------------------------------------------- README (GitHub): the same text, as markdown
 def md(text):
     text = re.sub(r'<a href="([^"]+)">([^<]+)</a>', r'[\2](\1)', text)
     for a, b in (('<b>', '**'), ('</b>', '**'), ('<i>', '*'), ('</i>', '*'), ('<br>', '  \n'),
-                 ('&amp;', '&'), ('&quot;', '"'), ('&mdash;', '—')):
+                 ('&amp;', '&'), ('&quot;', '"'), ('&mdash;', '—'), ('&gt;', '>')):
         text = text.replace(a, b)
     return text
 
 
-def shot_md(key):
-    name, caption = SHOTS[key]
-    return (f'<p align="center"><img src="docs/images/screenshots/{name}" width="560" alt="{caption}"><br>'
-            f'<i>{caption}</i></p>\n')
+def bullets(entries):
+    return ''.join(f'- {md(e)}\n' for e in entries)
 
 
-r = [
-    '<p align="center"><img src="docs/images/description.png" alt="Volume Sliders, a searchable list for every '
-    'sound in Vintage Story 1.22.7. The full text is below." width="920"></p>\n',
-    '<details><summary><b>Text version</b> (the same content as the image above)</summary>\n',
+def readme_screenshots():
+    parts = []
+    for key in ('window', 'mods'):
+        width, _ = shot_size(key)
+        name, caption = SHOTS[key]
+        parts.append(f'<img src="docs/images/screenshots/{name}" width="{width}" alt="{caption}">\n\n*{caption}*\n')
+    return '<details>\n<summary><b>Screenshots</b></summary>\n\n' + '\n'.join(parts) + '\n</details>\n'
+
+
+readme = [
+    '# Volume Sliders\n',
+    f'Version {VERSION} · Vintage Story {GAME} · client side\n',
     f'*{AI_NOTE}*\n',
     INTRO + '\n',
-    '### What You Get\n\n' + ''.join(f'- {md(t)}\n' for t in FEATURES),
-    f'### The Sounds\n\n{SOUNDS_INTRO}\n\n| Group | Includes | Sounds |\n|---|---|---|\n'
-    + ''.join(f'| {md(a)} | {md(b)} | {c} |\n' for a, b, c in sound_rows),
-    shot_md('mods'),
-    '### Using It\n\n' + ''.join(f'- {md(t)}\n' for t in USING),
-    shot_md('window'),
-    '### Compatibility\n\n' + ''.join(f'- **{a}** {b}\n' for a, b in COMPAT),
-    '### Installation\n\n' + ''.join(f'{i}. {md(t)}\n' for i, t in enumerate(INSTALL, 1)),
-    '### Credits\n\n' + ''.join(f'- **{a}** {md(b)}\n' for a, b in CREDITS),
-    f'### A Note from G0rbash\n\n{md(NOTE)}\n\n{md(SIGN)}\n',
-    '</details>\n',
-    '**Links:** [Accessibility Tweaks](https://mods.vintagestory.at/accessibilitytweaks)\n\n'
-    '**Building from source:** see [BUILDING.md](BUILDING.md).\n',
+    readme_screenshots(),
+    '## What you get\n\n' + bullets(FEATURES),
+    f'## The sounds\n\n{md(SOUNDS_INTRO)}\n\n' + bullets([sound_line(e) for e in sound_rows]),
+    '## Using it\n\n' + bullets(USING),
+    '## Compatibility\n\n' + bullets([f'<b>{a}</b> {b}' for a, b in COMPAT]),
+    '## Installation\n\n' + ''.join(f'{i}. {md(t)}\n' for i, t in enumerate(INSTALL, 1)),
+    '## Credits\n\n' + bullets([f'<b>{a}</b> {b}' for a, b in CREDITS]),
+    f'## A note from G0rbash\n\n{md(NOTE)}\n\n{md(SIGN)}\n',
+    '---\n\nBuilding from source: see [BUILDING.md](BUILDING.md).\n',
 ]
 with open(os.path.join(ROOT, 'README.md'), 'w', encoding='utf-8', newline='\n') as f:
-    f.write('\n'.join(r))
-print(f'wrote docs/moddb-description.html, docs/moddb-entry.md, docs/images/description.png (920x{height}), and README.md')
+    f.write('\n'.join(readme))
+print('wrote docs/moddb-description.html, docs/moddb-entry.md, and README.md')

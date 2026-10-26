@@ -21,13 +21,14 @@ A searchable list of volume sliders for every sound in the game.  (64 characters
 ## Text
 
 Click the **source code** button in the editor toolbar (the `<>` icon, or Tools > Source code), paste the whole of
-`docs/moddb-description.html`, and press Save in the dialog. It uses only what the editor itself writes: paragraphs,
+`docs/moddb-description.html` into the window that opens, and press Save in that window. Pasting straight into the text
+box instead shows the tags as literal text. The description uses only what the editor itself writes: paragraphs,
 headings, bold and italic, lists, and the site's own spoiler (the same kind as the one under the intro on the Deciduous
 Trees page). The two icons at the end of the toolbar look like spoiler controls, if you'd rather build the spoiler by hand.
 
 The screenshots inside the spoiler link to this repository's copies, which load once the repository is public. Until then,
-after you upload the screenshots below, swap the two image addresses in the spoiler for the uploaded ones, or delete the
-images there and add them with the editor's image button.
+after you upload the screenshots below, swap the two image addresses in the spoiler for the uploaded ones (right-click a
+gallery image and copy its image address), or delete the images there and add them with the editor's image button.
 
 ## Screenshots (drag to upload; drag to reorder)
 
