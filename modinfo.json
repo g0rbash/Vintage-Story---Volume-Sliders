@@ -2,7 +2,7 @@
 	"type": "code",
 	"modid": "volumesliders",
 	"name": "Volume Sliders",
-	"description": "Gives every sound in the game its own 0-100 volume slider, with search. Open it with Ctrl+Shift+V.",
+	"description": "A searchable list of volume sliders for every sound in the game. Open it with Ctrl+Shift+V.",
 	"version": "0.1.0",
 	"authors": [ "G0rbash" ],
 	"side": "Client",

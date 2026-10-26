@@ -33,8 +33,24 @@ namespace VolumeSliders
 
         public static int Get(string key) => volumes.TryGetValue(key, out int v) ? v : Max;
 
-        /// <summary>0..1 multiplier. Never above 1, so a sound can't exceed its default maximum.</summary>
-        public static float Factor(string key) => Math.Clamp(Get(key), 0, Max) / (float)Max;
+        // Sound key -> the group/combo sliders it answers to. Replaced wholesale once the sound list is known.
+        static Dictionary<string, SoundRule> rules = new Dictionary<string, SoundRule>();
+
+        public static void SetRules(Dictionary<string, SoundRule> newRules) => rules = newRules;
+
+        static float Unit(string key) => Math.Clamp(Get(key), 0, Max) / (float)Max;
+
+        /// <summary>
+        /// 0..1 multiplier: the sound's own slider times every group slider above it (a combo slider replaces the
+        /// sound's own). Each part is at most 1, so a sound can never exceed its default maximum.
+        /// </summary>
+        public static float Factor(string key)
+        {
+            if (!rules.TryGetValue(key, out var rule)) return Unit(key);
+            float f = rule.IgnoreOwn ? 1f : Unit(key);
+            foreach (string g in rule.Groups) f *= Unit(g);
+            return f;
+        }
 
         public static void Set(string key, int value)
         {

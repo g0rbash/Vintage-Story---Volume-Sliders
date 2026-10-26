@@ -1,15 +1,17 @@
-<p align="center"><img src="docs/images/description.png" alt="Volume Sliders, a 0 to 100 volume slider for every sound in Vintage Story 1.22.7. The full text is below." width="920"></p>
+<p align="center"><img src="docs/images/description.png" alt="Volume Sliders, a searchable list for every sound in Vintage Story 1.22.7. The full text is below." width="920"></p>
 
 <details><summary><b>Text version</b> (the same content as the image above)</summary>
 
 *This project was done with the help of Claude (Claude Sonnet 5.5).*
 
-Some sounds in Vintage Story you'll love for a hundred hours, and some will wear you down: the helve hammer through a long smithing session, the rapids beside your base, the cicadas, a rainstorm that won't quit. The base game only gives you a few master volume sliders. This mod gives the individual sounds their own slider, from 0 to 100, so you can turn down just the ones that bother you and leave the rest alone.
+Some sounds in Vintage Story you'll love for a hundred hours, and some will wear you down: the helve hammer through a long smithing session, the rapids beside your base, the cicadas, a rainstorm that won't quit. The base game only gives you a few master volume sliders. This mod gives the individual sounds their own slider, so you can turn down just the ones that bother you and leave the rest alone.
 
 ### What You Get
 
-- **0 to 100 per sound.** 100 is the game's normal volume for that sound, and no slider can go above it.
-- **Clear names.** "Water: Rapids", "Thunder: Near", "Anvil & Helve Hammer: Hit 2". Sounds that come in several versions get a slider for each version.
+- **A slider for every sound.** 100 is the game's normal volume for that sound, and no slider can go above it.
+- **Clear names.** "Water: Rapids", "Thunder: Near", "Drifter: Idle 2". Sounds that come in several versions get a slider for each version.
+- **Groups that open.** Related sounds sit under a group marked with a **&gt;**. Open it to see each sound; the group's own slider turns the whole group up or down. Mobs are grouped by creature: Drifter, Bear, Bowtorn, and so on.
+- **One slider for the helve hammer.** Everything the helve hammer plays is a single slider, instead of a handful of near-identical hits.
 - **A searchable window** in the same style as the game's own settings.
 - **Heard in the last 30 seconds.** One switch lists only the sounds that just played, so you can find the one that is bugging you right now.
 - **Changes apply immediately**, including sounds that are already playing, like a river loop.
@@ -20,9 +22,10 @@ Some sounds in Vintage Story you'll love for a hundred hours, and some will wear
 
 The window opens on these sounds, the ones people most often want quieter, and can show all 813 of the game's own, plus any added by other mods.
 
-| Group | Includes | Sliders |
+| Group | Includes | Sounds |
 |---|---|---|
-| **Anvil & Helve Hammer** | The anvil hit, which is also the helve hammer's sound | 4 |
+| **Helve Hammer** | One slider for everything the helve hammer plays. Hammering at an anvil by hand plays the same hits, so it quiets those too. | 3 |
+| **Anvil** | The weld hit | 1 |
 | **Water** | Rapids, creek, waterfall, waves, underwater, splashes, waterwheel, wading, swimming | 15 |
 | **Boat** | Water against the raft, idle and moving | 2 |
 | **Rain** | Rain on leafy and bare trees, hail, rain on windows | 4 |
@@ -30,7 +33,7 @@ The window opens on these sounds, the ones people most often want quieter, and c
 | **Thunder** | Distant, near, very near, overhead, and the low rumbles | 7 |
 | **Fire** | Flames, fireplace | 2 |
 | **Lava** | Lava ambience | 1 |
-| **Mobs** | Every creature sound: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest | 271 |
+| **Mobs** | Every creature sound, grouped by creature: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest | 271 |
 | **Insects** | Cicadas, grasshoppers, coqui frogs | 4 |
 | **Bees** | Hives, swarms, stings | 4 |
 | **Temporal** | Stability warnings, rifts, rift wards | 5 |
@@ -40,6 +43,7 @@ The window opens on these sounds, the ones people most often want quieter, and c
 ### Using It
 
 - Press **Ctrl+Shift+V** (you can rebind it in the controls settings), or type **.volumesliders** in chat.
+- Click a group, or its **&gt;**, to open or close it. The group's slider scales everything inside, and each sound keeps its own slider too. They multiply, so a group at 50% and a sound at 50% plays at 25%.
 - The window opens on the sounds most people want quieter, plus every creature sound. Flip *Show every sound* to list all of them, including other mods'.
 - Your settings are saved in **ModConfig/volumesliders.json**.
 

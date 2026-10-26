@@ -1,0 +1,11 @@
+[
+	{
+		"id": "helvehammer",
+		"name": "Helve Hammer (and Anvil Hits)",
+		"keys": [
+			"effect_anvilhit1",
+			"effect_anvilhit2",
+			"effect_anvilhit3"
+		]
+	}
+]

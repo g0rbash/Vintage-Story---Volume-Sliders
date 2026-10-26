@@ -32,18 +32,23 @@ MAJOR_PATTERNS = [
     r"environment_wind", r"weather_wind_(leafy|leafless)",                           # wind
     r"weather_lightning_.*", r"weather_lowgrumble", r"weather_tracks_(lowtremble|verylowtremble)",  # thunder
     r"environment_(fire|fireplace|lava)",
-    r"creature_(drifter|shiver|bowtorn|locust)_?.*",                                 # hostile mobs
-    r"creature_bell_(alarm|bell|death|hurt|listen|walk)",
     r"creature_(cicada|cicada_short_looping|grasshopper|coqui|beehive|beehive_wild|beemob|beesting)",
     r"effect_tempstab_(drain|low|verylow)", r"effect_rift", r"effect_deepbell", r"block_riftward",
     r"block_quern", r"effect_(gears|bellows)",
 ]
 MAJOR_PREFIXES = ["creature_"]
 
+# Sounds that share ONE slider instead of getting one each. The mod stores the slider under "combo:<id>".
+# The helve hammer plays only effect/anvilhit (the game picks one of anvilhit1-3); the hand hammer plays the same
+# sound, so this slider quiets hammering at an anvil by hand too. The weld hit (anvilmergehit) is the hand hammer's alone.
+COMBINED = [
+    {"id": "helvehammer", "name": "Helve Hammer (and Anvil Hits)", "patterns": [r"effect_anvilhit\d"]},
+]
+
 # Friendly names where the file name alone isn't clear. {n} = trailing number.
 OVERRIDES = [
-    (r"effect_anvilhit(\d)", "Anvil & Helve Hammer: Hit {n}"),
-    (r"effect_anvilmergehit", "Anvil & Helve Hammer: Weld Hit"),
+    (r"effect_anvilhit(\d)", "Helve Hammer: Hit {n}"),
+    (r"effect_anvilmergehit", "Anvil: Weld Hit"),
     (r"environment_rapids", "Water: Rapids"), (r"environment_creek", "Water: Creek"),
     (r"environment_waterfall", "Water: Waterfall"), (r"environment_waterwaves", "Water: Waves"),
     (r"environment_underwater", "Water: Underwater"),
@@ -141,12 +146,21 @@ def main():
     lang = dict(UI)
     major = []
     for k in keys:
-        lang["sound-" + k] = override_name(k) or found[k]
+        name = override_name(k)
+        if name:  # only deliberate renames; every other name is built from the file path by src/SoundTree.cs
+            lang["sound-" + k] = name
         if is_major(k):
             major.append(k)
 
+    combined = []
+    for c in COMBINED:
+        members = [k for k in keys if any(re.fullmatch(p, k) for p in c["patterns"])]
+        combined.append({"id": c["id"], "name": c["name"], "keys": members})
+    with open(os.path.join(ROOT, "assets/volumesliders/config/combined.json"), "w", encoding="utf-8") as f:
+        json.dump(combined, f, indent="	")
     with open(os.path.join(ROOT, "assets/volumesliders/config/major.json"), "w", encoding="utf-8") as f:
-        json.dump({"keys": major, "prefixes": MAJOR_PREFIXES}, f, indent="	")
+        json.dump({"keys": major, "prefixes": MAJOR_PREFIXES, "total": len(keys),
+                   "creatures": len([k for k in keys if k.startswith("creature_")])}, f, indent="	")
     with open(os.path.join(ROOT, "assets/volumesliders/lang/en.json"), "w", encoding="utf-8") as f:
         json.dump(lang, f, indent="\t", ensure_ascii=False)
     print(f"{len(keys)} sounds, {len(major)} major")

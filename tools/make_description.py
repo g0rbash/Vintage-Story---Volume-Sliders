@@ -31,12 +31,17 @@ AI_NOTE = 'This project was done with the help of Claude (Claude Sonnet 5.5).'
 INTRO = ("Some sounds in Vintage Story you'll love for a hundred hours, and some will wear you down: the helve hammer "
          "through a long smithing session, the rapids beside your base, the cicadas, a rainstorm that won't quit. The "
          "base game only gives you a few master volume sliders. This mod gives the individual sounds their own slider, "
-         "from 0 to 100, so you can turn down just the ones that bother you and leave the rest alone.")
+         "so you can turn down just the ones that bother you and leave the rest alone.")
 
 FEATURES = [
-    '<b>0 to 100 per sound.</b> 100 is the game\'s normal volume for that sound, and no slider can go above it.',
-    '<b>Clear names.</b> "Water: Rapids", "Thunder: Near", "Anvil &amp; Helve Hammer: Hit 2". Sounds that come in '
-    'several versions get a slider for each version.',
+    '<b>A slider for every sound.</b> 100 is the game\'s normal volume for that sound, and no slider can go above it.',
+    '<b>Clear names.</b> "Water: Rapids", "Thunder: Near", "Drifter: Idle 2". Sounds that come in several versions get '
+    'a slider for each version.',
+    '<b>Groups that open.</b> Related sounds sit under a group marked with a <b>&gt;</b>. Open it to see each sound; '
+    'the group\'s own slider turns the whole group up or down. Mobs are grouped by creature: Drifter, Bear, Bowtorn, '
+    'and so on.',
+    '<b>One slider for the helve hammer.</b> Everything the helve hammer plays is a single slider, instead of a '
+    'handful of near-identical hits.',
     '<b>A searchable window</b> in the same style as the game\'s own settings.',
     '<b>Heard in the last 30 seconds.</b> One switch lists only the sounds that just played, so you can find the one '
     'that is bugging you right now.',
@@ -47,7 +52,7 @@ FEATURES = [
 
 # group label -> examples. The label is the text before ":" in each sound's name (see tools/generate.py).
 GROUPS = [
-    ('Anvil & Helve Hammer', 'The anvil hit, which is also the helve hammer\'s sound'),
+    ('Anvil', 'The weld hit'),
     ('Water', 'Rapids, creek, waterfall, waves, underwater, splashes, waterwheel, wading, swimming'),
     ('Boat', 'Water against the raft, idle and moving'),
     ('Rain', 'Rain on leafy and bare trees, hail, rain on windows'),
@@ -61,10 +66,14 @@ GROUPS = [
     ('Bells', 'The deep bell'),
     ('Machines', 'Quern, gears, bellows'),
 ]
-MOBS = 'Every creature sound: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest'
+MOBS = 'Every creature sound, grouped by creature: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest'
+HELVE = ('One slider for everything the helve hammer plays. Hammering at an anvil by hand plays the same hits, '
+         'so it quiets those too.')
 
 USING = [
     'Press <b>Ctrl+Shift+V</b> (you can rebind it in the controls settings), or type <b>.volumesliders</b> in chat.',
+    'Click a group, or its <b>&gt;</b>, to open or close it. The group\'s slider scales everything inside, and each '
+    'sound keeps its own slider too. They multiply, so a group at 50% and a sound at 50% plays at 25%.',
     'The window opens on the sounds most people want quieter, plus every creature sound. Flip <i>Show every sound</i> '
     "to list all of them, including other mods'.",
     'Your settings are saved in <b>ModConfig/volumesliders.json</b>.',
@@ -95,8 +104,9 @@ SIGN = 'Thank you,<br>G0rbash'
 # ---------------------------------------------------------------- sound data
 cfg = os.path.join(ROOT, 'assets', 'volumesliders')
 lang = json.load(open(os.path.join(cfg, 'lang', 'en.json'), encoding='utf-8'))
-major = json.load(open(os.path.join(cfg, 'config', 'major.json'), encoding='utf-8'))['keys']
-total = len([k for k in lang if k.startswith('sound-')])
+major_cfg = json.load(open(os.path.join(cfg, 'config', 'major.json'), encoding='utf-8'))
+major = [k for k in major_cfg['keys'] if 'sound-' + k in lang]
+total = major_cfg['total']
 
 
 def group_of(key):
@@ -106,14 +116,16 @@ def group_of(key):
 counts = {}
 for k in major:
     counts[group_of(k)] = counts.get(group_of(k), 0) + 1
-creature_total = len([k for k in lang if k.startswith('sound-creature_')])
+creature_total = major_cfg['creatures']
+combined_total = sum(len(c['keys']) for c in json.load(open(os.path.join(cfg, 'config', 'combined.json'), encoding='utf-8')))
 
 sound_rows = []
 for label, examples in GROUPS:
     n = counts.get(label, 0)
     if n:
         sound_rows.append((f'<b>{label.replace("&", "&amp;")}</b>', examples, str(n)))
-sound_rows.insert(8, ('<b>Mobs</b>', MOBS, str(creature_total)))
+sound_rows.insert(0, ('<b>Helve Hammer</b>', HELVE, str(combined_total)))
+sound_rows.insert(9, ('<b>Mobs</b>', MOBS, str(creature_total)))
 SOUNDS_INTRO = (f'The window opens on these sounds, the ones people most often want quieter, and can show all {total} of '
                 "the game's own, plus any added by other mods.")
 
@@ -158,7 +170,7 @@ body = [
     ul(FEATURES),
     h('The Sounds'),
     f'<p style="{P}">{SOUNDS_INTRO}</p>\n',
-    table(['Group', 'Includes', 'Sliders'], sound_rows),
+    table(['Group', 'Includes', 'Sounds'], sound_rows),
     h('Using It'),
     ul(USING),
     h('Compatibility'),
@@ -220,13 +232,13 @@ def md(text):
 
 shots = sorted(glob.glob(os.path.join(docs, 'images', 'screenshots', '*.png')))
 r = [
-    '<p align="center"><img src="docs/images/description.png" alt="Volume Sliders, a 0 to 100 volume slider for every '
+    '<p align="center"><img src="docs/images/description.png" alt="Volume Sliders, a searchable list for every '
     'sound in Vintage Story 1.22.7. The full text is below." width="920"></p>\n',
     '<details><summary><b>Text version</b> (the same content as the image above)</summary>\n',
     f'*{AI_NOTE}*\n',
     INTRO + '\n',
     '### What You Get\n\n' + ''.join(f'- {md(t)}\n' for t in FEATURES),
-    f'### The Sounds\n\n{SOUNDS_INTRO}\n\n| Group | Includes | Sliders |\n|---|---|---|\n'
+    f'### The Sounds\n\n{SOUNDS_INTRO}\n\n| Group | Includes | Sounds |\n|---|---|---|\n'
     + ''.join(f'| {md(a)} | {md(b)} | {c} |\n' for a, b, c in sound_rows),
     '### Using It\n\n' + ''.join(f'- {md(t)}\n' for t in USING),
     '### Compatibility\n\n' + ''.join(f'- **{a}** {b}\n' for a, b in COMPAT),

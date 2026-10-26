@@ -8,15 +8,6 @@ using Vintagestory.API.Config;
 
 namespace VolumeSliders
 {
-    public class SoundEntry
-    {
-        public string Key = "";
-        public string Display = "";
-        public string Search = "";
-        public AssetLocation Location = null!;
-        public bool Major;
-    }
-
     public class VolumeSlidersSystem : ModSystem
     {
         const string HarmonyId = "volumesliders";
@@ -26,6 +17,7 @@ namespace VolumeSliders
         VolumeDialog? dialog;
 
         public List<SoundEntry> Sounds { get; private set; } = new List<SoundEntry>();
+        public List<SoundNode> Tree { get; private set; } = new List<SoundNode>();
 
         // assets/volumesliders/config/major.json, written by tools/generate.py.
         HashSet<string> majorKeys = new HashSet<string>();
@@ -64,6 +56,9 @@ namespace VolumeSliders
                 majorPrefixes = major.prefixes;
             }
 
+            var combos = capi.Assets.TryGet(new AssetLocation("volumesliders", "config/combined.json"))?.ToObject<CombinedDef[]>()
+                ?? new CombinedDef[0];
+
             // Mods' assets are all loaded by now, so this includes sounds from other mods.
             Sounds = capi.Assets.AllAssets
                 .Where(p => (p.Key.Category == AssetCategory.sounds || p.Key.Category == AssetCategory.music) && p.Key.Path.EndsWith(".ogg"))
@@ -74,8 +69,10 @@ namespace VolumeSliders
                 .OrderBy(e => e.Display, StringComparer.OrdinalIgnoreCase)
                 .ToList();
 
+            Tree = SoundTree.Build(Sounds, combos, out var rules);
+            VolumeConfig.SetRules(rules);
             dialog?.Refresh();
-            capi.Logger.Notification("[volumesliders] Loaded {0} sounds ({1} major).", Sounds.Count, Sounds.Count(s => s.Major));
+            capi.Logger.Notification("[volumesliders] Loaded {0} sounds ({1} major) in {2} groups.", Sounds.Count, Sounds.Count(s => s.Major), Tree.Count);
         }
 
         SoundEntry Describe(AssetLocation loc)
@@ -86,6 +83,7 @@ namespace VolumeSliders
                 ? Lang.Get(langKey)
                 : SoundKeys.CategoryFor(loc) + ": " + SoundKeys.NameFor(loc);
             return new SoundEntry { Key = key, Display = display, Search = (display + " " + key).ToLowerInvariant(), Location = loc,
+                HasLangName = Lang.HasTranslation(langKey, false, false),
                 Major = majorKeys.Contains(key) || majorPrefixes.Any(p => key.StartsWith(p)) };
         }
 
