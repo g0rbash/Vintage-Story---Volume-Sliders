@@ -277,6 +277,10 @@ readme = [
     '## Using it\n\n' + bullets(USING),
     '## Compatibility\n\n' + bullets([f'<b>{a}</b> {b}' for a, b in COMPAT]),
     '## Installation\n\n' + ''.join(f'{i}. {md(t)}\n' for i, t in enumerate(INSTALL, 1)),
+    '## License\n\n'
+    'Volume Sliders follows the [Vintage Story Mod DB terms](https://mods.vintagestory.at/terms): it is free to download '
+    'and use, and it may not be reuploaded, modified or not, without the author\'s approval. The full text is in '
+    '[LICENSE](LICENSE).\n',
     '## A note from G0rbash\n' + '\n'.join(NOTE_LINES) + f'\n\n{md(SIGN)}\n',
     '---\n\nBuilding from source: see [BUILDING.md](BUILDING.md).\n',
 ]

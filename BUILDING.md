@@ -2,9 +2,13 @@
 
 Requires the .NET 10 SDK, Python 3, and a Vintage Story install (set `VINTAGE_STORY`, default `%APPDATA%\Vintagestory`). `make_thumbnail.py` also uses Microsoft Edge to render.
 
-    python build.py     # regenerates major.json and lang, builds, writes dist/volumesliders_<version>.zip
+    python build.py     # regenerates major.json and lang, builds, writes releases/volumesliders_<version>.zip
 
-Then copy the zip from `dist/` into your Mods folder.
+Then copy the zip from `releases/` into your Mods folder. The `releases/` folder is local (git ignores it) and keeps the zip of every version you build.
+
+## Updating a published version
+
+The zip is named after `"version"` in `modinfo.json`. Once a version has been released (it has a `v<version>` tag), its code is fixed: `build.py` refuses to rebuild it if `src/`, `assets/`, `modinfo.json` or the project file have changed since the tag. To publish an update, raise the version in `modinfo.json` first, build (which makes a new zip with the new number and keeps the old one), commit, then tag and release that version. Run `python -I tools/make_description.py .` too, so the README and the Mod DB text show the new number.
 
 ## How it fits together
 

@@ -1,8 +1,12 @@
 bin/
 obj/
 *.zip
-dist/
+# Local copies of each built version's zip (the published ones are on the GitHub release and the Mod DB)
+releases/
 __pycache__/
+
+# Notes for working on this project with Claude Code; local only
+CLAUDE.md
 
 # Test screenshots
 /*.png

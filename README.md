@@ -72,6 +72,10 @@ The window opens on these sounds, the ones people most often want quieter, and c
 2. Start the game. The first run writes **ModConfig/volumesliders.json** with every sound at 100.
 3. To reset everything, delete that file, or use *Reset Shown to 100* in the window.
 
+## License
+
+Volume Sliders follows the [Vintage Story Mod DB terms](https://mods.vintagestory.at/terms): it is free to download and use, and it may not be reuploaded, modified or not, without the author's approval. The full text is in [LICENSE](LICENSE).
+
 ## A note from G0rbash
 I have not coded in C# since 1996, and json is just pure black magic I don't have time to relearn that skill while also learning skills for my #dayjob.
 I tested and reviewed the code to the best of my ability.
