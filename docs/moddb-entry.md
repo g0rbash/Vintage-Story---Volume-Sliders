@@ -9,7 +9,7 @@ numbers match the README.
 | Field | Value |
 |---|---|
 | Status | Draft. Leave it until you're ready to publish. |
-| Category | Pick from the dropdown. (I couldn't see its options; choose the one for a code mod that tweaks the game.) |
+| Category | Game Mod (the other choices are Server Specific-Tweak, External Tool, and Other) |
 | Tags | QoL, Utility, Tweak, Sound, Audio, Accessibility (other pages use short free-form words like these) |
 | Name | Volume Sliders |
 | URL Alias | volumesliders (matches the mod ID in `modinfo.json`) |
