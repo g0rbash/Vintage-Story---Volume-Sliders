@@ -247,30 +247,42 @@ namespace VolumeSliders
 
         public override void OnMouseDown(MouseEvent args)
         {
+            // The base class marks every click inside the window as handled, so a group row has to be checked first.
+            if (!args.Handled && TryToggleGroup(args)) return;
             base.OnMouseDown(args);
-            if (args.Handled || listBounds == null || args.Button != EnumMouseButton.Left) return;
-            if (!listBounds.PointInside(args.X, args.Y)) return;
+        }
+
+        bool TryToggleGroup(MouseEvent args)
+        {
+            if (listBounds == null || args.Button != EnumMouseButton.Left || !IsOpened()) return false;
+            if (!listBounds.PointInside(args.X, args.Y)) return false;
 
             double localX = args.X - listBounds.absX, localY = args.Y - listBounds.absY;
-            if (localX >= GuiElement.scaled(NameWidth)) return;   // the slider and play button handle their own clicks
+            if (localX >= GuiElement.scaled(NameWidth)) return false;   // the slider and play button handle their own clicks
 
             int idx = offset + (int)(localY / GuiElement.scaled(RowHeight));
-            if (idx < 0 || idx >= rows.Count || !rows[idx].Header) return;
+            if (idx < 0 || idx >= rows.Count || !rows[idx].Header) return false;
 
             string key = rows[idx].Node.ConfigKey;
             if (!openGroups.Remove(key)) openGroups.Add(key);
             BuildRows();
             FillRows();
             args.Handled = true;
+            return true;
         }
 
         public override void OnMouseWheel(MouseWheelEventArgs args)
         {
+            // Same as clicks: the base class would mark the wheel handled before we saw it.
+            if (!args.IsHandled && SingleComposer != null && listBounds != null && IsOpened()
+                && listBounds.PointInside(capi.Input.MouseX, capi.Input.MouseY))
+            {
+                offset = Math.Clamp(offset - Math.Sign(args.deltaPrecise) * 2, 0, Math.Max(0, rows.Count - RowCount));
+                FillRows();
+                args.SetHandled();
+                return;
+            }
             base.OnMouseWheel(args);
-            if (args.IsHandled || SingleComposer == null) return;
-            offset = Math.Clamp(offset - Math.Sign(args.deltaPrecise) * 2, 0, Math.Max(0, rows.Count - RowCount));
-            FillRows();
-            args.SetHandled();
         }
 
         long saveListener;
