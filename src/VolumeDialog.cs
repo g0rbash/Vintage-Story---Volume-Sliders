@@ -23,6 +23,7 @@ namespace VolumeSliders
         List<SoundEntry> filtered = new List<SoundEntry>();
         string search = "";
         bool recentOnly;
+        bool showAll;
         int offset;
 
         public override string ToggleKeyCombinationCode => "volumesliders";
@@ -62,7 +63,10 @@ namespace VolumeSliders
             ElementBounds recentLabel = ElementBounds.Fixed(425, 42, 170, 30);
             ElementBounds recentSwitch = ElementBounds.Fixed(600, 40, 30, 30);
 
-            double listTop = 85;
+            ElementBounds allLabel = ElementBounds.Fixed(425, 77, 170, 30);
+            ElementBounds allSwitch = ElementBounds.Fixed(600, 75, 30, 30);
+
+            double listTop = 120;
             ElementBounds listArea = ElementBounds.Fixed(0, listTop, Width - 20, RowCount * RowHeight);
             ElementBounds scrollBounds = ElementBounds.Fixed(Width - 10, listTop, 20, RowCount * RowHeight);
 
@@ -74,6 +78,8 @@ namespace VolumeSliders
                     .AddTextInput(searchInput, OnSearchChanged, CairoFont.TextInput(), "search")
                     .AddStaticText(Lang.Get("volumesliders:recent"), CairoFont.WhiteSmallText(), recentLabel)
                     .AddSwitch(on => { recentOnly = on; offset = 0; ApplyFilter(); FillRows(); }, recentSwitch, "recent")
+                    .AddStaticText(Lang.Get("volumesliders:all-sounds"), CairoFont.WhiteSmallText(), allLabel)
+                    .AddSwitch(on => { showAll = on; offset = 0; ApplyFilter(); FillRows(); }, allSwitch, "all")
                     .AddInset(listArea.ForkBoundingParent(2, 2, 2, 2), 4);
 
             for (int i = 0; i < RowCount; i++)
@@ -93,6 +99,7 @@ namespace VolumeSliders
             SingleComposer = comp.Compose();
             SingleComposer.GetTextInput("search").SetValue(search);
             SingleComposer.GetSwitch("recent").SetValue(recentOnly);
+            SingleComposer.GetSwitch("all").SetValue(showAll);
             ApplyFilter();
             FillRows();
         }
@@ -100,7 +107,7 @@ namespace VolumeSliders
         void ApplyFilter()
         {
             string[] terms = search.ToLowerInvariant().Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            IEnumerable<SoundEntry> q = system.Sounds;
+            IEnumerable<SoundEntry> q = showAll ? system.Sounds : system.Sounds.Where(s => s.Major);
             if (terms.Length > 0) q = q.Where(s => terms.All(t => s.Search.Contains(t)));
 
             if (recentOnly)

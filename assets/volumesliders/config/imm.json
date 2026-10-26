@@ -12,6 +12,310 @@
 				},
 				{
 					"Type": "Slider",
+					"Label": "volumesliders:sound-block_quern",
+					"Map": "block_quern",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_riftward",
+					"Map": "block_riftward",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_water",
+					"Map": "block_water",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_waterwheel_water",
+					"Map": "block_waterwheel_water",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-block_waterwheel_wood",
+					"Map": "block_waterwheel_wood",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_beehive",
+					"Map": "creature_beehive",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_beehive_wild",
+					"Map": "creature_beehive_wild",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_beemob",
+					"Map": "creature_beemob",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_beesting",
+					"Map": "creature_beesting",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_alarm",
+					"Map": "creature_bell_alarm",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_bell",
+					"Map": "creature_bell_bell",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_death",
+					"Map": "creature_bell_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_hurt",
+					"Map": "creature_bell_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_listen",
+					"Map": "creature_bell_listen",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bell_walk",
+					"Map": "creature_bell_walk",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_death",
+					"Map": "creature_bowtorn_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_draw",
+					"Map": "creature_bowtorn_draw",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_hurt",
+					"Map": "creature_bowtorn_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_idle",
+					"Map": "creature_bowtorn_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_release",
+					"Map": "creature_bowtorn_release",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_bowtorn_reload",
+					"Map": "creature_bowtorn_reload",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_cicada",
+					"Map": "creature_cicada",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_cicada_short_looping",
+					"Map": "creature_cicada_short_looping",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_coqui",
+					"Map": "creature_coqui",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_aggro1",
+					"Map": "creature_drifter_aggro1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_aggro2",
+					"Map": "creature_drifter_aggro2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_death",
+					"Map": "creature_drifter_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_hit",
+					"Map": "creature_drifter_hit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_hurt",
+					"Map": "creature_drifter_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_idle1",
+					"Map": "creature_drifter_idle1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_idle2",
+					"Map": "creature_drifter_idle2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_idle3",
+					"Map": "creature_drifter_idle3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_drifter_idle4",
+					"Map": "creature_drifter_idle4",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_grasshopper",
+					"Map": "creature_grasshopper",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_locust_death",
+					"Map": "creature_locust_death",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_locust_hurt",
+					"Map": "creature_locust_hurt",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_locust_idle",
+					"Map": "creature_locust_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-creature_locust_saw",
+					"Map": "creature_locust_saw",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
 					"Label": "volumesliders:sound-creature_shiver_aggro",
 					"Map": "creature_shiver_aggro",
 					"Min": 0,
@@ -100,32 +404,96 @@
 				},
 				{
 					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_anvilhit1",
+					"Map": "effect_anvilhit1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_anvilhit2",
+					"Map": "effect_anvilhit2",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_anvilhit3",
+					"Map": "effect_anvilhit3",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_anvilmergehit",
+					"Map": "effect_anvilmergehit",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_bellows",
+					"Map": "effect_bellows",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_deepbell",
+					"Map": "effect_deepbell",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_gears",
+					"Map": "effect_gears",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_rift",
+					"Map": "effect_rift",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_tempstab_drain",
+					"Map": "effect_tempstab_drain",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_tempstab_low",
+					"Map": "effect_tempstab_low",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-effect_tempstab_verylow",
+					"Map": "effect_tempstab_verylow",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
 					"Label": "volumesliders:sound-environment_creek",
 					"Map": "environment_creek",
-					"Min": 0,
-					"Max": 100,
-					"Step": 1
-				},
-				{
-					"Type": "Slider",
-					"Label": "volumesliders:sound-environment_drip1",
-					"Map": "environment_drip1",
-					"Min": 0,
-					"Max": 100,
-					"Step": 1
-				},
-				{
-					"Type": "Slider",
-					"Label": "volumesliders:sound-environment_drip2",
-					"Map": "environment_drip2",
-					"Min": 0,
-					"Max": 100,
-					"Step": 1
-				},
-				{
-					"Type": "Slider",
-					"Label": "volumesliders:sound-environment_drip3",
-					"Map": "environment_drip3",
 					"Min": 0,
 					"Max": 100,
 					"Step": 1
@@ -230,6 +598,46 @@
 					"Type": "Slider",
 					"Label": "volumesliders:sound-environment_wind",
 					"Map": "environment_wind",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-player_swim",
+					"Map": "player_swim",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-raft_idle",
+					"Map": "raft_idle",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-raft_moving",
+					"Map": "raft_moving",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_water1",
+					"Map": "walk_water1",
+					"Min": 0,
+					"Max": 100,
+					"Step": 1
+				},
+				{
+					"Type": "Slider",
+					"Label": "volumesliders:sound-walk_water2",
+					"Map": "walk_water2",
 					"Min": 0,
 					"Max": 100,
 					"Step": 1
