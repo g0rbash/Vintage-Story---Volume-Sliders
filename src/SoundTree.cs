@@ -23,6 +23,7 @@ namespace VolumeSliders
     {
         public string id = "";
         public string name = "";
+        public string group = "";   // optional: list the combo inside this top-level group
         public string[] keys = new string[0];
     }
 
@@ -67,16 +68,22 @@ namespace VolumeSliders
     {
         static readonly HashSet<string> GenericFolders = new HashSet<string> { "animal", "mammal", "hooved", "large", "medium", "small", "bird", "birds", "generic", "strange" };
 
+        // Everyday game sounds (blocks, doors, chests, tools, menus...) that fill up the list without being what people tune.
+        // They go under Miscellaneous, one sub-group per category, and none of them is on the default list.
+        static readonly HashSet<string> MiscCategories = new HashSet<string> { "Block", "Effect", "Environment", "Held", "Tool", "Instrument", "General" };
+
         public static List<SoundNode> Build(IEnumerable<SoundEntry> sounds, IEnumerable<CombinedDef> combos, out Dictionary<string, SoundRule> rules)
         {
             var roots = new List<SoundNode>();
             var groups = new Dictionary<string, SoundNode>();
             var comboOf = new Dictionary<string, SoundNode>();
+            var comboGroup = new Dictionary<SoundNode, string>();
 
             foreach (var def in combos)
             {
                 var node = new SoundNode { ConfigKey = "combo:" + def.id, Name = def.name };
                 foreach (var k in def.keys) comboOf[k] = node;
+                comboGroup[node] = def.group;
             }
 
             SoundNode Group(string name, SoundNode? parent)
@@ -98,7 +105,12 @@ namespace VolumeSliders
                 {
                     combo.Members.Add(s);
                     combo.Major |= s.Major;
-                    if (usedCombos.Add(combo)) roots.Add(combo);
+                    if (usedCombos.Add(combo))
+                    {
+                        string home = comboGroup[combo];
+                        if (home.Length == 0) roots.Add(combo);
+                        else { var g = Group(home, null); combo.Parent = g; g.Children.Add(combo); }
+                    }
                     continue;
                 }
 
@@ -215,6 +227,7 @@ namespace VolumeSliders
 
             group = SoundKeys.CategoryFor(loc);
             leafName = SoundKeys.NameFor(loc);
+            if (MiscCategories.Contains(group)) { subs.Add(group == "General" ? "Menus and Interface" : group); group = "Miscellaneous"; return; }
             if (group != "Creature") return;
 
             group = "Mobs";

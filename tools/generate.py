@@ -37,25 +37,31 @@ MAJOR_PATTERNS = [
     r"effect_tempstab_(drain|low|verylow)", r"effect_rift", r"effect_deepbell", r"block_riftward",
     r"block_quern", r"effect_(gears|bellows)",
 ]
-MAJOR_PREFIXES = ["creature_", "voice_"]   # voice_ = NPC speech (traders, villagers)
+MAJOR_PREFIXES = ["creature_", "voice_", "wearable_"]   # voice_ = NPC speech (traders, villagers); wearable_ = armor and clothing rustle
 # ...except these, which stay out of the default list (still found by search, or with "Show every sound").
 MINOR_PREFIXES = ["creature_bell_charlemange_"]   # Charlemange, the mini Bell
 
 # Sounds that share ONE slider instead of getting one each. The mod stores the slider under "combo:<id>".
 # The helve hammer plays only effect/anvilhit (the game picks one of anvilhit1-3); the hand hammer plays the same
-# sound, so this slider quiets hammering at an anvil by hand too. The weld hit (anvilmergehit) is the hand hammer's alone.
+# sound, so this slider quiets hammering at an anvil by hand too. The weld hit (anvilmergehit) is the hand hammer's alone, but it shares the slider to save space.
 COMBINED = [
-    {"id": "helvehammer", "name": "Helve Hammer (and Anvil Hits)", "patterns": [r"effect_anvilhit\d"]},
+    {"id": "helvehammer", "name": "Helve Hammer and Anvil", "patterns": [r"effect_anvilhit\d", r"effect_anvilmergehit"]},
     # Traders and villagers speak by playing random notes from sounds/voice/<instrument>/ (listed as "voiceSounds" in
     # their entity files). Trader-male and villager share the same six instruments, and the female trader's three
     # overlap them, so the voices can't be told apart by NPC type. One slider quiets all of them.
     # The Bell mob's own sounds, including its deep bell. Deep, Nightmare and Tainted are the same mob at higher
     # difficulty and have no sound files of their own. Reception Bell (a block) stays separate.
-    {"id": "bellmob", "name": "Bell Mob (Deep, Nightmare, Tainted)",
+    {"id": "bellmob", "name": "Bell Mob",
      "patterns": [r"creature_bell_(alarm|bell|death|hurt|listen|walk)", r"effect_deepbell"]},
     # Charlemange, the mini Bell: kept apart from the Bell mob and off the default list.
-    {"id": "charlemange", "name": "Charlemange (Mini Bell)", "patterns": [r"creature_bell_charlemange_.*"]},
-    {"id": "npcvoices", "name": "NPC Voices (Traders, Villagers)", "patterns": [r"voice_.*"]},
+    {"id": "charlemange", "name": "Charlemange", "patterns": [r"creature_bell_charlemange_.*"]},
+    # Armor: one slider per type, listed under an Armor group (no per-variant sliders).
+    {"id": "armor-brigandine", "group": "Armor", "name": "Brigandine", "patterns": [r"wearable_brigandine\d"]},
+    {"id": "armor-chain", "group": "Armor", "name": "Chain", "patterns": [r"wearable_chain\d"]},
+    {"id": "armor-leather", "group": "Armor", "name": "Leather", "patterns": [r"wearable_leather\d"]},
+    {"id": "armor-plate", "group": "Armor", "name": "Plate", "patterns": [r"wearable_plate\d"]},
+    {"id": "armor-scale", "group": "Armor", "name": "Scale", "patterns": [r"wearable_scale\d"]},
+    {"id": "npcvoices", "name": "NPC Voices", "patterns": [r"voice_.*"]},
 ]
 
 # Friendly names where the file name alone isn't clear. {n} = trailing number.
@@ -79,7 +85,7 @@ OVERRIDES = [
     (r"weather_tracks_verylowtremble", "Thunder: Very Low Tremble"),
     (r"environment_fire", "Fire: Flames"), (r"environment_fireplace", "Fire: Fireplace"),
     (r"environment_lava", "Lava: Ambient"), (r"block_lava", "Lava: Block"), (r"walk_lava", "Lava: Wading"),
-    (r"creature_cicada_short_looping", "Insects: Cicada (Short Loop)"), (r"creature_cicada", "Insects: Cicada"),
+    (r"creature_cicada_short_looping", "Insects: Cicada Short Loop"), (r"creature_cicada", "Insects: Cicada"),
     (r"creature_grasshopper", "Insects: Grasshopper"), (r"creature_coqui", "Insects: Coqui Frog"),
     (r"creature_beehive_wild", "Bees: Wild Hive"), (r"creature_beehive", "Bees: Hive"),
     (r"creature_beemob", "Bees: Swarm"), (r"creature_beesting", "Bees: Sting"),
@@ -90,7 +96,27 @@ OVERRIDES = [
     (r"block_quern", "Machines: Quern"), (r"effect_gears", "Machines: Gears"),
     (r"effect_gearbox_turn", "Machines: Gearbox Turning"), (r"effect_planetary_gears", "Machines: Planetary Gears"),
     (r"effect_woodgrind", "Machines: Wood Grinding"), (r"effect_metalgrinding", "Machines: Metal Grinding"),
+    # The Player group is for the player's own body: voice, movement, eating. Everything else the player does by
+    # hand goes under Combat or Crafting & Activities.
+    (r"player_hurt(\d)", "Player: Hurt {n}"), (r"player_death(\d)", "Player: Death {n}"), (r"player_jump", "Player: Jump"),
+    (r"player_eat", "Player: Eating"), (r"player_eat_crunchy", "Player: Eating Crunchy"), (r"player_drink(\d)", "Player: Drinking {n}"),
+    (r"player_slap", "Combat: Slap"), (r"player_stab", "Combat: Stab"), (r"player_hackingspearhit", "Combat: Spear Hit"),
+    (r"player_projectilehit", "Combat: Projectile Hit"), (r"player_throw", "Combat: Throw"), (r"player_quickthrow", "Combat: Quick Throw"),
+    (r"player_build", "Crafting & Activities: Building"), (r"player_buildhigh", "Crafting & Activities: Building High"),
+    (r"player_chalkdraw(\d)", "Crafting & Activities: Chalk Drawing {n}"),
+    (r"player_clayform", "Crafting & Activities: Clay Forming"), (r"player_clayformhi", "Crafting & Activities: Clay Forming High"),
+    (r"player_clothrepair", "Crafting & Activities: Cloth Repair"), (r"player_gluerepair(\d)", "Crafting & Activities: Glue Repair {n}"),
+    (r"player_coin(\d)", "Crafting & Activities: Coins {n}"), (r"player_collect(\d)", "Crafting & Activities: Collecting {n}"),
+    (r"player_destruct", "Crafting & Activities: Deconstructing"), (r"player_handdrill", "Crafting & Activities: Hand Drill"),
+    (r"player_knap(\d)", "Crafting & Activities: Knapping {n}"), (r"player_messycraft", "Crafting & Activities: Messy Crafting"),
+    (r"player_panning", "Crafting & Activities: Panning"), (r"player_poultice", "Crafting & Activities: Poultice"),
+    (r"player_poultice_applied", "Crafting & Activities: Poultice Applied"), (r"player_scrape", "Crafting & Activities: Scraping"),
+    (r"player_seal", "Crafting & Activities: Sealing"), (r"player_squeezehoneycomb", "Crafting & Activities: Squeezing Honeycomb"),
+    (r"player_strike(\d)", "Crafting & Activities: Striking {n}"), (r"player_wetclothsqueeze", "Crafting & Activities: Squeezing Wet Cloth"),
     (r"effect_bellows", "Machines: Bellows"),
+    (r"wearable_brigandine(\d)", "Armor: Brigandine {n}"), (r"wearable_chain(\d)", "Armor: Chain {n}"),
+    (r"wearable_leather(\d)", "Armor: Leather {n}"), (r"wearable_plate(\d)", "Armor: Plate {n}"),
+    (r"wearable_scale(\d)", "Armor: Scale {n}"),
 ]
 
 
@@ -113,7 +139,7 @@ def mod_sound_names():
     for n in range(1, 9):
         names[f"{d}thunder_specialthunder{n}"] = f"Temporal Storm: Special Thunder {n}"
     names[f"{d}tempwarningbell"] = "Temporal Storm: Warning Bell"
-    names[f"{d}tempwarningbell_waning"] = "Temporal Storm: Warning Bell (Waning)"
+    names[f"{d}tempwarningbell_waning"] = "Temporal Storm: Warning Bell Waning"
     names[f"{d}riftweather_apocalyptic"] = "Temporal Storm: Apocalyptic Rift Weather"
     return names
 
@@ -195,7 +221,7 @@ def main():
     combined = []
     for c in COMBINED:
         members = [k for k in keys if any(re.fullmatch(p, k) for p in c["patterns"])]
-        combined.append({"id": c["id"], "name": c["name"], "keys": members})
+        combined.append({"id": c["id"], "name": c["name"], "group": c.get("group", ""), "keys": members})
     with open(os.path.join(ROOT, "assets/volumesliders/config/combined.json"), "w", encoding="utf-8") as f:
         json.dump(combined, f, indent="	")
     with open(os.path.join(ROOT, "assets/volumesliders/config/major.json"), "w", encoding="utf-8") as f:

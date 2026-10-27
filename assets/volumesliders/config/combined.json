@@ -1,16 +1,19 @@
 [
 	{
 		"id": "helvehammer",
-		"name": "Helve Hammer (and Anvil Hits)",
+		"name": "Helve Hammer and Anvil",
+		"group": "",
 		"keys": [
 			"effect_anvilhit1",
 			"effect_anvilhit2",
-			"effect_anvilhit3"
+			"effect_anvilhit3",
+			"effect_anvilmergehit"
 		]
 	},
 	{
 		"id": "bellmob",
-		"name": "Bell Mob (Deep, Nightmare, Tainted)",
+		"name": "Bell Mob",
+		"group": "",
 		"keys": [
 			"creature_bell_alarm",
 			"creature_bell_bell",
@@ -23,7 +26,8 @@
 	},
 	{
 		"id": "charlemange",
-		"name": "Charlemange (Mini Bell)",
+		"name": "Charlemange",
+		"group": "",
 		"keys": [
 			"creature_bell_charlemange_death_charlemange_death3",
 			"creature_bell_charlemange_happy_char_happy_chirp1",
@@ -78,8 +82,57 @@
 		]
 	},
 	{
+		"id": "armor-brigandine",
+		"name": "Brigandine",
+		"group": "Armor",
+		"keys": [
+			"wearable_brigandine1",
+			"wearable_brigandine2"
+		]
+	},
+	{
+		"id": "armor-chain",
+		"name": "Chain",
+		"group": "Armor",
+		"keys": [
+			"wearable_chain1",
+			"wearable_chain2"
+		]
+	},
+	{
+		"id": "armor-leather",
+		"name": "Leather",
+		"group": "Armor",
+		"keys": [
+			"wearable_leather1",
+			"wearable_leather2",
+			"wearable_leather3"
+		]
+	},
+	{
+		"id": "armor-plate",
+		"name": "Plate",
+		"group": "Armor",
+		"keys": [
+			"wearable_plate1",
+			"wearable_plate2",
+			"wearable_plate3",
+			"wearable_plate4"
+		]
+	},
+	{
+		"id": "armor-scale",
+		"name": "Scale",
+		"group": "Armor",
+		"keys": [
+			"wearable_scale1",
+			"wearable_scale2"
+		]
+	},
+	{
 		"id": "npcvoices",
-		"name": "NPC Voices (Traders, Villagers)",
+		"name": "NPC Voices",
+		"group": "",
 		"keys": [
 			"voice_accordion",
 			"voice_accordion_1",

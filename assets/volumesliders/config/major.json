@@ -58,7 +58,8 @@
 	],
 	"prefixes": [
 		"creature_",
-		"voice_"
+		"voice_",
+		"wearable_"
 	],
 	"minorPrefixes": [
 		"creature_bell_charlemange_"

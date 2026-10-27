@@ -3,7 +3,7 @@
 	"modid": "volumesliders",
 	"name": "Volume Sliders",
 	"description": "A searchable list of volume sliders for every sound in the game. Open it with Ctrl+Shift+V.",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"authors": [ "G0rbash" ],
 	"side": "Client",
 	"requiredOnClient": true,

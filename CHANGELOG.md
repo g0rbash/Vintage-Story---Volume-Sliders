@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.3
+
+**New**
+- **Armor sounds:** worn armor now shows on the default list as an **Armor** group with one slider per type: Brigandine, Chain, Leather, Plate and Scale. The Armor slider controls all of them. Before, you had to turn on "Show every sound" to find them.
+
+**Changed**
+- **Helve Hammer and Anvil:** the weld hit now shares the Helve Hammer slider, which is now named "Helve Hammer and Anvil". The helve hammer and the player striking an anvil play the same hit sounds, so one slider covers both.
+- **Shorter names:** the combined sliders are now just "Bell Mob", "Charlemange" and "NPC Voices", and a few sound names lost their brackets.
+- **Miscellaneous:** everyday sounds that aren't what people usually tune, such as blocks, doors, chests, tools, held items, menus and ambient effects, now sit in a **Miscellaneous** group, one sub-group each. None of them is on the default list. Footsteps, music and weather keep their own groups.
+- **Player group:** it now holds only the player's own body sounds: hurt, death, jump, eating and drinking.
+- **Combat:** new group for slap, stab, spear hit, projectile hit and throwing.
+- **Crafting & Activities:** new group for everything else the player did that was listed under Player: panning, glue and cloth repair, knapping, clay forming, building, coins, collecting, chalk drawing, and so on.
+
 ## 0.1.2
 
 **New**
