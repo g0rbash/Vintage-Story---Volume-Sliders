@@ -52,5 +52,5 @@ headings, bold and italic, lists) and has no screenshots of its own, because the
 
 ## After saving
 
-Upload `dist/volumesliders_0.1.0.zip` and set its game versions to 1.22.0 to 1.22.7 (`modinfo.json` asks for
+Upload `dist/volumesliders_0.1.1.zip` and set its game versions to 1.22.0 to 1.22.7 (`modinfo.json` asks for
 1.22.0; it was tested on 1.22.7). I couldn't see where the form does this, so look for it after the first save.

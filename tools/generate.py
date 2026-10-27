@@ -22,7 +22,7 @@ UI = {
 
 
 # The "major" sounds people most often want quieter. The in-game window opens on these plus every creature
-# sound (MAJOR_PREFIXES), with a switch to show everything.
+# and NPC voice sound (MAJOR_PREFIXES), with a switch to show everything.
 # Sources: forum/mod-page complaints (helve hammer anvil hit, boat water, quern, cicadas/insects, loud bells,
 # temporal sounds) plus the user's own list (water, rain, wind, thunder, mobs). Gears/bellows/fire are judgment calls.
 MAJOR_PATTERNS = [
@@ -37,13 +37,17 @@ MAJOR_PATTERNS = [
     r"effect_tempstab_(drain|low|verylow)", r"effect_rift", r"effect_deepbell", r"block_riftward",
     r"block_quern", r"effect_(gears|bellows)",
 ]
-MAJOR_PREFIXES = ["creature_"]
+MAJOR_PREFIXES = ["creature_", "voice_"]   # voice_ = NPC speech (traders, villagers)
 
 # Sounds that share ONE slider instead of getting one each. The mod stores the slider under "combo:<id>".
 # The helve hammer plays only effect/anvilhit (the game picks one of anvilhit1-3); the hand hammer plays the same
 # sound, so this slider quiets hammering at an anvil by hand too. The weld hit (anvilmergehit) is the hand hammer's alone.
 COMBINED = [
     {"id": "helvehammer", "name": "Helve Hammer (and Anvil Hits)", "patterns": [r"effect_anvilhit\d"]},
+    # Traders and villagers speak by playing random notes from sounds/voice/<instrument>/ (listed as "voiceSounds" in
+    # their entity files). Trader-male and villager share the same six instruments, and the female trader's three
+    # overlap them, so the voices can't be told apart by NPC type. One slider quiets all of them.
+    {"id": "npcvoices", "name": "NPC Voices (Traders, Villagers)", "patterns": [r"voice_.*"]},
 ]
 
 # Friendly names where the file name alone isn't clear. {n} = trailing number.

@@ -1,6 +1,6 @@
 # Volume Sliders
 
-Version 0.1.0 · Vintage Story 1.22.7 · client side
+Version 0.1.1 · Vintage Story 1.22.7 · client side
 
 *This project was done with the help of Claude (Claude Sonnet 5.5).*
 
@@ -36,7 +36,7 @@ Some sounds in Vintage Story you'll love for a hundred hours, and some will wear
 
 The window opens on these sounds, the ones people most often want quieter, and can show all 813 of the game's own, plus the sounds of any mods you have.
 
-- **Helve Hammer** (3): One slider for everything the helve hammer plays. Hammering at an anvil by hand plays the same hits, so it quiets those too.
+- **Helve Hammer** (96): One slider for everything the helve hammer plays. Hammering at an anvil by hand plays the same hits, so it quiets those too.
 - **Anvil** (1): The weld hit
 - **Water** (15): Rapids, creek, waterfall, waves, underwater, splashes, waterwheel, wading, swimming
 - **Boat** (2): Water against the raft, idle and moving
@@ -68,7 +68,7 @@ The window opens on these sounds, the ones people most often want quieter, and c
 
 ## Installation
 
-1. Drop **volumesliders_0.1.0.zip** into your Mods folder.
+1. Drop **volumesliders_0.1.1.zip** into your Mods folder.
 2. Start the game. The first run writes **ModConfig/volumesliders.json** with every sound at 100.
 3. To reset everything, delete that file, or use *Reset Shown to 100* in the window.
 

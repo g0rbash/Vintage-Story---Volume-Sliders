@@ -57,7 +57,8 @@
 		"weather_wind_leafy"
 	],
 	"prefixes": [
-		"creature_"
+		"creature_",
+		"voice_"
 	],
 	"total": 813,
 	"creatures": 271

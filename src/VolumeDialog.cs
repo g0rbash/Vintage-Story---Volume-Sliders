@@ -131,7 +131,8 @@ namespace VolumeSliders
 
             bool Passes(SoundNode n)
             {
-                if (!showAll && !n.Major) return false;
+                // Anything heard in the last 30 seconds is listed, major or not: that is how you find a sound you can't name.
+                if (!showAll && !recentOnly && !n.Major) return false;
                 if (terms.Length > 0 && !terms.All(t => n.Search.Contains(t))) return false;
                 if (recentOnly && !n.Members.Any(m => VolumeConfig.LastHeard.TryGetValue(m.Key, out long t) && now - t < RecentMs)) return false;
                 return true;
