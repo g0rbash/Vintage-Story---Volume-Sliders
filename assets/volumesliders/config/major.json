@@ -60,6 +60,9 @@
 		"creature_",
 		"voice_"
 	],
+	"minorPrefixes": [
+		"creature_bell_charlemange_"
+	],
 	"total": 813,
 	"creatures": 271
 }

@@ -38,6 +38,8 @@ MAJOR_PATTERNS = [
     r"block_quern", r"effect_(gears|bellows)",
 ]
 MAJOR_PREFIXES = ["creature_", "voice_"]   # voice_ = NPC speech (traders, villagers)
+# ...except these, which stay out of the default list (still found by search, or with "Show every sound").
+MINOR_PREFIXES = ["creature_bell_charlemange_"]   # Charlemange, the mini Bell
 
 # Sounds that share ONE slider instead of getting one each. The mod stores the slider under "combo:<id>".
 # The helve hammer plays only effect/anvilhit (the game picks one of anvilhit1-3); the hand hammer plays the same
@@ -47,6 +49,12 @@ COMBINED = [
     # Traders and villagers speak by playing random notes from sounds/voice/<instrument>/ (listed as "voiceSounds" in
     # their entity files). Trader-male and villager share the same six instruments, and the female trader's three
     # overlap them, so the voices can't be told apart by NPC type. One slider quiets all of them.
+    # The Bell mob's own sounds, including its deep bell. Deep, Nightmare and Tainted are the same mob at higher
+    # difficulty and have no sound files of their own. Reception Bell (a block) stays separate.
+    {"id": "bellmob", "name": "Bell Mob (Deep, Nightmare, Tainted)",
+     "patterns": [r"creature_bell_(alarm|bell|death|hurt|listen|walk)", r"effect_deepbell"]},
+    # Charlemange, the mini Bell: kept apart from the Bell mob and off the default list.
+    {"id": "charlemange", "name": "Charlemange (Mini Bell)", "patterns": [r"creature_bell_charlemange_.*"]},
     {"id": "npcvoices", "name": "NPC Voices (Traders, Villagers)", "patterns": [r"voice_.*"]},
 ]
 
@@ -191,7 +199,7 @@ def main():
     with open(os.path.join(ROOT, "assets/volumesliders/config/combined.json"), "w", encoding="utf-8") as f:
         json.dump(combined, f, indent="	")
     with open(os.path.join(ROOT, "assets/volumesliders/config/major.json"), "w", encoding="utf-8") as f:
-        json.dump({"keys": major, "prefixes": MAJOR_PREFIXES, "total": len(keys),
+        json.dump({"keys": major, "prefixes": MAJOR_PREFIXES, "minorPrefixes": MINOR_PREFIXES, "total": len(keys),
                    "creatures": len([k for k in keys if k.startswith("creature_")])}, f, indent="	")
     with open(os.path.join(ROOT, "assets/volumesliders/lang/en.json"), "w", encoding="utf-8") as f:
         json.dump(lang, f, indent="\t", ensure_ascii=False)

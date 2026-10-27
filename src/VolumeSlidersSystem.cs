@@ -22,8 +22,9 @@ namespace VolumeSliders
         // assets/volumesliders/config/major.json, written by tools/generate.py.
         HashSet<string> majorKeys = new HashSet<string>();
         string[] majorPrefixes = new string[0];
+        string[] minorPrefixes = new string[0];   // stay off the default list even under a major prefix
 
-        class MajorList { public string[] keys = new string[0]; public string[] prefixes = new string[0]; }
+        class MajorList { public string[] keys = new string[0]; public string[] prefixes = new string[0]; public string[] minorPrefixes = new string[0]; }
 
         public override bool ShouldLoad(EnumAppSide forSide) => forSide == EnumAppSide.Client;
 
@@ -54,6 +55,7 @@ namespace VolumeSliders
             {
                 majorKeys = new HashSet<string>(major.keys);
                 majorPrefixes = major.prefixes;
+                minorPrefixes = major.minorPrefixes;
             }
 
             var combos = capi.Assets.TryGet(new AssetLocation("volumesliders", "config/combined.json"))?.ToObject<CombinedDef[]>()
@@ -111,7 +113,8 @@ namespace VolumeSliders
                 Key = key, Display = display, Search = (display + " " + key).ToLowerInvariant(), Location = loc, HasLangName = hasName,
                 ModName = mod, Replaced = replaced,
                 // A mod's own sounds show up by default; a replaced game sound is major only if the game's own would be.
-                Major = majorKeys.Contains(key) || majorPrefixes.Any(p => key.StartsWith(p)) || (mod != null && !replaced),
+                Major = !minorPrefixes.Any(p => key.StartsWith(p))
+                    && (majorKeys.Contains(key) || majorPrefixes.Any(p => key.StartsWith(p)) || (mod != null && !replaced)),
             };
         }
 
