@@ -226,7 +226,8 @@ def main():
         json.dump(combined, f, indent="	")
     with open(os.path.join(ROOT, "assets/volumesliders/config/major.json"), "w", encoding="utf-8") as f:
         json.dump({"keys": major, "prefixes": MAJOR_PREFIXES, "minorPrefixes": MINOR_PREFIXES, "total": len(keys),
-                   "creatures": len([k for k in keys if k.startswith("creature_")])}, f, indent="	")
+                   "creatures": len([k for k in keys if k.startswith("creature_") and not k.startswith(tuple(MINOR_PREFIXES))
+                                     and k not in major and not any(k in c["keys"] for c in combined)])}, f, indent="	")
     with open(os.path.join(ROOT, "assets/volumesliders/lang/en.json"), "w", encoding="utf-8") as f:
         json.dump(lang, f, indent="\t", ensure_ascii=False)
     print(f"{len(keys)} sounds, {len(major)} major")

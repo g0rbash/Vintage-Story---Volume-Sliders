@@ -29,13 +29,15 @@ INTRO = ("Some sounds in Vintage Story you'll love for a hundred hours, and some
 
 FEATURES = [
     '<b>A slider for every sound.</b> 100 is the game\'s normal volume for that sound, and no slider can go above it.',
-    '<b>Clear names.</b> "Water: Rapids", "Thunder: Near", "Drifter: Idle 2". Sounds that come in several versions get '
-    'a slider for each version.',
+    '<b>Clear names.</b> "Water: Rapids", "Thunder: Near", "Drifter: Idle 2".',
     '<b>Groups that open.</b> Related sounds sit under a group marked with a <b>&gt;</b>. Open it to see each sound; '
     'the group\'s own slider turns the whole group up or down. Mobs are grouped by creature: Drifter, Bear, Bowtorn, '
     'and so on.',
-    '<b>One slider for the helve hammer.</b> Everything the helve hammer plays is a single slider, instead of a '
-    'handful of near-identical hits.',
+    '<b>One slider where sounds belong together.</b> The helve hammer and anvil, the Bell mob, with its Deep, Nightmare and '
+    'Tainted versions, NPC speech, and each type of armor each get a single slider, instead of a handful of '
+    'near-identical sounds.',
+    '<b>Sorted by what they are.</b> Mobs, NPC Voices, Armor, Player, Combat, Crafting &amp; Activities, and a '
+    'Miscellaneous group for everyday block, door, tool and menu sounds, so the sounds people tune are easy to find.',
     '<b>A searchable window</b> in the same style as the game\'s own settings.',
     '<b>Recently heard.</b> One switch lists only the sounds that played in the last 30 seconds, so you can find the '
     'one that is bugging you right now.',
@@ -49,7 +51,6 @@ FEATURES = [
 
 # group label -> examples. The label is the text before ":" in each sound's name (see tools/generate.py).
 GROUPS = [
-    ('Anvil', 'The weld hit'),
     ('Water', 'Rapids, creek, waterfall, waves, underwater, splashes, waterwheel, wading, swimming'),
     ('Boat', 'Water against the raft, idle and moving'),
     ('Rain', 'Rain on leafy and bare trees, hail, rain on windows'),
@@ -60,21 +61,25 @@ GROUPS = [
     ('Insects', 'Cicadas, grasshoppers, coqui frogs'),
     ('Bees', 'Hives, swarms, stings'),
     ('Temporal', 'Stability warnings, rifts, rift wards'),
-    ('Bells', 'The deep bell'),
     ('Machines', 'Quern, gears, bellows'),
 ]
-MOBS = 'Every creature sound, grouped by creature: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest'
+MOBS = 'Creature sounds, grouped by creature: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest'
+BELL = 'The Bell mob, including its deep bell. Deep, Nightmare and Tainted are the same mob and share these sounds.'
+NPC = 'Everything traders and villagers say. They share their voices, so one slider covers them all.'
+ARMOR = 'One slider each for Brigandine, Chain, Leather, Plate and Scale, and an Armor slider for all of them.'
+ELSEWHERE = ('Not on the opening list, but one switch away with <i>Show every sound</i>, or by searching: Player, '
+             'Combat, Crafting &amp; Activities, Walk, Music, Charlemange, and Miscellaneous.')
 MODS = ("Sounds added by other mods, grouped by mod. Temporal Symphony's temporal storm, thunder, and creature sounds are "
         "one example.")
-HELVE = ('One slider for everything the helve hammer plays. Hammering at an anvil by hand plays the same hits, '
-         'so it quiets those too.')
+HELVE = ('One slider for the helve hammer and anvil. Hammering at an anvil by hand plays the same hits, and the weld '
+         'hit shares the slider, so it quiets those too.')
 
 USING = [
-    'Press <b>Ctrl+Shift+V</b> (you can rebind it in the controls settings), or type <b>.volumesliders</b> in chat.',
+    'Press <b>Ctrl+Shift+V</b> which you can rebind in the controls settings, or type <b>.volumesliders</b> in chat.',
     'Click a group, or its <b>&gt;</b>, to open or close it. The group\'s slider scales everything inside, and each '
     'sound keeps its own slider too. They multiply, so a group at 50% and a sound at 50% plays at 25%.',
-    'The window opens on the sounds most people want quieter, plus every creature sound. Flip <i>Show every sound</i> '
-    "to list every sound, including mods' quieter ones.",
+    'The window opens on the sounds most people want quieter, plus the creature sounds. Flip <i>Show every sound</i> '
+    "to list every sound, including mods' quieter ones. <i>Recently heard</i> lists whatever just played, listed or not.",
     'Your settings are saved in <b>ModConfig/volumesliders.json</b>.',
 ]
 COMPAT = [
@@ -117,18 +122,21 @@ counts = {}
 for k in major:
     counts[group_of(k)] = counts.get(group_of(k), 0) + 1
 creature_total = major_cfg['creatures']
-combined_total = sum(len(c['keys']) for c in json.load(open(os.path.join(cfg, 'config', 'combined.json'), encoding='utf-8')))
+combos = {c['id']: len(c['keys']) for c in json.load(open(os.path.join(cfg, 'config', 'combined.json'), encoding='utf-8'))}
+armor_total = sum(n for i, n in combos.items() if i.startswith('armor-'))
 
-sound_rows = []
-for label, examples in GROUPS:
-    n = counts.get(label, 0)
-    if n:
-        sound_rows.append((f'<b>{label}</b>', examples, str(n)))
-sound_rows.insert(0, ('<b>Helve Hammer</b>', HELVE, str(combined_total)))
-sound_rows.insert(9, ('<b>Mobs</b>', MOBS, str(creature_total)))
+by_label = {label: (f'<b>{label}</b>', examples, str(counts.get(label, 0))) for label, examples in GROUPS}
+order = ['Water', 'Boat', 'Rain', 'Wind', 'Thunder', 'Fire', 'Lava', 'Insects', 'Bees']
+sound_rows = [('<b>Helve Hammer and Anvil</b>', HELVE, str(combos['helvehammer']))]
+sound_rows += [by_label[l] for l in order if counts.get(l)]
+sound_rows += [('<b>Mobs</b>', MOBS, str(creature_total)),
+               ('<b>Bell Mob</b>', BELL, str(combos['bellmob'])),
+               ('<b>NPC Voices</b>', NPC, str(combos['npcvoices'])),
+               ('<b>Armor</b>', ARMOR, str(armor_total))]
+sound_rows += [by_label[l] for l in ('Temporal', 'Machines') if counts.get(l)]
 sound_rows.append(('<b>Mods</b>', MODS, 'Varies'))
-SOUNDS_INTRO = (f'The window opens on these sounds, the ones people most often want quieter, and can show all {total} of '
-                "the game's own, plus the sounds of any mods you have.")
+SOUNDS_INTRO = (f'The window opens on these sounds, the ones people most often want quieter, and can show every one of '
+                "the game's own, plus the sounds of any mods you have. " + ELSEWHERE)
 
 # Real in-game screenshots (docs/images/screenshots).
 SHOTS = {  # file, caption, short alt text for when the image can't load
@@ -150,7 +158,7 @@ def shot_size(key, width=700):
 
 def sound_line(entry):
     group, includes, count = entry
-    return f'{group}{"" if count == "Varies" else f" ({count})"}: {includes}'
+    return f'{group}: {includes}'
 
 
 # ---------------------------------------------------------------- Mod DB description (HTML)
