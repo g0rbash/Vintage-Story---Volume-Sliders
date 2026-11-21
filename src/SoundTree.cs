@@ -16,6 +16,7 @@ namespace VolumeSliders
         public bool HasLangName;      // Display came from lang/en.json ("Group: Name") rather than the file name
         public string? ModName;       // set when the sound's file comes from a mod rather than the game
         public bool Replaced;         // ...and that mod replaced one of the game's own sound files
+        public float Pitch = 1f;      // pitch the Play button uses; a "virtual" sound (the helve hammer) is one file at another pitch
     }
 
     /// <summary>One of the "combo" sliders from config/combined.json: several sounds, one slider.</summary>

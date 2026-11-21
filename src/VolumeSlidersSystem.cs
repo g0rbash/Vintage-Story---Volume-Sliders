@@ -78,6 +78,18 @@ namespace VolumeSliders
                 .Select(g => Describe(g.First().Key, g.First().Value, ModFor))
                 .OrderBy(e => e.Display, StringComparer.OrdinalIgnoreCase)
                 .ToList();
+            // The helve hammer has no file of its own: it plays the hand hammer's anvilhit at a low pitch (see SoundPatch).
+            // List it as a sound of its own so it can have a slider, and let Play use that pitch.
+            var anvilHit = Sounds.FirstOrDefault(e => e.Key == "effect_anvilhit1");
+            if (anvilHit != null)
+            {
+                string helveName = Lang.Get("volumesliders:sound-" + SoundPatch.HelveKey);
+                Sounds.Add(new SoundEntry
+                {
+                    Key = SoundPatch.HelveKey, Display = helveName, Search = (helveName + " " + SoundPatch.HelveKey).ToLowerInvariant(),
+                    Location = anvilHit.Location, HasLangName = true, Pitch = 0.4f, Major = majorKeys.Contains(SoundPatch.HelveKey),
+                });
+            }
             VolumeConfig.SetKnown(new HashSet<string>(Sounds.Select(e => e.Key)));
 
             Tree = SoundTree.Build(Sounds, combos, out var rules);
@@ -122,6 +134,7 @@ namespace VolumeSliders
         {
             harmony?.UnpatchAll(HarmonyId);
             dialog?.Dispose();
+            VolumeConfig.Save();   // a slider moved just before quitting may still be waiting on the dialog's delayed save
         }
     }
 }

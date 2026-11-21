@@ -1,10 +1,10 @@
 # Volume Sliders
 
-Version 0.1.3 · Vintage Story 1.22.7 · client side
+Version 0.1.4 · Vintage Story 1.22.7 · client side
 
 *This project was done with the help of Claude (Claude Sonnet 5.5).*
 
-Some sounds in Vintage Story you'll love for a hundred hours, and some will wear you down: the helve hammer through a long smithing session, the rapids beside your base, the cicadas, a rainstorm that won't quit. The base game only gives you a few master volume sliders. This mod gives the individual sounds their own slider, so you can turn down just the ones that bother you and leave the rest alone.
+Volume Sliders adds a volume slider for each sound in Vintage Story. The base game only has a few master volume sliders. With this mod you can turn down a single sound, such as the helve hammer, the rapids, the cicadas or the rain, and leave everything else as it is.
 
 <details>
 <summary><b>Screenshots</b></summary>
@@ -21,23 +21,19 @@ Some sounds in Vintage Story you'll love for a hundred hours, and some will wear
 
 ## What you get
 
-- **A slider for every sound.** 100 is the game's normal volume for that sound, and no slider can go above it.
-- **Clear names.** "Water: Rapids", "Thunder: Near", "Drifter: Idle 2".
-- **Groups that open.** Related sounds sit under a group marked with a **>**. Open it to see each sound; the group's own slider turns the whole group up or down. Mobs are grouped by creature: Drifter, Bear, Bowtorn, and so on.
-- **One slider where sounds belong together.** The helve hammer and anvil, the Bell mob, with its Deep, Nightmare and Tainted versions, NPC speech, and each type of armor each get a single slider, instead of a handful of near-identical sounds.
-- **Sorted by what they are.** Mobs, NPC Voices, Armor, Player, Combat, Crafting & Activities, and a Miscellaneous group for everyday block, door, tool and menu sounds, so the sounds people tune are easy to find.
-- **A searchable window** in the same style as the game's own settings.
-- **Recently heard.** One switch lists only the sounds that played in the last 30 seconds, so you can find the one that is bugging you right now.
-- **Changes apply immediately**, including sounds that are already playing, like a river loop.
-- **Preview button** beside every slider.
-- **Mod sounds too.** Sounds that other mods add get sliders under **Mods**, grouped by mod. Salty's Temporal Symphony, for example, has a **Temporal Storm** group for its storm rumbles, warnings, and thunder.
-- **Changes are marked.** When a mod replaces one of the game's own sounds, that slider shows the mod's name beside it, and its group counts how many of its sounds were changed.
+- A slider for every sound, from 0 to 100. 100 is the game's normal volume; no slider can go above it.
+- Sounds are listed in groups (Water, Mobs, Armor and so on). Click a group, or its **>**, to open it. A group's slider scales everything inside it.
+- Some near-identical sounds share one slider: Bells (the Bell mob and its Deep, Nightmare and Tainted versions), NPC Voices, each type of armor, and the Anvil group (Helve Hammer and Hand Hammer).
+- A search box, and a *Recently heard* switch that lists the sounds played in the last 30 seconds, for finding a sound you can't name.
+- A Play button beside every slider.
+- Changes apply immediately, including to loops that are already playing, such as a river.
+- Sounds added by other mods are listed under **Mods**, grouped by mod. When a mod replaces one of the game's sounds, that slider shows the mod's name.
 
 ## The sounds
 
-The window opens on these sounds, the ones people most often want quieter, and can show every one of the game's own, plus the sounds of any mods you have. Not on the opening list, but one switch away with *Show every sound*, or by searching: Player, Combat, Crafting & Activities, Walk, Music, Charlemange, and Miscellaneous.
+The window opens on these sounds. Everything else is available with *Show every sound*, or by searching: Player, Combat, Crafting & Activities, Walk, Music and Miscellaneous. The mini Bell, Charlemange, is under Mobs.
 
-- **Helve Hammer and Anvil**: One slider for the helve hammer and anvil. Hammering at an anvil by hand plays the same hits, and the weld hit shares the slider, so it quiets those too.
+- **Anvil**: *Helve Hammer* and *Hand Hammer* have separate sliders. The game plays the same sound file for both, with the helve hammer at a much lower pitch, so the mod tells them apart by pitch. Hand Hammer also covers the weld hit. Placing or breaking an anvil is a different sound (Miscellaneous > Block).
 - **Water**: Rapids, creek, waterfall, waves, underwater, splashes, waterwheel, wading, swimming
 - **Boat**: Water against the raft, idle and moving
 - **Rain**: Rain on leafy and bare trees, hail, rain on windows
@@ -47,31 +43,30 @@ The window opens on these sounds, the ones people most often want quieter, and c
 - **Lava**: Lava ambience
 - **Insects**: Cicadas, grasshoppers, coqui frogs
 - **Bees**: Hives, swarms, stings
-- **Mobs**: Creature sounds, grouped by creature: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest
-- **Bell Mob**: The Bell mob, including its deep bell. Deep, Nightmare and Tainted are the same mob and share these sounds.
-- **NPC Voices**: Everything traders and villagers say. They share their voices, so one slider covers them all.
+- **Mobs**: Creature sounds, grouped by creature: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens and the rest. Bells is one slider for the Bell mob, including its deep bell and its Deep, Nightmare and Tainted versions.
+- **NPC Voices**: Speech from traders and villagers, on one slider.
 - **Armor**: One slider each for Brigandine, Chain, Leather, Plate and Scale, and an Armor slider for all of them.
 - **Temporal**: Stability warnings, rifts, rift wards
 - **Machines**: Quern, gears, bellows
-- **Mods**: Sounds added by other mods, grouped by mod. Temporal Symphony's temporal storm, thunder, and creature sounds are one example.
+- **Mods**: Sounds added by other mods, grouped by mod. Salty's Temporal Symphony is one example.
 
 ## Using it
 
-- Press **Ctrl+Shift+V** which you can rebind in the controls settings, or type **.volumesliders** in chat.
-- Click a group, or its **>**, to open or close it. The group's slider scales everything inside, and each sound keeps its own slider too. They multiply, so a group at 50% and a sound at 50% plays at 25%.
-- The window opens on the sounds most people want quieter, plus the creature sounds. Flip *Show every sound* to list every sound, including mods' quieter ones. *Recently heard* lists whatever just played, listed or not.
-- Your settings are saved in **ModConfig/volumesliders.json**.
+- Open the window with **Ctrl+Shift+V** (rebindable in the controls settings) or the chat command **.volumesliders**.
+- A group's slider and the sliders inside it multiply: a group at 50% and a sound at 50% plays at 25%.
+- The window opens on the sounds listed below plus creature sounds. *Show every sound* lists all of them. *Recently heard* lists whatever just played, whether it is on the default list or not.
+- Settings are saved in **ModConfig/volumesliders.json**.
 
 ## Compatibility
 
 - **Vintage Story 1.22.7.** Client-side only.
-- **Accessibility Tweaks.** Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to 50% in each plays at 25%.
-- **Other mods.** Their sounds get sliders under Mods, and a game sound a mod replaces is marked with the mod's name. If a mod has its own volume setting, it still applies on top of these sliders. A mod that plays sound through its own audio code, instead of the game's sound engine, may not respond.
+- **Accessibility Tweaks.** Its Sound Effects screen also scales sounds. Both apply, so a sound set to 50% in each plays at 25%.
+- **Other mods.** Their sounds get sliders under Mods. A mod's own volume setting still applies on top of these sliders. A mod that plays sound through its own audio code instead of the game's sound engine may not respond.
 
 ## Installation
 
-1. Drop **volumesliders_0.1.3.zip** into your Mods folder.
-2. Start the game. The first run writes **ModConfig/volumesliders.json** with every sound at 100.
+1. Put **volumesliders_0.1.4.zip** in your Mods folder.
+2. Start the game. The first run creates **ModConfig/volumesliders.json**.
 3. To reset everything, delete that file, or use *Reset Shown to 100* in the window.
 
 ## License

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.4
+
+**New**
+- **Helve Hammer has its own slider.** The helve hammer sounds nothing like hammering an anvil by hand, but the game gives it no sound file of its own: it plays the hand hammer's hit at a much lower pitch (0.3 to 0.5 instead of about 1), which is also why it resembles the sound of placing an anvil. The mod now tells the two apart by pitch, so the new **Helve Hammer** slider quiets only the helve hammer.
+
+**Changed**
+- **Anvil group:** "Helve Hammer" and "Hand Hammer" (the old "Helve Hammer and Anvil" slider: hammering at an anvil by hand and the weld hit) now sit together under an **Anvil** group. Your old setting carries over to the Helve Hammer slider (the one most people used it for), so hand hammering returns to full volume until you turn Hand Hammer down.
+- **Charlemange:** the combined Charlemange slider is gone, since the mini Bell sounds nothing like the Bell mob. Its sounds are still there, one slider each, under Mobs > Bell (search for them, or turn on "Show every sound").
+- **Bells under Mobs:** the "Bell Mob" slider is now called **Bells** and lives inside the Mobs group, so the Mobs slider scales it too. Your saved Bell Mob setting carries over.
+
 ## 0.1.3
 
 **New**

@@ -245,7 +245,8 @@ namespace VolumeSliders
             if (sound != null)
             {
                 // Plays through the normal pipeline, so the slider values apply to the preview too.
-                capi.World.PlaySoundAt(sound.Location, capi.World.Player.Entity, null, false, 16f, 1f);
+                if (sound.Pitch != 1f) capi.World.PlaySoundAt(sound.Location, capi.World.Player.Entity, null, sound.Pitch, 16f, 1f);
+                else capi.World.PlaySoundAt(sound.Location, capi.World.Player.Entity, null, false, 16f, 1f);
             }
             return true;
         }

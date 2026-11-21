@@ -18,17 +18,38 @@ namespace VolumeSliders
         // Location.ToString() allocates and this runs on every volume update, so remember the key per AssetLocation.
         static readonly ConditionalWeakTable<AssetLocation, string> keys = new ConditionalWeakTable<AssetLocation, string>();
 
+        /// <summary>
+        /// The helve hammer and a hammer in the player's hand both play sounds/effect/anvilhit; the helve hammer plays it
+        /// at a pitch of 0.3-0.5, the hand hammer at about 1 (villager smiths 0.75-1.25). Pitch is the only difference, so
+        /// a hit below this pitch, midway between the helve's top and the villagers' bottom, is filed under its own key
+        /// and gets its own slider.
+        /// </summary>
+        public const float HelveMaxPitch = 0.62f;
+        public const string HelveKey = "effect_helvehammer";
+
+        static string KeyOf(LoadedSoundNative sound, AssetLocation loc)
+        {
+            if (!keys.TryGetValue(loc, out string? key))
+            {
+                key = SoundKeys.KeyFor(loc);
+                keys.AddOrUpdate(loc, key);
+            }
+            if (IsAnvilHit(key) && sound.Params.Pitch < HelveMaxPitch) return HelveKey;
+            return key;
+        }
+
+        const string AnvilHitPrefix = "effect_anvilhit";   // + a digit: effect_anvilhit1..3
+
+        static bool IsAnvilHit(string key) =>
+            key.Length == AnvilHitPrefix.Length + 1 && key.StartsWith(AnvilHitPrefix, StringComparison.Ordinal) && char.IsDigit(key[key.Length - 1]);
+
         [HarmonyPostfix]
         public static void Postfix(LoadedSoundNative __instance, ref float __result)
         {
             var loc = __instance.Params?.Location;
             if (loc == null) return;
 
-            if (!keys.TryGetValue(loc, out string? key))
-            {
-                key = SoundKeys.KeyFor(loc);
-                keys.AddOrUpdate(loc, key);
-            }
+            string key = KeyOf(__instance, loc);
 
             if (!VolumeConfig.IsKnown(key)) return;   // not a sound with a slider
 
@@ -56,7 +77,7 @@ namespace VolumeSliders
             {
                 var loc = s.Params?.Location;
                 if (loc == null || s.IsDisposed) continue;
-                if (matches == null || matches(SoundKeys.KeyFor(loc))) s.SetVolume();
+                if (matches == null || matches(KeyOf(s, loc))) s.SetVolume();
             }
         }
     }

@@ -22,31 +22,22 @@ VERSION = json.load(open(os.path.join(ROOT, 'modinfo.json'), encoding='utf-8'))[
 GAME = '1.22.7'
 AI_NOTE = 'This project was done with the help of Claude (Claude Sonnet 5.5).'
 
-INTRO = ("Some sounds in Vintage Story you'll love for a hundred hours, and some will wear you down: the helve hammer "
-         "through a long smithing session, the rapids beside your base, the cicadas, a rainstorm that won't quit. The "
-         "base game only gives you a few master volume sliders. This mod gives the individual sounds their own slider, "
-         "so you can turn down just the ones that bother you and leave the rest alone.")
+INTRO = ("Volume Sliders adds a volume slider for each sound in Vintage Story. The base game only has a few master "
+         "volume sliders. With this mod you can turn down a single sound, such as the helve hammer, the rapids, the "
+         "cicadas or the rain, and leave everything else as it is.")
 
 FEATURES = [
-    '<b>A slider for every sound.</b> 100 is the game\'s normal volume for that sound, and no slider can go above it.',
-    '<b>Clear names.</b> "Water: Rapids", "Thunder: Near", "Drifter: Idle 2".',
-    '<b>Groups that open.</b> Related sounds sit under a group marked with a <b>&gt;</b>. Open it to see each sound; '
-    'the group\'s own slider turns the whole group up or down. Mobs are grouped by creature: Drifter, Bear, Bowtorn, '
-    'and so on.',
-    '<b>One slider where sounds belong together.</b> The helve hammer and anvil, the Bell mob, with its Deep, Nightmare and '
-    'Tainted versions, NPC speech, and each type of armor each get a single slider, instead of a handful of '
-    'near-identical sounds.',
-    '<b>Sorted by what they are.</b> Mobs, NPC Voices, Armor, Player, Combat, Crafting &amp; Activities, and a '
-    'Miscellaneous group for everyday block, door, tool and menu sounds, so the sounds people tune are easy to find.',
-    '<b>A searchable window</b> in the same style as the game\'s own settings.',
-    '<b>Recently heard.</b> One switch lists only the sounds that played in the last 30 seconds, so you can find the '
-    'one that is bugging you right now.',
-    '<b>Changes apply immediately</b>, including sounds that are already playing, like a river loop.',
-    '<b>Preview button</b> beside every slider.',
-    '<b>Mod sounds too.</b> Sounds that other mods add get sliders under <b>Mods</b>, grouped by mod. Salty\'s Temporal '
-    'Symphony, for example, has a <b>Temporal Storm</b> group for its storm rumbles, warnings, and thunder.',
-    '<b>Changes are marked.</b> When a mod replaces one of the game\'s own sounds, that slider shows the mod\'s name '
-    'beside it, and its group counts how many of its sounds were changed.',
+    'A slider for every sound, from 0 to 100. 100 is the game\'s normal volume; no slider can go above it.',
+    'Sounds are listed in groups (Water, Mobs, Armor and so on). Click a group, or its <b>&gt;</b>, to open it. A group\'s '
+    'slider scales everything inside it.',
+    'Some near-identical sounds share one slider: Bells (the Bell mob and its Deep, Nightmare and Tainted versions), NPC '
+    'Voices, each type of armor, and the Anvil group (Helve Hammer and Hand Hammer).',
+    'A search box, and a <i>Recently heard</i> switch that lists the sounds played in the last 30 seconds, for finding a '
+    'sound you can\'t name.',
+    'A Play button beside every slider.',
+    'Changes apply immediately, including to loops that are already playing, such as a river.',
+    'Sounds added by other mods are listed under <b>Mods</b>, grouped by mod. When a mod replaces one of the game\'s '
+    'sounds, that slider shows the mod\'s name.',
 ]
 
 # group label -> examples. The label is the text before ":" in each sound's name (see tools/generate.py).
@@ -63,36 +54,37 @@ GROUPS = [
     ('Temporal', 'Stability warnings, rifts, rift wards'),
     ('Machines', 'Quern, gears, bellows'),
 ]
-MOBS = 'Creature sounds, grouped by creature: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens, and the rest'
-BELL = 'The Bell mob, including its deep bell. Deep, Nightmare and Tainted are the same mob and share these sounds.'
-NPC = 'Everything traders and villagers say. They share their voices, so one slider covers them all.'
+MOBS = ('Creature sounds, grouped by creature: drifters, shivers, bowtorn, locusts, wolves, bears, goats, chickens and '
+        'the rest. Bells is one slider for the Bell mob, including its deep bell and its Deep, Nightmare and Tainted '
+        'versions.')
+NPC = 'Speech from traders and villagers, on one slider.'
 ARMOR = 'One slider each for Brigandine, Chain, Leather, Plate and Scale, and an Armor slider for all of them.'
-ELSEWHERE = ('Not on the opening list, but one switch away with <i>Show every sound</i>, or by searching: Player, '
-             'Combat, Crafting &amp; Activities, Walk, Music, Charlemange, and Miscellaneous.')
-MODS = ("Sounds added by other mods, grouped by mod. Temporal Symphony's temporal storm, thunder, and creature sounds are "
-        "one example.")
-HELVE = ('One slider for the helve hammer and anvil. Hammering at an anvil by hand plays the same hits, and the weld '
-         'hit shares the slider, so it quiets those too.')
+ELSEWHERE = ('Everything else is available with <i>Show every sound</i>, or by searching: Player, Combat, Crafting &amp; '
+             'Activities, Walk, Music and Miscellaneous. The mini Bell, Charlemange, is under Mobs.')
+MODS = "Sounds added by other mods, grouped by mod. Salty's Temporal Symphony is one example."
+ANVIL_GROUP = ('<i>Helve Hammer</i> and <i>Hand Hammer</i> have separate sliders. The game plays the same sound file for '
+               'both, with the helve hammer at a much lower pitch, so the mod tells them apart by pitch. Hand Hammer also '
+               'covers the weld hit. Placing or breaking an anvil is a different sound (Miscellaneous > Block).')
 
 USING = [
-    'Press <b>Ctrl+Shift+V</b> which you can rebind in the controls settings, or type <b>.volumesliders</b> in chat.',
-    'Click a group, or its <b>&gt;</b>, to open or close it. The group\'s slider scales everything inside, and each '
-    'sound keeps its own slider too. They multiply, so a group at 50% and a sound at 50% plays at 25%.',
-    'The window opens on the sounds most people want quieter, plus the creature sounds. Flip <i>Show every sound</i> '
-    "to list every sound, including mods' quieter ones. <i>Recently heard</i> lists whatever just played, listed or not.",
-    'Your settings are saved in <b>ModConfig/volumesliders.json</b>.',
+    'Open the window with <b>Ctrl+Shift+V</b> (rebindable in the controls settings) or the chat command '
+    '<b>.volumesliders</b>.',
+    'A group\'s slider and the sliders inside it multiply: a group at 50% and a sound at 50% plays at 25%.',
+    'The window opens on the sounds listed below plus creature sounds. <i>Show every sound</i> lists all of them. '
+    '<i>Recently heard</i> lists whatever just played, whether it is on the default list or not.',
+    'Settings are saved in <b>ModConfig/volumesliders.json</b>.',
 ]
 COMPAT = [
     ('Vintage Story 1.22.7.', 'Client-side only.'),
-    ('Accessibility Tweaks.', 'Its Sound Effects screen scales sounds too. The two multipliers stack, so a sound set to '
-                              '50% in each plays at 25%.'),
-    ('Other mods.', 'Their sounds get sliders under Mods, and a game sound a mod replaces is marked with the mod\'s name. '
-                    'If a mod has its own volume setting, it still applies on top of these sliders. A mod that plays sound '
-                    'through its own audio code, instead of the game\'s sound engine, may not respond.'),
+    ('Accessibility Tweaks.', 'Its Sound Effects screen also scales sounds. Both apply, so a sound set to 50% in each '
+                              'plays at 25%.'),
+    ('Other mods.', 'Their sounds get sliders under Mods. A mod\'s own volume setting still applies on top of these '
+                    'sliders. A mod that plays sound through its own audio code instead of the game\'s sound engine may '
+                    'not respond.'),
 ]
 INSTALL = [
-    'Drop <b>volumesliders_{v}.zip</b> into your Mods folder.'.format(v=VERSION),
-    'Start the game. The first run writes <b>ModConfig/volumesliders.json</b> with every sound at 100.',
+    'Put <b>volumesliders_{v}.zip</b> in your Mods folder.'.format(v=VERSION),
+    'Start the game. The first run creates <b>ModConfig/volumesliders.json</b>.',
     'To reset everything, delete that file, or use <i>Reset Shown to 100</i> in the window.',
 ]
 # G0rbash's own wording (edited on GitHub); one string per line, as written. There is no credits section.
@@ -127,16 +119,14 @@ armor_total = sum(n for i, n in combos.items() if i.startswith('armor-'))
 
 by_label = {label: (f'<b>{label}</b>', examples, str(counts.get(label, 0))) for label, examples in GROUPS}
 order = ['Water', 'Boat', 'Rain', 'Wind', 'Thunder', 'Fire', 'Lava', 'Insects', 'Bees']
-sound_rows = [('<b>Helve Hammer and Anvil</b>', HELVE, str(combos['helvehammer']))]
+sound_rows = [('<b>Anvil</b>', ANVIL_GROUP, str(1 + combos['anvilhammer']))]
 sound_rows += [by_label[l] for l in order if counts.get(l)]
-sound_rows += [('<b>Mobs</b>', MOBS, str(creature_total)),
-               ('<b>Bell Mob</b>', BELL, str(combos['bellmob'])),
+sound_rows += [('<b>Mobs</b>', MOBS, str(creature_total + combos['bellmob'])),
                ('<b>NPC Voices</b>', NPC, str(combos['npcvoices'])),
                ('<b>Armor</b>', ARMOR, str(armor_total))]
 sound_rows += [by_label[l] for l in ('Temporal', 'Machines') if counts.get(l)]
 sound_rows.append(('<b>Mods</b>', MODS, 'Varies'))
-SOUNDS_INTRO = (f'The window opens on these sounds, the ones people most often want quieter, and can show every one of '
-                "the game's own, plus the sounds of any mods you have. " + ELSEWHERE)
+SOUNDS_INTRO = 'The window opens on these sounds. ' + ELSEWHERE
 
 # Real in-game screenshots (docs/images/screenshots).
 SHOTS = {  # file, caption, short alt text for when the image can't load
@@ -247,7 +237,7 @@ headings, bold and italic, lists) and has no screenshots of its own, because the
 
 ## After saving
 
-Upload `dist/volumesliders_{VERSION}.zip` and set its game versions to 1.22.0 to {GAME} (`modinfo.json` asks for
+Upload `releases/volumesliders_{VERSION}.zip` and set its game versions to 1.22.0 to {GAME} (`modinfo.json` asks for
 1.22.0; it was tested on {GAME}). I couldn't see where the form does this, so look for it after the first save.
 """)
 

@@ -20,6 +20,7 @@
 		"effect_bellows",
 		"effect_deepbell",
 		"effect_gears",
+		"effect_helvehammer",
 		"effect_rift",
 		"effect_tempstab_drain",
 		"effect_tempstab_low",
@@ -64,6 +65,6 @@
 	"minorPrefixes": [
 		"creature_bell_charlemange_"
 	],
-	"total": 813,
+	"total": 814,
 	"creatures": 207
 }

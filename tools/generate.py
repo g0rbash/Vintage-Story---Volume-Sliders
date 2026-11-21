@@ -26,7 +26,7 @@ UI = {
 # Sources: forum/mod-page complaints (helve hammer anvil hit, boat water, quern, cicadas/insects, loud bells,
 # temporal sounds) plus the user's own list (water, rain, wind, thunder, mobs). Gears/bellows/fire are judgment calls.
 MAJOR_PATTERNS = [
-    r"effect_anvilhit\d", r"effect_anvilmergehit",                                   # helve hammer + anvil
+    r"effect_helvehammer", r"effect_anvilhit\d", r"effect_anvilmergehit",           # helve hammer, hand hammer on anvil
     r"environment_(rapids|creek|waterfall|waterwaves|underwater|largesplash\d|mediumsplash|smallsplash)",
     r"block_water", r"block_waterwheel_(water|wood)", r"walk_water\d", r"player_swim", r"raft_(idle|moving)",
     r"weather_tracks_(rain_leafy|rain_leafless|hail)", r"environment_rainwindow",   # rain
@@ -39,22 +39,24 @@ MAJOR_PATTERNS = [
 ]
 MAJOR_PREFIXES = ["creature_", "voice_", "wearable_"]   # voice_ = NPC speech (traders, villagers); wearable_ = armor and clothing rustle
 # ...except these, which stay out of the default list (still found by search, or with "Show every sound").
-MINOR_PREFIXES = ["creature_bell_charlemange_"]   # Charlemange, the mini Bell
+MINOR_PREFIXES = ["creature_bell_charlemange_"]   # Charlemange, the mini Bell: no combined slider (it sounds nothing like the Bell mob); its sounds list singly under Mobs
 
 # Sounds that share ONE slider instead of getting one each. The mod stores the slider under "combo:<id>".
-# The helve hammer plays only effect/anvilhit (the game picks one of anvilhit1-3); the hand hammer plays the same
-# sound, so this slider quiets hammering at an anvil by hand too. The weld hit (anvilmergehit) is the hand hammer's alone, but it shares the slider to save space.
+# The helve hammer and a hand hammer both play effect/anvilhit (the game picks one of anvilhit1-3). The helve hammer
+# plays it at a pitch of 0.3-0.5 (deep thud, close to the sound of placing an anvil); the hand hammer plays it at about 1.
+# There is no separate file, so the mod tells them apart by pitch (src/SoundPatch.cs) and files the low-pitched hits
+# under VIRTUAL_SOUNDS below. The weld hit (anvilmergehit) is the hand hammer's alone.
+VIRTUAL_SOUNDS = ["effect_helvehammer"]
 COMBINED = [
-    {"id": "helvehammer", "name": "Helve Hammer and Anvil", "patterns": [r"effect_anvilhit\d", r"effect_anvilmergehit"]},
+    {"id": "helvehammer", "group": "Anvil", "name": "Helve Hammer", "patterns": [r"effect_helvehammer"]},
+    {"id": "anvilhammer", "group": "Anvil", "name": "Hand Hammer", "patterns": [r"effect_anvilhit\d", r"effect_anvilmergehit"]},
     # Traders and villagers speak by playing random notes from sounds/voice/<instrument>/ (listed as "voiceSounds" in
     # their entity files). Trader-male and villager share the same six instruments, and the female trader's three
     # overlap them, so the voices can't be told apart by NPC type. One slider quiets all of them.
     # The Bell mob's own sounds, including its deep bell. Deep, Nightmare and Tainted are the same mob at higher
     # difficulty and have no sound files of their own. Reception Bell (a block) stays separate.
-    {"id": "bellmob", "name": "Bell Mob",
+    {"id": "bellmob", "group": "Mobs", "name": "Bells",
      "patterns": [r"creature_bell_(alarm|bell|death|hurt|listen|walk)", r"effect_deepbell"]},
-    # Charlemange, the mini Bell: kept apart from the Bell mob and off the default list.
-    {"id": "charlemange", "name": "Charlemange", "patterns": [r"creature_bell_charlemange_.*"]},
     # Armor: one slider per type, listed under an Armor group (no per-variant sliders).
     {"id": "armor-brigandine", "group": "Armor", "name": "Brigandine", "patterns": [r"wearable_brigandine\d"]},
     {"id": "armor-chain", "group": "Armor", "name": "Chain", "patterns": [r"wearable_chain\d"]},
@@ -66,7 +68,8 @@ COMBINED = [
 
 # Friendly names where the file name alone isn't clear. {n} = trailing number.
 OVERRIDES = [
-    (r"effect_anvilhit(\d)", "Helve Hammer: Hit {n}"),
+    (r"effect_helvehammer", "Helve Hammer"),
+    (r"effect_anvilhit(\d)", "Anvil: Hand Hammer Hit {n}"),
     (r"effect_anvilmergehit", "Anvil: Weld Hit"),
     (r"environment_rapids", "Water: Rapids"), (r"environment_creek", "Water: Creek"),
     (r"environment_waterfall", "Water: Waterfall"), (r"environment_waterwaves", "Water: Waves"),
@@ -205,6 +208,8 @@ def main():
                         key, display = describe(rel)
                         found.setdefault(key, display)
 
+    for v in VIRTUAL_SOUNDS:
+        found.setdefault(v, v)
     keys = sorted(found)
     lang = dict(UI)
     major = []
